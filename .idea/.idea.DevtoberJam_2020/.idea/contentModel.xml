@@ -8,6 +8,10 @@
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="PlayerMovement.cs" t="Include" />
+          <e p="UI" t="Include">
+            <e p="ItemSlot.cs" t="Include" />
+            <e p="MoveableUIItem.cs" t="Include" />
+          </e>
         </e>
       </e>
       <e p="DevtoberJam_2020.sln" t="IncludeFlat" />
