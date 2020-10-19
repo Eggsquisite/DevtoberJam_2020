@@ -6,6 +6,17 @@
     <e p="C:\Users\Matt\Documents\GitHub\DevtoberJam_2020" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="DialogueData" t="Include">
+          <e p="Attributes.cs" t="Include" />
+          <e p="DataLoader.cs" t="Include" />
+          <e p="GameManager.cs" t="Include" />
+          <e p="Ingredient.cs" t="Include" />
+          <e p="Inventory.cs" t="Include" />
+          <e p="Patron.cs" t="Include" />
+          <e p="PatronManager.cs" t="Include" />
+          <e p="Potion.cs" t="Include" />
+          <e p="PotionDialogues.txt" t="Include" />
+        </e>
         <e p="Scripts" t="Include">
           <e p="PlayerMovement.cs" t="Include" />
           <e p="UI" t="Include">

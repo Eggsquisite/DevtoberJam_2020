@@ -20,8 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02456b1a-d081-4f5f-8ad7-6e37f0b0f34b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DevtoberJam_2020/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DevtoberJam_2020/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DevtoberJam_2020/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DevtoberJam_2020/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DevtoberJam_2020/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DevtoberJam_2020/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/UITest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/UITest.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,9 +34,16 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/DialogueData/PatronManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/MoveableUIItem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../RewindGameJam/Assets/Scripts/Player.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/DialogueData/Inventory.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/DialogueData/Potion.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/ItemSlot.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/DialogueData/Attributes.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/DialogueData/Ingredient.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/DialogueData/Patron.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/DialogueData/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -43,6 +52,16 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/MoveableUIItem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/MoveableUIItem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/ItemSlot.cs" />
+        <option value="$PROJECT_DIR$/Assets/DialogueData/Ingredients.cs" />
+        <option value="$PROJECT_DIR$/Assets/DialogueData/PatronManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/DialogueData/Ingredient.cs" />
+        <option value="$PROJECT_DIR$/Assets/DialogueData/Inventory.cs" />
+        <option value="$PROJECT_DIR$/Assets/DialogueData/DialogueLoader.cs" />
+        <option value="$PROJECT_DIR$/Assets/DialogueData/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/DialogueData/Patron.cs" />
+        <option value="$PROJECT_DIR$/Assets/DialogueData/Potion.cs" />
+        <option value="$PROJECT_DIR$/Assets/DialogueData/Attributes.cs" />
+        <option value="$PROJECT_DIR$/Assets/DialogueData/DataLoader.cs" />
       </list>
     </option>
   </component>
@@ -89,6 +108,8 @@
       <updated>1602601054714</updated>
       <workItem from="1602601070696" duration="83000" />
       <workItem from="1602601450527" duration="12471000" />
+      <workItem from="1602860718233" duration="20039000" />
+      <workItem from="1603123784031" duration="3967000" />
     </task>
     <servers />
   </component>
@@ -107,6 +128,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
@@ -120,10 +142,10 @@
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state x="626" y="330" key="RiderGenerateDialog/0.0.3440.1400/3440.360.1920.1040@0.0.3440.1400" timestamp="1602625837507" />
-    <state x="1857" y="0" width="1215" height="1368" key="dock-window-1" timestamp="1602602262496">
+    <state x="1713" y="0" width="1734" height="1407" key="dock-window-1" timestamp="1603133182220">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state x="1857" y="0" width="1215" height="1368" key="dock-window-1/0.0.3440.1400/3440.360.1920.1040@0.0.3440.1400" timestamp="1602602262496" />
+    <state x="1713" y="0" width="1734" height="1407" key="dock-window-1/0.0.3440.1400/3440.360.1920.1040@0.0.3440.1400" timestamp="1603133182220" />
     <state x="432" y="312" key="search.everywhere.popup" timestamp="1602603949683">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
