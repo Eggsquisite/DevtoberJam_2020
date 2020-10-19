@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Net;
 using UnityEngine;
 
 public class DataLoader : MonoBehaviour {
@@ -24,7 +25,9 @@ public class DataLoader : MonoBehaviour {
             if (line.Contains("//")) line = line.Split('/')[0];
             Debug.Log(line);
             while ((line != null) && line.Contains("[") && line.Contains("]")) {
-                if (line.Contains("Potion")) LoadPotion();
+                if (line.Contains("GoodAttributes")) LoadAttributes(true);
+                else if (line.Contains("BadAttributes")) LoadAttributes(false);
+                else if (line.Contains("Potion")) LoadPotion();
             }
         }
     }
@@ -45,7 +48,7 @@ public class DataLoader : MonoBehaviour {
         
         while (((line = inputFile.ReadLine()) != null) && !line.Contains("[") && !line.Contains("]")){
             if (line.Contains("//")) line = line.Split('/')[0];
-            if (line.Contains("Name")) potion.name = line.Split('=')[1].Trim();
+            if (line.Contains("Name")) potion.potion_name = line.Split('=')[1].Trim();
             else if (line.Contains("Attribute")) {
                 line = line.Split('=')[1];
                 string[] s = line.Split(',');
@@ -61,8 +64,16 @@ public class DataLoader : MonoBehaviour {
                     }
 
                     if (a == null) {
-                        for (int j = 0; j < )
+                        for (int j = 0; j < badAttributes.Count; j++) {
+                            if (attribute == badAttributes[j].name) { a = badAttributes[j]; break; }
+                        }
                     }
+                    
+                    if (a == null) Debug.LogError("Error: The attribute '" + attribute + "' from potion '" + potion.potion_name + "' could not be " +
+                                                  "located in the database.  Please check the data file.");
+                    
+                    WeightedAttribute wa = new WeightedAttribute((Attribute) a, strength);
+                    potion.AddAttribute(wa);
                 }
             }
         }

@@ -9,6 +9,7 @@ public struct Attribute {
 
 }
 
+[System.Serializable]
 public struct WeightedAttribute {
     
     public Attribute attribute;

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Patron : MonoBehaviour {
     
-    public string name;
+    public string patron_name;
     public string costume;
     public string problem;
     public List<WeightedAttribute> attributes = new List<WeightedAttribute>(1);

@@ -15,7 +15,7 @@ public class MoveableUIItem : MonoBehaviour, IPointerDownHandler, IBeginDragHand
     }
 
     public void OnPointerDown(PointerEventData eventData) {
-        throw new System.NotImplementedException();
+        Debug.Log("Blah");
     }
 
     public void OnDrag(PointerEventData eventData) {
