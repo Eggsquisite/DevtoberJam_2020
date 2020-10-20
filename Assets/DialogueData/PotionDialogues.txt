@@ -18,6 +18,11 @@ Wing of Bat, 20
 Eye of Newt, 25
 Bacon, 25
 
+[ Inventory ]
+
+Bacon, 2
+Eye of Newt, 3 
+
 [ GoodAttributes ]
 
 Strength
@@ -40,6 +45,8 @@ Luck
 
 Name= The Blabbermouth
 Attribute= 3 Charisma, 2 Charm
+
+
 
 [ Patron ]
 

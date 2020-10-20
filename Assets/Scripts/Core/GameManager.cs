@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
     
-    private Inventory inventory;
+    public Inventory inventory;
     
-    void Start()
-    {
+    void Start() {
         DataLoader.LoadDataFromFile();
+        inventory = DataLoader.inventory;
+        
+        //now instantiate the inventory
     }
 
     // Update is called once per frame

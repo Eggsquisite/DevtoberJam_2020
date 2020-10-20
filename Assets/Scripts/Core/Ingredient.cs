@@ -3,7 +3,7 @@ using System.Threading;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Ingredient : MonoBehaviour {
+public class Ingredient {
     public string ingredient_name;
     public ushort cost;
     public ushort quantity = 0;
@@ -12,21 +12,28 @@ public class Ingredient : MonoBehaviour {
     public Ingredient(string ingredient_name, ushort cost) {
         this.ingredient_name = ingredient_name;
         this.cost = cost;
-        icon = GetComponent<Image>();
-        icon.sprite = Resources.Load<Sprite>("Art/UI/Ingredients/Bacon.png");
+        //icon = GetComponent<Image>();
+        //icon.sprite = Resources.Load<Sprite>("Art/UI/Ingredients/Bacon.png");
     }
 
-    private void Start() {
+    /*private void Start() {
         icon = GetComponent<Image>();
         icon.sprite = Resources.Load<Sprite>("Art/UI/Ingredients/Bacon");
-    }
+    }*/
 
-    public void AddOne() {
+    public void Add() {
         quantity++; 
     }
+    public void Add(ushort amount) {
+        quantity += amount; 
+    }
 
-    public void RemoveOne() {
+    public void Remove() {
         quantity--;
+    }
+    
+    public void Remove(ushort amount) {
+        quantity -= amount;
     }
 
 }

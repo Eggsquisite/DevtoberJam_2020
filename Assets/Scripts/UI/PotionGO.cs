@@ -7,21 +7,15 @@ public class PotionGO : MonoBehaviour {
     
     public Potion potion;
     public Image icon;
-    
-    
-    void Start()
-    {
-        
-    }
+    //public Text text;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void Start() {
+        icon = transform.Find("Icon").GetComponent<Image>();
+        //text = transform.Find("StackSize").GetComponent<Text>();
     }
 
     void SetPotion(Potion potion) {
         this.potion = potion;
-        icon.sprite = Resources.Load<Sprite>("Art/UI/Ingredients/Bacon.png");
+        icon.sprite = Resources.Load<Sprite>("Art/UI/Ingredients/" + potion.potion_name);
     }
 }

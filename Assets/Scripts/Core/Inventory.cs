@@ -2,35 +2,38 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Inventory : MonoBehaviour {
+public class Inventory {
 
     public List<Ingredient> ingredients;
-    
-    void Start() {
-        
+
+    public Inventory(List<Ingredient> ingredients) {
+        this.ingredients = ingredients;
     }
 
-    
-    void Update() {
-        
-    }
-
-    void AddItem(Ingredient ingredient) {
+    public void AddItem(Ingredient ingredient, ushort amount) {
         for (int i = 0; i < ingredients.Count; i++) {
-            if (ingredients[i].name == ingredient.name) { ingredients[i].AddOne(); break; }
+            if (ingredients[i] == ingredient) { ingredients[i].Add(amount); break; }
         }
     }
 
-    void RemoveItem(Ingredient ingredient) {
+    public void RemoveItem(Ingredient ingredient, ushort amount) {
         for (int i = 0; i < ingredients.Count; i++) {
-            if (ingredients[i].name == ingredient.name) { ingredients[i].RemoveOne(); break; }
+            if (ingredients[i] == ingredient) { ingredients[i].Remove(amount); break; }
         }
     }
 
-    ushort CheckQuantity(Ingredient ingredient) {
+    public ushort CheckQuantity(Ingredient ingredient) {
         for (int i = 0; i < ingredients.Count; i++) {
-            if (ingredients[i].name == ingredient.name) return ingredients[i].quantity;
+            if (ingredients[i] == ingredient) return ingredients[i].quantity;
         }
         return 0;
+    }
+
+    public override string ToString() {
+        string s = "";
+        for (int i = 0; i < ingredients.Count; i++) {
+            s += ingredients[i].ingredient_name + "  (" + ingredients[i].quantity + ")\n";
+        }
+        return s;
     }
 }

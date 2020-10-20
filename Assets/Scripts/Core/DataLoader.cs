@@ -10,8 +10,10 @@ public class DataLoader : MonoBehaviour {
     
     private static StreamReader inputFile;
     private static string line;
-    
+
+    public static Inventory inventory;
     public static List<Potion> potions = new List<Potion>();
+    public static List<Ingredient> ingredients = new List<Ingredient>();
     public static List<Attribute> goodAttributes = new List<Attribute>();
     public static List<Attribute> badAttributes = new List<Attribute>();
 
@@ -29,6 +31,8 @@ public class DataLoader : MonoBehaviour {
                 if (line.Contains("GoodAttributes")) LoadAttributes(true);
                 else if (line.Contains("BadAttributes")) LoadAttributes(false);
                 else if (line.Contains("Potion")) LoadPotion();
+                else if (line.Contains("Ingredients")) LoadIngredients();
+                else if (line.Contains("Inventory")) LoadInventory();
                 else line = inputFile.ReadLine();
             }
 
@@ -36,16 +40,32 @@ public class DataLoader : MonoBehaviour {
             if (counter == 5000) break;
         }
 
-        Debug.Log("We found " + potions.Count + " potions");
-        for (int i = 0; i < potions.Count; i++) {
-            Debug.Log(potions[i]);
-        }
+        String s = "We loaded the following: ";
 
-        Debug.Log("We found " + goodAttributes.Count + " attributes");
-        for (int i = 0; i < goodAttributes.Count; i++) {
-            Debug.Log(goodAttributes[i].attribute_name);
+        s += ("\n\n" + potions.Count + " potions:");
+        for (int i = 0; i < potions.Count; i++) {
+            s += ("\n" + potions[i]);
         }
         
+        s += ("\n\n" + ingredients.Count + " ingredients:");
+        for (int i = 0; i < ingredients.Count; i++) {
+            s += ("\n" + ingredients[i].ingredient_name);
+        }
+
+        s += ("\n\n" + goodAttributes.Count + " good attributes:");
+        for (int i = 0; i < goodAttributes.Count; i++) {
+            s += ("\n" + goodAttributes[i].attribute_name);
+        }
+        
+        s += ("\n\n" + badAttributes.Count + " bad attributes:");
+        for (int i = 0; i < badAttributes.Count; i++) {
+            s += ("\n" + badAttributes[i].attribute_name);
+        }
+        
+        s += ("\n\n" + "Inventory:\n");
+        s += inventory;
+
+        Debug.Log(s);
     }
 
     private static void LoadAttributes(bool good) {
@@ -94,5 +114,30 @@ public class DataLoader : MonoBehaviour {
             }
         }
         potions.Add(potion);
+    }
+
+    private static void LoadIngredients() {
+        while (((line = inputFile.ReadLine()) != null) && !line.Contains("[") && !line.Contains("]")) {
+            if (line.Contains("//")) line = line.Split('/')[0];
+            if (line.Trim().Length > 0) {
+                string[] s = line.Split(',');
+                ingredients.Add(new Ingredient(s[0].Trim(), Byte.Parse(s[1].Trim())));
+            }
+        }
+    }
+
+    private static void LoadInventory() {
+        inventory = new Inventory(ingredients);
+        while (((line = inputFile.ReadLine()) != null) && !line.Contains("[") && !line.Contains("]")) {
+            if (line.Contains("//")) line = line.Split('/')[0];
+            if (line.Trim().Length > 0) {
+                string[] s = line.Split(',');
+                string ingredient_name = s[0].Trim();
+                //Ingredient ingredient;
+                for (int i = 0; i < ingredients.Count; i++) {
+                    if (ingredient_name == ingredients[i].ingredient_name) inventory.AddItem(ingredients[i], ushort.Parse(s[1].Trim()));
+                }
+            }
+        }
     }
 }
