@@ -27,6 +27,7 @@
             <e p="ItemSlot.cs" t="Include" />
             <e p="MoveableUIItem.cs" t="Include" />
             <e p="PanelManager.cs" t="Include" />
+            <e p="PotionGO.cs" t="Include" />
           </e>
         </e>
       </e>

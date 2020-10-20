@@ -1,10 +1,10 @@
 ﻿
 public struct Attribute {
 
-    public string name;
+    public string attribute_name;
 
-    public Attribute(string name) {
-        this.name = name;
+    public Attribute(string attribute_name) {
+        this.attribute_name = attribute_name;
     }
 
 }

@@ -22,88 +22,13 @@
     <list default="true" id="02456b1a-d081-4f5f-8ad7-6e37f0b0f34b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DevtoberJam_2020/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DevtoberJam_2020/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DevtoberJam_2020/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DevtoberJam_2020/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Characters.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Characters/character1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Characters/character1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Icons.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Icons/icon-bacon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Icons/icon-bacon.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Icons/icon-batWing.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Icons/icon-batWing.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Icons/icon-cash.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Icons/icon-cash.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Icons/icon-currency.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Icons/icon-currency.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Icons/icon-eyeNewt.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Icons/icon-eyeNewt.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Icons/icon-frogToe.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Icons/icon-frogToe.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Static.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Static/background-full.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Static/background-full.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Static/window-background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Static/window-background.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Static/window-frame.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Static/window-frame.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Testing.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Testing/flask.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Testing/flask.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Testing/slot.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Testing/slot.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/UI.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/UI/beacker.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/UI/beacker.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/UI/button-brewIt.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/UI/button-brewIt.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/UI/button-chemset.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/UI/button-chemset.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/UI/button-inventory.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/UI/button-inventory.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/UI/button-recipes.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/UI/button-recipes.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/UI/button-shop.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/UI/button-shop.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/UI/button-slideLeft.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/UI/button-slideLeft.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/UI/button-slideRight.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/UI/button-slideRight.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/UI/container-ingred-selector.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/UI/container-ingred-selector.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/UI/container-inventory.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/UI/container-inventory.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/UI/container-recipeBook.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/UI/container-recipeBook.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/UI/container-recipes-table.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/UI/container-recipes-table.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/UI/counter-half.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/UI/counter-half.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/UI/dialogue-box.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/UI/dialogue-box.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/UI/recipes-gauge-positive.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/UI/recipes-gauge-positive.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/UI/test-tubes.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/UI/test-tubes.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DialogueData/Attributes.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DialogueData/Attributes.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DialogueData/DataLoader.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DialogueData/DataLoader.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DialogueData/GameManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DialogueData/GameManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DialogueData/Ingredient.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DialogueData/Ingredient.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DialogueData/Inventory.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DialogueData/Inventory.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DialogueData/Patron.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DialogueData/Patron.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DialogueData/PatronManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DialogueData/PatronManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DialogueData/Potion.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DialogueData/Potion.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/MoveableUIItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/MoveableUIItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Ingredients.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Potions.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestScenes/UITest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TestScenes/UITest.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Attributes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Attributes.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/DataLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/DataLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Potion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Potion.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +41,9 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/MoveableUIItem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../RewindGameJam/Assets/Scripts/Player.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/PotionGO.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/ItemSlot.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/63DD8BF9-8CFA-4BA9-85AF-735EF1A56BA9/de/544df211/List`1.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -134,12 +61,15 @@
         <option value="$PROJECT_DIR$/Assets/DialogueData/Attributes.cs" />
         <option value="$PROJECT_DIR$/Assets/DialogueData/DataLoader.cs" />
         <option value="$PROJECT_DIR$/Assets/DialogueData/Potion.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Potion.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Core/Patron.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Attributes.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/MoveableUIItem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Core/Ingredient.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Core/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Attributes.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Potion.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Core/DataLoader.cs" />
+        <option value="$PROJECT_DIR$/Assets/DialogueData/PotionDialogues.txt" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/PotionGO.cs" />
       </list>
     </option>
   </component>
@@ -187,7 +117,7 @@
       <workItem from="1602601070696" duration="83000" />
       <workItem from="1602601450527" duration="12471000" />
       <workItem from="1602860718233" duration="20039000" />
-      <workItem from="1603123784031" duration="10389000" />
+      <workItem from="1603123784031" duration="16616000" />
     </task>
     <servers />
   </component>

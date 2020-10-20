@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class Potion : MonoBehaviour {
+public class Potion {
     
     public string potion_name;
     public List<WeightedAttribute> attributes = new List<WeightedAttribute>();
@@ -15,7 +15,15 @@ public class Potion : MonoBehaviour {
     public void AddAttribute(WeightedAttribute attribute) {
         attributes.Add(attribute);
     }
-    
+
+    public override string ToString() {
+        string s = potion_name;
+        for (int i = 0; i < attributes.Count; i++) {
+            s += ("\n" + attributes[i].attribute.attribute_name + ": " + attributes[i].weight);
+        }
+
+        return s;
+    }
 }
 
 public struct PotionSolution {

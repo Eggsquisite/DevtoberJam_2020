@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour {
     
     void Start()
     {
-        
+        DataLoader.LoadDataFromFile();
     }
 
     // Update is called once per frame

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class DataLoader : MonoBehaviour {
@@ -20,16 +21,31 @@ public class DataLoader : MonoBehaviour {
 
     public static void LoadDataFromFile() {
         inputFile = new StreamReader("Assets/DialogueData/PotionDialogues.txt");
-
+        int counter = 0;
         while ((line = inputFile.ReadLine()) != null) {
             if (line.Contains("//")) line = line.Split('/')[0];
-            Debug.Log(line);
+            //Debug.Log(line);
             while ((line != null) && line.Contains("[") && line.Contains("]")) {
                 if (line.Contains("GoodAttributes")) LoadAttributes(true);
                 else if (line.Contains("BadAttributes")) LoadAttributes(false);
                 else if (line.Contains("Potion")) LoadPotion();
+                else line = inputFile.ReadLine();
             }
+
+            counter++;
+            if (counter == 5000) break;
         }
+
+        Debug.Log("We found " + potions.Count + " potions");
+        for (int i = 0; i < potions.Count; i++) {
+            Debug.Log(potions[i]);
+        }
+
+        Debug.Log("We found " + goodAttributes.Count + " attributes");
+        for (int i = 0; i < goodAttributes.Count; i++) {
+            Debug.Log(goodAttributes[i].attribute_name);
+        }
+        
     }
 
     private static void LoadAttributes(bool good) {
@@ -43,7 +59,7 @@ public class DataLoader : MonoBehaviour {
     }
 
     private static void LoadPotion() {
-        
+        //Debug.Log("LOADING POTION");
         Potion potion = new Potion();
         
         while (((line = inputFile.ReadLine()) != null) && !line.Contains("[") && !line.Contains("]")){
@@ -60,12 +76,12 @@ public class DataLoader : MonoBehaviour {
 
                     Attribute? a = null;
                     for (int j = 0; j < goodAttributes.Count; j++) {
-                        if (attribute == goodAttributes[j].name) { a = goodAttributes[j]; break; }
+                        if (attribute == goodAttributes[j].attribute_name) { a = goodAttributes[j]; break; }
                     }
 
                     if (a == null) {
                         for (int j = 0; j < badAttributes.Count; j++) {
-                            if (attribute == badAttributes[j].name) { a = badAttributes[j]; break; }
+                            if (attribute == badAttributes[j].attribute_name) { a = badAttributes[j]; break; }
                         }
                     }
                     
@@ -77,5 +93,6 @@ public class DataLoader : MonoBehaviour {
                 }
             }
         }
+        potions.Add(potion);
     }
 }
