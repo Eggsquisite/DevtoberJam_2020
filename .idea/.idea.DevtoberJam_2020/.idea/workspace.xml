@@ -20,24 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02456b1a-d081-4f5f-8ad7-6e37f0b0f34b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DevtoberJam_2020/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DevtoberJam_2020/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DevtoberJam_2020/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DevtoberJam_2020/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DialogueData/PotionDialogues.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DialogueData/PotionDialogues.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Ingredient.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Ingredient.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Potion.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Potion.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Art/UI/Ingredients/icon-batWing.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Art/UI/Ingredients/icon-batWing.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Art/UI/Ingredients/icon-eyeNewt.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Art/UI/Ingredients/icon-eyeNewt.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestScenes/UITest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TestScenes/UITest.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/DataLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/DataLoader.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Ingredient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Ingredient.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Potion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Potion.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/IngredientGO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/IngredientGO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/RecipeBook.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/RecipeBook.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,10 +65,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/PotionGO.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/IngredientGO.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Core/GameManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/RecipeBook.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Core/Ingredient.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Potion.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Core/DataLoader.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Potion.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/RecipeBook.cs" />
       </list>
     </option>
   </component>
@@ -133,7 +118,7 @@
       <workItem from="1602860718233" duration="20039000" />
       <workItem from="1603123784031" duration="16617000" />
       <workItem from="1603205104857" duration="3223000" />
-      <workItem from="1603214406155" duration="13391000" />
+      <workItem from="1603214406155" duration="17338000" />
     </task>
     <servers />
   </component>

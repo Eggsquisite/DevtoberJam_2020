@@ -6,7 +6,7 @@ public class Potion {
     public string potion_name;
     public List<WeightedAttribute> attributes = new List<WeightedAttribute>();
     public List<WeightedIngredient> recipe = new List<WeightedIngredient>();
-    public bool craftable = false;
+    public bool isCraftable = false;
 
     public Potion() { }
 
