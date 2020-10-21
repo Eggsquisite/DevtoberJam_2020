@@ -35,6 +35,16 @@ public class Ingredient {
     public void Remove(ushort amount) {
         quantity -= amount;
     }
+}
 
+public struct WeightedIngredient {
+
+    public Ingredient ingredient;
+    public ushort quantity;
+
+    public WeightedIngredient(Ingredient ingredient, ushort quantity) {
+        this.ingredient = ingredient;
+        this.quantity = quantity;
+    }
 }
 

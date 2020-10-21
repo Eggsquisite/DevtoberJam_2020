@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using System.Net;
-using System.Runtime.CompilerServices;
+using JetBrains.Annotations;
 using UnityEngine;
 
-public class DataLoader : MonoBehaviour {
+public class DataLoader {
     
     private static StreamReader inputFile;
     private static string line;
@@ -16,10 +14,7 @@ public class DataLoader : MonoBehaviour {
     public static List<Ingredient> ingredients = new List<Ingredient>();
     public static List<Attribute> goodAttributes = new List<Attribute>();
     public static List<Attribute> badAttributes = new List<Attribute>();
-
-    void Start() {
-        
-    }
+    
 
     public static void LoadDataFromFile() {
         inputFile = new StreamReader("Assets/DialogueData/PotionDialogues.txt");
@@ -94,22 +89,29 @@ public class DataLoader : MonoBehaviour {
                     byte strength = Byte.Parse(s2[0]);
                     string attribute = s2[1];
 
-                    Attribute? a = null;
-                    for (int j = 0; j < goodAttributes.Count; j++) {
-                        if (attribute == goodAttributes[j].attribute_name) { a = goodAttributes[j]; break; }
-                    }
-
-                    if (a == null) {
-                        for (int j = 0; j < badAttributes.Count; j++) {
-                            if (attribute == badAttributes[j].attribute_name) { a = badAttributes[j]; break; }
-                        }
-                    }
                     
+                    Attribute? a = FindAttribute(attribute);
                     if (a == null) Debug.LogError("Error: The attribute '" + attribute + "' from potion '" + potion.potion_name + "' could not be " +
                                                   "located in the database.  Please check the data file.");
                     
                     WeightedAttribute wa = new WeightedAttribute((Attribute) a, strength);
                     potion.AddAttribute(wa);
+                }
+            }
+            else if (line.Contains("Ingredients")) {
+                line = line.Split('=')[1];
+                string[] s = line.Split(',');
+
+                
+                for (int i = 0; i < s.Length; i++) {
+                    s[i] = s[i].Trim();
+                    int index = 0;
+                    string quantity = "";
+                    for (int j = 0; j < s[i].Length; j++) {
+                        if (s[i][j] == ' ') { index = j; break; }
+                        quantity += s[i][j];
+                    }
+                    potion.AddRecipeIngredient(new WeightedIngredient(FindIngredient(s[i].Remove(0,index+1)), ushort.Parse(quantity)));
                 }
             }
         }
@@ -139,5 +141,47 @@ public class DataLoader : MonoBehaviour {
                 }
             }
         }
+    }
+
+    private static int FindGoodAttributeIndex(string attribute) {
+        for (int i = 0; i < goodAttributes.Count; i++) { 
+            if (goodAttributes[i].attribute_name == attribute) return i;
+        }
+        return -1;
+    }
+    
+    private static int FindBadAttributeIndex(string attribute) {
+        for (int i = 0; i < badAttributes.Count; i++) { 
+            if (badAttributes[i].attribute_name == attribute) return i;
+        }
+        return -1;
+    }
+
+    private static Attribute? FindAttribute(string attribute) {
+        for (int i = 0; i < goodAttributes.Count; i++) { 
+            if (goodAttributes[i].attribute_name == attribute) return goodAttributes[i];
+        }
+        for (int i = 0; i < badAttributes.Count; i++) { 
+            if (badAttributes[i].attribute_name == attribute) return badAttributes[i];
+        }
+
+        return null;
+    }
+
+    private static int FindIngredientIndex(string ingredient) {
+        for (int i = 0; i < ingredients.Count; i++) {
+            if (ingredients[i].ingredient_name == ingredient) return i;
+        }
+        Debug.LogError("We were unable to find the ingredient '" + ingredient + "'.  Is this a typo?");
+        return -1;
+    }
+
+    [CanBeNull]
+    private static Ingredient FindIngredient(string ingredient) {
+        for (int i = 0; i < ingredients.Count; i++) {
+            if (ingredients[i].ingredient_name == ingredient) return ingredients[i];
+        }
+        Debug.LogError("We were unable to find the ingredient '" + ingredient + "'.  Is this a typo?");
+        return null;
     }
 }

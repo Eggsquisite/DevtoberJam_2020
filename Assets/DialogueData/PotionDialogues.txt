@@ -22,6 +22,7 @@ Bacon, 25
 
 Bacon, 2
 Eye of Newt, 3 
+Wing of Bat, 4
 
 [ GoodAttributes ]
 
@@ -45,7 +46,7 @@ Luck
 
 Name= The Blabbermouth
 Attribute= 3 Charisma, 2 Charm
-
+Ingredients= 3 Eye of Newt, 2 Bacon
 
 
 [ Patron ]

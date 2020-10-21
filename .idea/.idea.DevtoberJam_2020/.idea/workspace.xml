@@ -23,12 +23,21 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DevtoberJam_2020/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DevtoberJam_2020/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DevtoberJam_2020/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DevtoberJam_2020/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/DialogueData/PotionDialogues.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DialogueData/PotionDialogues.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Ingredient.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Ingredient.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Potion.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Potion.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Art/UI/Ingredients/icon-batWing.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Art/UI/Ingredients/icon-batWing.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Art/UI/Ingredients/icon-eyeNewt.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Art/UI/Ingredients/icon-eyeNewt.png.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestScenes/UITest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TestScenes/UITest.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/DataLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/DataLoader.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Ingredient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Ingredient.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/PotionGO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/PotionGO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Potion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Potion.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/IngredientGO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/IngredientGO.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +54,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/IngredientGO.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/ItemSlot.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/63DD8BF9-8CFA-4BA9-85AF-735EF1A56BA9/de/544df211/List`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/RecipeBook.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -65,14 +75,15 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Core/Patron.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/MoveableUIItem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Core/Attributes.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Potion.cs" />
         <option value="$PROJECT_DIR$/Assets/DialogueData/PotionDialogues.txt" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Ingredient.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Core/Inventory.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Core/DataLoader.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Core/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/PotionGO.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/IngredientGO.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Core/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/RecipeBook.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Ingredient.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Potion.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Core/DataLoader.cs" />
       </list>
     </option>
   </component>
@@ -122,7 +133,7 @@
       <workItem from="1602860718233" duration="20039000" />
       <workItem from="1603123784031" duration="16617000" />
       <workItem from="1603205104857" duration="3223000" />
-      <workItem from="1603214406155" duration="4175000" />
+      <workItem from="1603214406155" duration="13391000" />
     </task>
     <servers />
   </component>

@@ -5,6 +5,8 @@ public class Potion {
     
     public string potion_name;
     public List<WeightedAttribute> attributes = new List<WeightedAttribute>();
+    public List<WeightedIngredient> recipe = new List<WeightedIngredient>();
+    public bool craftable = false;
 
     public Potion() { }
 
@@ -16,12 +18,20 @@ public class Potion {
         attributes.Add(attribute);
     }
 
+    public void AddRecipeIngredient(WeightedIngredient ingredient) {
+        recipe.Add(ingredient);
+    }
+
     public override string ToString() {
-        string s = potion_name;
+        string s = potion_name + "\nAttributes:";
         for (int i = 0; i < attributes.Count; i++) {
             s += ("\n" + attributes[i].attribute.attribute_name + ": " + attributes[i].weight);
         }
 
+        s += "\nRecipe:";
+        for (int i = 0; i < recipe.Count; i++) {
+            s += ("\n" + recipe[i].ingredient.ingredient_name + " (" + recipe[i].quantity + ")");
+        }
         return s;
     }
 }
