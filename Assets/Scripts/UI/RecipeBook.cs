@@ -11,14 +11,15 @@ public class RecipeBook : MonoBehaviour {
     private int pageIndex;
 
     private Image[] recipeIcons;
-    private TextMeshProUGUI[] recipeIngredientText;
-    private TextMeshProUGUI[] ingredientQuantityText;
-    private Image brewItButton;
-    private Color brewItButtonDisabledColor = new Color(150f, 150f, 150f);
-    
+    private TextMeshProUGUI[] recipeIngredientText, ingredientQuantityText;
+    private TextMeshProUGUI potionTitle;
+    private Button brewItButton, pageLeftButton, pageRightButton;
+    private Color32 brewItButtonDisabledColor = new Color(150f, 150f, 150f);
+
 
     void Start() {
         potions = DataLoader.potions;
+        potionTitle = transform.Find("PotionTitle").GetComponent<TextMeshProUGUI>();
         
         recipeIcons = new Image[3];
         for (int i = 0; i < recipeIcons.Length; i++) {
@@ -35,7 +36,13 @@ public class RecipeBook : MonoBehaviour {
             ingredientQuantityText[i] = transform.Find("QuantityText" + (i+1)).GetComponent<TextMeshProUGUI>();
         }
 
-        brewItButton = transform.Find("BrewItButton").GetComponent<Image>();
+        brewItButton = transform.Find("BrewItButton").GetComponent<Button>();
+        brewItButton.onClick.AddListener(BrewIt);
+        pageLeftButton = transform.Find("PageLeftButton").GetComponent<Button>();
+        pageLeftButton.onClick.AddListener(TurnPageLeft);
+        pageRightButton = transform.Find("PageRightButton").GetComponent<Button>();
+        pageRightButton.onClick.AddListener(TurnPageRight);
+
 
         TurnToPage(0);
     }
@@ -51,13 +58,39 @@ public class RecipeBook : MonoBehaviour {
         
     }
 
-    public int FlipPage(bool fwd) {
+    public void BrewIt() {
+        //TODO
+    }
+
+    public void TurnPageRight() {
+        Debug.Log("PageTurnRight Clicked");
+        int nextPageIndex = FlipPage(pageIndex, true);
+        //if (nextPageIndex > 0 && !pageLeftButton.interactable) pageLeftButton.interactable = true;
+        //run a check to see if there is another page
+        //int i = FlipPage(nextPageIndex, true);
+        //if (i < 0) pageRightButton.interactable = false;
+        TurnToPage(nextPageIndex);
+    }
+    
+    public void TurnPageLeft() {
+        Debug.Log("PageTurnLeft Clicked");
+        int nextPageIndex = FlipPage(pageIndex, false);
+        //if (nextPageIndex > 0 && !pageRightButton.interactable) pageRightButton.interactable = true;
+        //run a check to see if there is another page
+        // i = FlipPage(nextPageIndex, false);
+        //if (i < 0) pageLeftButton.interactable = false;
+        TurnToPage(nextPageIndex);
+    }
+
+    public int FlipPage(int pageIndex, bool fwd) {
         if (fwd) {
+            if (pageIndex + 1 > potions.Count) return -1;
             for (int i = pageIndex+1; i < potions.Count; i++) {
                 if (potions[i].isCraftable) return i;
             }
         }
         else {
+            if (pageIndex - 1 < 0) return -1;
             for (int i = pageIndex-1; i >= 0; i--) {
                 if (potions[i].isCraftable) return i;
             }
@@ -68,6 +101,7 @@ public class RecipeBook : MonoBehaviour {
 
     public void TurnToPage(int index) {
         Debug.Log("Setting recipe book page to: " + potions[index].potion_name + " (Page -)");
+        potionTitle.SetText(potions[index].potion_name);
         Debug.Log("Found " + potions[index].recipe.Count + " ingredients in the recipe");
         for (int i = 0; i < potions[index].recipe.Count; i++) {
             Debug.Log("Setting ingredient " + potions[index].recipe[i].ingredient.ingredient_name);
@@ -94,10 +128,22 @@ public class RecipeBook : MonoBehaviour {
         }
 
         if (!isBrewable) {
-            brewItButton.color = brewItButtonDisabledColor;
+            brewItButton.interactable = false;
+            Debug.Log("Unable to craft potion");
         }
         else {
-            brewItButton.color = Color.white;
+            brewItButton.interactable = true;
         }
+        
+        //check to see if the page turn buttons can be used
+        
+        int check = FlipPage(index, true);
+        if (check < 0) pageRightButton.interactable = false;
+        else pageRightButton.interactable = true;
+        check = FlipPage(index, false);
+        if (check < 0) pageLeftButton.interactable = false;
+        else pageLeftButton.interactable = true;
+
+        pageIndex = index;
     }
 }

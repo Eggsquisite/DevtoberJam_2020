@@ -15,6 +15,7 @@
             <e p="DataLoader.cs" t="Include" />
             <e p="GameManager.cs" t="Include" />
             <e p="Ingredient.cs" t="Include" />
+            <e p="Input.txt" t="Include" />
             <e p="Inventory.cs" t="Include" />
             <e p="MixPotion.cs" t="Include" />
             <e p="Patron.cs" t="Include" />
@@ -28,6 +29,7 @@
             <e p="IngredientGO.cs" t="Include" />
             <e p="ItemSlot.cs" t="Include" />
             <e p="MoveableUIItem.cs" t="Include" />
+            <e p="PageTurn.cs" t="Include" />
             <e p="PanelManager.cs" t="Include" />
             <e p="PotionGO.cs" t="Include" />
             <e p="RecipeBook.cs" t="Include" />

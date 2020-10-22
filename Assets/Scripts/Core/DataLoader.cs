@@ -17,7 +17,7 @@ public class DataLoader {
     
 
     public static void LoadDataFromFile() {
-        inputFile = new StreamReader("Assets/DialogueData/PotionDialogues.txt");
+        inputFile = new StreamReader("Assets/Scripts/Core/Input.txt");
         int counter = 0;
         while ((line = inputFile.ReadLine()) != null) {
             if (line.Contains("//")) line = line.Split('/')[0];
@@ -61,6 +61,8 @@ public class DataLoader {
         s += Inventory.ToString();
 
         Debug.Log(s);
+        
+        inputFile.Close();
     }
 
     private static void LoadAttributes(bool good) {

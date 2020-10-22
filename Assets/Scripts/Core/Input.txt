@@ -1,0 +1,72 @@
+[ GenericFail ]
+
+Response= Errr, I don't think this potion will solve my problem.  Thanks for wasting my time, jerk.
+
+[ GenericWin ]
+
+Response= This should do just nicely!  Thanks!
+
+[ MaleNames ] 
+
+[ FemaleNames ]
+
+[ Hints ]
+
+[ Ingredients ]
+
+Wing of Bat, 20
+Eye of Newt, 25
+Bacon, 25
+
+[ Inventory ]
+
+Bacon, 2
+Eye of Newt, 2 
+Wing of Bat, 1
+
+[ GoodAttributes ]
+
+Strength
+Charisma
+Courage
+Charm
+Intellect
+Stealth
+Allure
+Tech
+Animal
+Entertainer
+Green
+Speed
+Luck
+
+[ BadAttributes ]
+
+[ Potion ] 
+
+Name= The Blabbermouth
+Attribute= 3 Charisma, 2 Charm
+Ingredients= 3 Eye of Newt, 2 Bacon
+Craftable= yes
+
+[ Potion ]
+
+Name= Smartypants
+Attribute= 4 Intellect, 2 Tech
+Ingredients= 1 Wing of Bat, 2 Bacon
+Craftable= yes
+
+[ Potion ]
+
+Name= Lucky Star
+Attribute= 5 Luck, 3 Courage, 1 Allure
+Ingredients= 2 Wing of Bat, 1 Eye of Newt, 1 Bacon
+Craftable= yes
+
+[ Patron ]
+
+Name= Steve King
+Costume= Vampire
+Problem= Hey pal, I need some help.  I have a job interview next week at a bakery and I need a little boost to help me get the job.  Can you help me out?
+Formula= 3 Charisma, 2charm
+Solutio
