@@ -9,7 +9,7 @@ public class DataLoader {
     private static StreamReader inputFile;
     private static string line;
 
-    public static Inventory inventory;
+    //public static Inventory inventory;
     public static List<Potion> potions = new List<Potion>();
     public static List<Ingredient> ingredients = new List<Ingredient>();
     public static List<Attribute> goodAttributes = new List<Attribute>();
@@ -58,7 +58,7 @@ public class DataLoader {
         }
         
         s += ("\n\n" + "Inventory:\n");
-        s += inventory;
+        s += Inventory.ToString();
 
         Debug.Log(s);
     }
@@ -114,6 +114,10 @@ public class DataLoader {
                     potion.AddRecipeIngredient(new WeightedIngredient(FindIngredient(s[i].Remove(0,index+1)), ushort.Parse(quantity)));
                 }
             }
+            else if (line.Contains("Craftable")) {
+                line = line.Split('=')[1].Trim();
+                if (line.Contains("yes")) potion.isCraftable = true;
+            }
         }
         potions.Add(potion);
     }
@@ -129,7 +133,8 @@ public class DataLoader {
     }
 
     private static void LoadInventory() {
-        inventory = new Inventory(ingredients);
+        //inventory = new Inventory(ingredients);
+        Inventory.ingredients = ingredients;
         while (((line = inputFile.ReadLine()) != null) && !line.Contains("[") && !line.Contains("]")) {
             if (line.Contains("//")) line = line.Split('/')[0];
             if (line.Trim().Length > 0) {
@@ -137,7 +142,7 @@ public class DataLoader {
                 string ingredient_name = s[0].Trim();
                 //Ingredient ingredient;
                 for (int i = 0; i < ingredients.Count; i++) {
-                    if (ingredient_name == ingredients[i].ingredient_name) inventory.AddItem(ingredients[i], ushort.Parse(s[1].Trim()));
+                    if (ingredient_name == ingredients[i].ingredient_name) Inventory.AddItem(ingredients[i], ushort.Parse(s[1].Trim()));
                 }
             }
         }

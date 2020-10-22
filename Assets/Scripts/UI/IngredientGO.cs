@@ -19,6 +19,6 @@ public class IngredientGO : MonoBehaviour {
     public void SetIngredient(Ingredient ingredient) {
         this.ingredient = ingredient;
         icon.sprite = Resources.Load<Sprite>("Art/UI/Ingredients/" + ingredient.ingredient_name);
-        text.text = ingredient.quantity + "";
+        text.text = ingredient.quantityInInventory + "";
     }
 }

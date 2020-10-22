@@ -4,35 +4,41 @@ using UnityEngine;
 
 public class Inventory {
 
-    public List<Ingredient> ingredients;
+    public static List<Ingredient> ingredients;
 
-    public Inventory(List<Ingredient> ingredients) {
-        this.ingredients = ingredients;
-    }
+    /*public Inventory(List<Ingredient> ingredients) {
+        Inventory.ingredients = ingredients;
+    }*/
 
-    public void AddItem(Ingredient ingredient, ushort amount) {
+    public static void AddItem(Ingredient ingredient, ushort amount) {
         for (int i = 0; i < ingredients.Count; i++) {
             if (ingredients[i] == ingredient) { ingredients[i].Add(amount); break; }
         }
     }
 
-    public void RemoveItem(Ingredient ingredient, ushort amount) {
+    public static void RemoveItem(Ingredient ingredient, ushort amount) {
         for (int i = 0; i < ingredients.Count; i++) {
             if (ingredients[i] == ingredient) { ingredients[i].Remove(amount); break; }
         }
     }
 
-    public ushort CheckQuantity(Ingredient ingredient) {
+    public static ushort CheckQuantity(Ingredient ingredient) {
         for (int i = 0; i < ingredients.Count; i++) {
-            if (ingredients[i] == ingredient) return ingredients[i].quantity;
+            if (ingredients[i] == ingredient) return ingredients[i].quantityInInventory;
         }
         return 0;
     }
 
-    public override string ToString() {
+    /*public static Ingredient FindIngredient(Ingredient ingredient) {
+        for (int i = 0; i < ingredients.Count; i++) {
+            if (ingredients[i] == ingredient) return 
+        }
+    }*/
+
+    public static string ToString() {
         string s = "";
         for (int i = 0; i < ingredients.Count; i++) {
-            s += ingredients[i].ingredient_name + "  (" + ingredients[i].quantity + ")\n";
+            s += ingredients[i].ingredient_name + "  (" + ingredients[i].quantityInInventory + ")\n";
         }
         return s;
     }

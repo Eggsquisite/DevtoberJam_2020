@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Ingredient {
     public string ingredient_name;
     public ushort cost;
-    public ushort quantity = 0;
+    public ushort quantityInInventory = 0;
     private Image icon;
 
     public Ingredient(string ingredient_name, ushort cost) {
@@ -22,18 +22,18 @@ public class Ingredient {
     }*/
 
     public void Add() {
-        quantity++; 
+        quantityInInventory++; 
     }
     public void Add(ushort amount) {
-        quantity += amount; 
+        quantityInInventory += amount; 
     }
 
     public void Remove() {
-        quantity--;
+        quantityInInventory--;
     }
     
     public void Remove(ushort amount) {
-        quantity -= amount;
+        quantityInInventory -= amount;
     }
 }
 
