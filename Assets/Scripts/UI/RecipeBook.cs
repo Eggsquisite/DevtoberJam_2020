@@ -60,6 +60,7 @@ public class RecipeBook : MonoBehaviour {
 
     public void BrewIt() {
         //TODO
+        brewItButton.GetComponent<AudioSource>().Play();
     }
 
     public void TurnPageRight() {
@@ -69,6 +70,7 @@ public class RecipeBook : MonoBehaviour {
         //run a check to see if there is another page
         //int i = FlipPage(nextPageIndex, true);
         //if (i < 0) pageRightButton.interactable = false;
+        pageRightButton.GetComponent<AudioSource>().Play();
         TurnToPage(nextPageIndex);
     }
     
@@ -79,6 +81,7 @@ public class RecipeBook : MonoBehaviour {
         //run a check to see if there is another page
         // i = FlipPage(nextPageIndex, false);
         //if (i < 0) pageLeftButton.interactable = false;
+        pageLeftButton.GetComponent<AudioSource>().Play();
         TurnToPage(nextPageIndex);
     }
 
@@ -145,5 +148,11 @@ public class RecipeBook : MonoBehaviour {
         else pageLeftButton.interactable = true;
 
         pageIndex = index;
+    }
+
+
+    void MakeSprite() {
+        GameObject go = new GameObject("Test Sprite");
+        SpriteRenderer r = go.AddComponent<SpriteRenderer>();
     }
 }

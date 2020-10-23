@@ -17,12 +17,14 @@ Response= This should do just nicely!  Thanks!
 Wing of Bat, 20
 Eye of Newt, 25
 Bacon, 25
+Toe of Frog, 30
 
 [ Inventory ]
 
 Bacon, 2
 Eye of Newt, 2 
 Wing of Bat, 1
+Toe of Frog, 2
 
 [ GoodAttributes ]
 
@@ -41,6 +43,8 @@ Speed
 Luck
 
 [ BadAttributes ]
+
+// Potions MUST come at the end of file
 
 [ Potion ] 
 
@@ -61,6 +65,13 @@ Craftable= yes
 Name= Lucky Star
 Attribute= 5 Luck, 3 Courage, 1 Allure
 Ingredients= 2 Wing of Bat, 1 Eye of Newt, 1 Bacon
+Craftable= yes
+
+[ Potion ]
+
+Name= The Cat Burglar
+Attribute= 5 Stealth, 2 Courage, 1 Animal Whisperer
+Ingredients= 3 Toe of Frog, 1 Eye of Newt, 2 Bacon
 Craftable= yes
 
 [ Patron ]
