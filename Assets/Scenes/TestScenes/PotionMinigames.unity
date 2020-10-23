@@ -536,8 +536,8 @@ MonoBehaviour:
   initialTemp: 310
   tempRange: 20
   swayRange: 3
-  swayFreqMin: 0.5
-  swayFreqMax: 1
+  swayFreqMin: 0.75
+  swayFreqMax: 1.25
   changeRange: 20
   changeChance: 8
   changeFreqMin: 0.25
