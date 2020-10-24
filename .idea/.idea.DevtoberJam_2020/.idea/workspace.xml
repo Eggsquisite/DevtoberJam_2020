@@ -22,13 +22,8 @@
     <list default="true" id="02456b1a-d081-4f5f-8ad7-6e37f0b0f34b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DevtoberJam_2020/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DevtoberJam_2020/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DevtoberJam_2020/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DevtoberJam_2020/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Art/UI/Ingredients/icon-frogToe.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Art/UI/Ingredients/icon-frogToe.png.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestScenes/UITest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TestScenes/UITest.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Input.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/RecipeBook.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/RecipeBook.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sound/UI/page-turn.wav" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sound/UI/page-turn.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sound/UI/page-turn.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sound/UI/page-turn.wav.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +123,7 @@
       <workItem from="1602860718233" duration="20039000" />
       <workItem from="1603123784031" duration="16617000" />
       <workItem from="1603205104857" duration="3223000" />
-      <workItem from="1603214406155" duration="38517000" />
+      <workItem from="1603214406155" duration="40340000" />
     </task>
     <servers />
   </component>

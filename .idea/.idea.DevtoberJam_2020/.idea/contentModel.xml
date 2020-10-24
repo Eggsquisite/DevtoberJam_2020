@@ -23,13 +23,17 @@
             <e p="Ingredient.cs" t="Include" />
             <e p="Input.txt" t="Include" />
             <e p="Inventory.cs" t="Include" />
-            <e p="MixPotion.cs" t="Include" />
             <e p="Patron.cs" t="Include" />
             <e p="PatronManager.cs" t="Include" />
             <e p="Potion.cs" t="Include" />
           </e>
           <e p="Old (Not in Use)" t="Include">
             <e p="PlayerMovement.cs" t="Include" />
+          </e>
+          <e p="Temp" t="Include">
+            <e p="Burner.cs" t="Include" />
+            <e p="Mix.cs" t="Include" />
+            <e p="MixPotion.cs" t="Include" />
           </e>
           <e p="UI" t="Include">
             <e p="IngredientGO.cs" t="Include" />

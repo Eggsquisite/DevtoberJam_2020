@@ -14,8 +14,6 @@ public class RecipeBook : MonoBehaviour {
     private TextMeshProUGUI[] recipeIngredientText, ingredientQuantityText;
     private TextMeshProUGUI potionTitle;
     private Button brewItButton, pageLeftButton, pageRightButton;
-    private Color32 brewItButtonDisabledColor = new Color(150f, 150f, 150f);
-
 
     void Start() {
         potions = DataLoader.potions;
@@ -43,19 +41,7 @@ public class RecipeBook : MonoBehaviour {
         pageRightButton = transform.Find("PageRightButton").GetComponent<Button>();
         pageRightButton.onClick.AddListener(TurnPageRight);
 
-
         TurnToPage(0);
-    }
-
-    /*private void OnEnable() {
-        potions = DataLoader.potions;
-        TurnToPage(0);
-    }*/
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void BrewIt() {
@@ -66,10 +52,6 @@ public class RecipeBook : MonoBehaviour {
     public void TurnPageRight() {
         Debug.Log("PageTurnRight Clicked");
         int nextPageIndex = FlipPage(pageIndex, true);
-        //if (nextPageIndex > 0 && !pageLeftButton.interactable) pageLeftButton.interactable = true;
-        //run a check to see if there is another page
-        //int i = FlipPage(nextPageIndex, true);
-        //if (i < 0) pageRightButton.interactable = false;
         pageRightButton.GetComponent<AudioSource>().Play();
         TurnToPage(nextPageIndex);
     }
@@ -77,10 +59,6 @@ public class RecipeBook : MonoBehaviour {
     public void TurnPageLeft() {
         Debug.Log("PageTurnLeft Clicked");
         int nextPageIndex = FlipPage(pageIndex, false);
-        //if (nextPageIndex > 0 && !pageRightButton.interactable) pageRightButton.interactable = true;
-        //run a check to see if there is another page
-        // i = FlipPage(nextPageIndex, false);
-        //if (i < 0) pageLeftButton.interactable = false;
         pageLeftButton.GetComponent<AudioSource>().Play();
         TurnToPage(nextPageIndex);
     }
@@ -139,7 +117,6 @@ public class RecipeBook : MonoBehaviour {
         }
         
         //check to see if the page turn buttons can be used
-        
         int check = FlipPage(index, true);
         if (check < 0) pageRightButton.interactable = false;
         else pageRightButton.interactable = true;
@@ -148,11 +125,5 @@ public class RecipeBook : MonoBehaviour {
         else pageLeftButton.interactable = true;
 
         pageIndex = index;
-    }
-
-
-    void MakeSprite() {
-        GameObject go = new GameObject("Test Sprite");
-        SpriteRenderer r = go.AddComponent<SpriteRenderer>();
     }
 }
