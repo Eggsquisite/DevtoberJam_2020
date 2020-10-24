@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour {
                 Debug.Log("Instantiating " + Inventory.ingredients[i].ingredient_name);
                 GameObject newIngredient = Instantiate(ingredientGO, new Vector3(Screen.width*0.5f, Screen.height*0.5f, 0f), Quaternion.identity);
                 newIngredient.GetComponent<IngredientGO>().SetIngredient(Inventory.ingredients[i]);
+                newIngredient.GetComponent<IngredientGO>().SetStackSize(Inventory.ingredients[i].quantityInInventory);
                 newIngredient.transform.parent = ingredientsParent.transform;
             }
         }
