@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class Mix : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+public class Mix : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerEnterHandler, IPointerExitHandler
 {
     public float circleSpeed; // the amount of seconds to complete a circle
     public float radius = 5;
@@ -13,7 +13,7 @@ public class Mix : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     private float x, y;
     private float speed, angle;
 
-    private bool mix;
+    private bool mix, mouseClick, mouseEnter;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +24,8 @@ public class Mix : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     void Update()
     {
-        if (mix)
+        // Add a buffer when mouse gets off mixer
+        if (mouseClick && mouseEnter)
             Mixing();
     }
 
@@ -45,11 +46,21 @@ public class Mix : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        Debug.Log(this.gameObject.name + " was clicked");
+        mouseClick = true;
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        Debug.Log("unclicked");
+        mouseClick = false;
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        mouseEnter = true;
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        mouseEnter = false;
     }
 }
