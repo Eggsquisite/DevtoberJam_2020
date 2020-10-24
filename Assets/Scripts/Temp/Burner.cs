@@ -26,7 +26,7 @@ public class Burner : MonoBehaviour
     public float resetFreq;
 
     private float resetTimer;
-    private bool reset;
+    private bool reset, increaseTemp;
 
     private float temp;
 
@@ -112,18 +112,19 @@ public class Burner : MonoBehaviour
         {
             resetTimer = 0;
 
-            if (temp > initialTemp)
-                temp--;
-            else if (temp < initialTemp)
+            if (increaseTemp)
                 temp++;
+            else
+                temp--;
         }
     }
 
-    public void ButtonDown()
+    public void ButtonDown(bool status)
     {
         reset = true;
         resetTimer = 0;
         sway = change = false;
+        increaseTemp = status;
     }
 
     public void ButtonUp()

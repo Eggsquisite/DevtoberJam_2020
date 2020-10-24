@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class Mix : MonoBehaviour
+public class Mix : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     public float circleSpeed; // the amount of seconds to complete a circle
     public float radius = 5;
@@ -36,8 +38,18 @@ public class Mix : MonoBehaviour
         transform.position = new Vector2(x, y);
     }
 
-    private void OnMouseDown()
+    public void MixStatus(bool status)
     {
-        Debug.Log("Mixing...");
+        mix = status;
+    }
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        Debug.Log(this.gameObject.name + " was clicked");
+    }
+
+    public void OnPointerUp(PointerEventData eventData)
+    {
+        Debug.Log("unclicked");
     }
 }
