@@ -8,8 +8,6 @@ public class PotionManager : MonoBehaviour
     public Liquid m_liquid;
     public Burner m_burner;
 
-    private bool vialDrag;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -22,18 +20,4 @@ public class PotionManager : MonoBehaviour
         
     }
 
-    public void BeakerEnter()
-    {
-        //Debug.Log("Beaker entered");
-    }
-
-    public void BeakerExit()
-    {
-        Debug.Log("Beaker exited");
-    }
-
-    public void VialDragging(bool status)
-    {
-        vialDrag = status;
-    }
 }

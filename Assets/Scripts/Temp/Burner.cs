@@ -26,7 +26,7 @@ public class Burner : MonoBehaviour
     public float resetFreq;
 
     private float resetTimer;
-    private bool reset, increaseTemp;
+    private bool reset, increaseTemp, losingQuality;
 
     private float temp;
 
@@ -53,8 +53,11 @@ public class Burner : MonoBehaviour
         if (changeTemp)
             ChangeTemp();
 
+        if (losingQuality) ;
+            // start timer to degrade potion quality
+
         if (reset)
-            Resetting();
+            Resetting(); 
     }
 
     void ChangeChance()
@@ -108,12 +111,20 @@ public class Burner : MonoBehaviour
     void ChangeColor()
     {
         if (temp >= initialTemp + changeRange)
+        {
+            losingQuality = true;
             tempText.color = Color.red;
+        }
         else if (temp <= initialTemp - changeRange)
+        {
+            losingQuality = true;
             tempText.color = Color.blue;
+        }
         else
+        {
+            losingQuality = false;
             tempText.color = Color.black;
-        
+        }
     }
 
     void Resetting()

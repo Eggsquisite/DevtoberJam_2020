@@ -35,7 +35,9 @@ public class Liquid : MonoBehaviour, IDropHandler
             updatedColor = data.pointerDrag.GetComponent<Vials>().GetColor();
 
             CombineColors(baseColor, updatedColor);
-            //ChangeColor(updatedColor);
+
+            if (baseColor == LiquidColor.Brown) ;
+                // penalize player and degrade quality of potion
         }
     }
 
@@ -54,8 +56,8 @@ public class Liquid : MonoBehaviour, IDropHandler
     private void ChangeColor(LiquidColor color)
     {
         baseColor = color;
-        liquid.color = (Color32)hueColorValues[color];
         Debug.Log("New color is... " + baseColor);
+        liquid.color = (Color32)hueColorValues[color];
     }
 
     private void CombineColors(LiquidColor baseColor, LiquidColor newColor)
