@@ -89,7 +89,7 @@ public class Burner : MonoBehaviour
 
     void ChangeTemp()
     {
-        Debug.Log("Changing temp");
+        //Debug.Log("Changing temp");
         if (changeTimer < changeFreq)
             changeTimer += Time.deltaTime;
         else if (changeTimer >= changeFreq)

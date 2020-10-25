@@ -5,7 +5,7 @@ using UnityEngine;
 public class PotionManager : MonoBehaviour
 {
     public Mix m_mix;
-    public Beaker m_beaker;
+    public Liquid m_liquid;
     public Burner m_burner;
 
     private bool vialDrag;

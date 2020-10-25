@@ -23,7 +23,7 @@ public class Vials : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHan
 
     public void OnBeginDrag(PointerEventData data)
     {
-        Debug.Log("Beginning Drag with color: " + m_color);
+        //Debug.Log("Beginning Drag with color: " + m_color);
         canvasGroup.blocksRaycasts = false;
     }
 
