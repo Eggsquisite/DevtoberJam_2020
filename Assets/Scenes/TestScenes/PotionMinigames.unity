@@ -600,6 +600,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b1ccba1be88bda47a3ad125162d374a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  liquid: {fileID: 1746104701}
+  m_color: 3
 --- !u!1 &852751517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1052,8 +1054,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96219e27aa86b2a45830de3fbeb474b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_burner: {fileID: 1138370467}
   m_mix: {fileID: 1593794404}
+  m_beaker: {fileID: 821773880}
+  m_burner: {fileID: 1138370467}
 --- !u!1 &1406028602
 GameObject:
   m_ObjectHideFlags: 0
@@ -1728,7 +1731,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.74133027, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

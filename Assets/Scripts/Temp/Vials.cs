@@ -10,20 +10,15 @@ public class Vials : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHan
     private CanvasGroup canvasGroup;
 
 
-    public enum vialColor { Red, Yellow, Blue };
+    //public enum LiquidColor { Red, Yellow, Blue, Purple, Green, Orange };
 
-    public vialColor m_color;
-    private int realColor;
+    public LiquidColor m_color;
 
     // Start is called before the first frame update
     void Start()
     {
         originalPos = transform.position;
         canvasGroup = GetComponent<CanvasGroup>();
-
-        if (m_color == vialColor.Red)           realColor = 0;
-        else if (m_color == vialColor.Yellow)   realColor = 1;
-        else if (m_color == vialColor.Blue)     realColor = 2;
     }
 
     public void OnBeginDrag(PointerEventData data)
@@ -44,8 +39,8 @@ public class Vials : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHan
         // If vial is over potion mix and can change color, change potion mix to appropriate color depending on vial
     }
 
-    public int GetColor()
+    public LiquidColor GetColor()
     {
-        return realColor;
+        return m_color;
     }
 }
