@@ -15,7 +15,8 @@ public class GameManager : MonoBehaviour {
     
     void Awake() {
         DataLoader.LoadDataFromFile();
-        // inventory = DataLoader.inventory;
+        PatronLoader.LoadDataFromFile();
+
 
         potionGO = Resources.Load<GameObject>("Prefabs/Potion");
         ingredientGO = Resources.Load<GameObject>("Prefabs/Ingredient");

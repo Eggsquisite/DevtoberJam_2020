@@ -7,6 +7,8 @@ public class Potion {
     public List<WeightedAttribute> attributes = new List<WeightedAttribute>();
     public List<WeightedIngredient> recipe = new List<WeightedIngredient>();
     public bool isCraftable = false;
+    
+    public static List<Potion> potions;
 
     public Potion() { }
 
@@ -34,11 +36,12 @@ public class Potion {
         }
         return s;
     }
-}
 
-public struct PotionSolution {
-    public Potion potion { get; set; }
-    public ushort payment { get; set; }
-    public bool isDrunkImmediately { get; set; }
-    public string comment { get; set; }
+    public static Potion FindPotion(string potion_name) {
+        for (int i = 0; i < potions.Count; i++) {
+            if (potions[i].potion_name == potion_name) return potions[i];
+        }
+        Debug.LogError("Unable to locate the potion '" + potion_name + "' from the PatronInput file");
+        return null;
+    }
 }

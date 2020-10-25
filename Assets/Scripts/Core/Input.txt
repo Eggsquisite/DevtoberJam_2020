@@ -81,4 +81,4 @@ Name= Steve King
 Costume= Vampire
 Problem= Hey pal, I need some help.  I have a job interview next week at a bakery and I need a little boost to help me get the job.  Can you help me out?
 Formula= 3 Charisma, 2charm
-Solutio
+Solution= The Blabbermouth; 150; no; OMG thanks buddy!  This will do 

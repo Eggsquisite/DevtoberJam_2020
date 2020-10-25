@@ -1,0 +1,23 @@
+[ FailDialogue ]
+
+Response= Errr, I don't think this potion will solve my problem.  Thanks for wasting my time, jerk.
+
+[ SuccessDialogue ]
+
+Response= This should do just nicely!  Thanks!
+
+[ Patron ]
+
+Name= Steve King
+Costume= Vampire
+Problem= Hey pal, I need some help.  I have a job interview next week at a bakery and I need a little boost to help me get the job.  Can you help me out?
+Formula= 3 Charisma, 2 Charm
+Solution= The Blabbermouth; 150; no; OMG thanks buddy!  This will do nicely!
+
+[ Patron ]
+
+Name= John Smith
+Costume= Dog
+Problem= So, uhm ... there's this girl I like.  She doesn't seem to notice me.  No matter what I do, it's like I'm invisible to her.  I want her to SEE me.  Can you help me out?
+Formula= 3 Charisma, 2 Charm
+Solution= The Blabbermouth; 150; no; OMG thanks buddy!  This will do nicely!

@@ -24,6 +24,8 @@
             <e p="Input.txt" t="Include" />
             <e p="Inventory.cs" t="Include" />
             <e p="Patron.cs" t="Include" />
+            <e p="PatronInput.txt" t="Include" />
+            <e p="PatronLoader.cs" t="Include" />
             <e p="PatronManager.cs" t="Include" />
             <e p="Potion.cs" t="Include" />
           </e>
@@ -33,8 +35,10 @@
           <e p="Temp" t="Include">
             <e p="Burner.cs" t="Include" />
             <e p="CursorRaycast.cs" t="Include" />
+            <e p="Liquid.cs" t="Include" />
             <e p="Mix.cs" t="Include" />
             <e p="MixPotion.cs" t="Include" />
+            <e p="PotionManager.cs" t="Include" />
             <e p="Vials.cs" t="Include" />
           </e>
           <e p="UI" t="Include">

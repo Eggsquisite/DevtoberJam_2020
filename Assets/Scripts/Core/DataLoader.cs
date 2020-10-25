@@ -10,13 +10,23 @@ public class DataLoader {
     private static string line;
 
     //public static Inventory inventory;
-    public static List<Potion> potions = new List<Potion>();
-    public static List<Ingredient> ingredients = new List<Ingredient>();
-    public static List<Attribute> goodAttributes = new List<Attribute>();
-    public static List<Attribute> badAttributes = new List<Attribute>();
+    private static List<Potion> potions = new List<Potion>();
+    private static List<Ingredient> ingredients = new List<Ingredient>();
+    private static List<Attribute> goodAttributes = new List<Attribute>();
+    private static List<Attribute> badAttributes = new List<Attribute>();
     
 
     public static void LoadDataFromFile() {
+        
+        potions = new List<Potion>();
+        Potion.potions = potions;
+        ingredients = new List<Ingredient>();
+        Ingredient.ingredients = ingredients;
+        goodAttributes = new List<Attribute>();
+        Attribute.goodAttributes = goodAttributes;
+        badAttributes = new List<Attribute>();
+        Attribute.badAttributes = badAttributes;
+        
         inputFile = new StreamReader("Assets/Scripts/Core/Input.txt");
         int counter = 0;
         while ((line = inputFile.ReadLine()) != null) {
@@ -61,6 +71,11 @@ public class DataLoader {
         s += Inventory.ToString();
 
         Debug.Log(s);
+
+        Potion.potions = potions;
+        Ingredient.ingredients = ingredients;
+        Attribute.goodAttributes = goodAttributes;
+        Attribute.badAttributes = badAttributes;
         
         inputFile.Close();
     }
@@ -92,7 +107,7 @@ public class DataLoader {
                     string attribute = s2[1];
 
                     
-                    Attribute? a = FindAttribute(attribute);
+                    Attribute a = Attribute.FindAttribute(attribute);
                     if (a == null) Debug.LogError("Error: The attribute '" + attribute + "' from potion '" + potion.potion_name + "' could not be " +
                                                   "located in the database.  Please check the data file.");
                     
@@ -113,7 +128,7 @@ public class DataLoader {
                         if (s[i][j] == ' ') { index = j; break; }
                         quantity += s[i][j];
                     }
-                    potion.AddRecipeIngredient(new WeightedIngredient(FindIngredient(s[i].Remove(0,index+1)), ushort.Parse(quantity)));
+                    potion.AddRecipeIngredient(new WeightedIngredient(Ingredient.FindIngredient(s[i].Remove(0,index+1)), ushort.Parse(quantity)));
                 }
             }
             else if (line.Contains("Craftable")) {
@@ -144,7 +159,7 @@ public class DataLoader {
                 if (s[0].Trim() == ("Money")) Inventory.AddFunds(int.Parse(s[1].Trim()));
                 else {
                     string ingredient_name = s[0].Trim();
-                    Inventory.AddItem(FindIngredient(ingredient_name),ushort.Parse(s[1].Trim()));
+                    Inventory.AddItem(Ingredient.FindIngredient(ingredient_name),ushort.Parse(s[1].Trim()));
                     //Ingredient ingredient;
                     /*for (int i = 0; i < ingredients.Count; i++) {
                         if (ingredient_name == ingredients[i].ingredient_name) Inventory.AddItem(ingredients[i], ushort.Parse(s[1].Trim()));
@@ -154,7 +169,7 @@ public class DataLoader {
         }
     }
 
-    private static int FindGoodAttributeIndex(string attribute) {
+    /*private static int FindGoodAttributeIndex(string attribute) {
         for (int i = 0; i < goodAttributes.Count; i++) { 
             if (goodAttributes[i].attribute_name == attribute) return i;
         }
@@ -166,9 +181,9 @@ public class DataLoader {
             if (badAttributes[i].attribute_name == attribute) return i;
         }
         return -1;
-    }
+    }*/
 
-    private static Attribute? FindAttribute(string attribute) {
+    /*private static Attribute? FindAttribute(string attribute) {
         for (int i = 0; i < goodAttributes.Count; i++) { 
             if (goodAttributes[i].attribute_name == attribute) return goodAttributes[i];
         }
@@ -177,22 +192,22 @@ public class DataLoader {
         }
 
         return null;
-    }
+    }*/
 
-    private static int FindIngredientIndex(string ingredient) {
+    /*private static int FindIngredientIndex(string ingredient) {
         for (int i = 0; i < ingredients.Count; i++) {
             if (ingredients[i].ingredient_name == ingredient) return i;
         }
         Debug.LogError("We were unable to find the ingredient '" + ingredient + "'.  Is this a typo?");
         return -1;
-    }
+    }*/
 
-    [CanBeNull]
-    private static Ingredient FindIngredient(string ingredient) {
+    //[CanBeNull]
+    /*private static Ingredient FindIngredient(string ingredient) {
         for (int i = 0; i < ingredients.Count; i++) {
             if (ingredients[i].ingredient_name == ingredient) return ingredients[i];
         }
         Debug.LogError("We were unable to find the ingredient '" + ingredient + "'.  Is this a typo?");
         return null;
-    }
+    }*/
 }

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Threading;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,31 +8,27 @@ public class Ingredient {
     public ushort quantityInInventory = 0;
     private Image icon;
 
+    public static List<Ingredient> ingredients;
+
     public Ingredient(string ingredient_name, ushort cost) {
         this.ingredient_name = ingredient_name;
         this.cost = cost;
-        //icon = GetComponent<Image>();
-        //icon.sprite = Resources.Load<Sprite>("Art/UI/Ingredients/Bacon.png");
     }
 
-    /*private void Start() {
-        icon = GetComponent<Image>();
-        icon.sprite = Resources.Load<Sprite>("Art/UI/Ingredients/Bacon");
-    }*/
-
-    public void Add() {
-        quantityInInventory++; 
-    }
     public void Add(ushort amount) {
         quantityInInventory += amount; 
     }
 
-    public void Remove() {
-        quantityInInventory--;
-    }
-    
     public void Remove(ushort amount) {
         quantityInInventory -= amount;
+    }
+    
+    public static Ingredient FindIngredient(string ingredient) {
+        for (int i = 0; i < ingredients.Count; i++) {
+            if (ingredients[i].ingredient_name == ingredient) return ingredients[i];
+        }
+        Debug.LogError("We were unable to find the ingredient '" + ingredient + "'.  Is this a typo?");
+        return null;
     }
 }
 

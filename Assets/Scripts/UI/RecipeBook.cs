@@ -16,7 +16,7 @@ public class RecipeBook : MonoBehaviour {
     private Button brewItButton, pageLeftButton, pageRightButton;
 
     void Start() {
-        potions = DataLoader.potions;
+        potions = Potion.potions;
         potionTitle = transform.Find("PotionTitle").GetComponent<TextMeshProUGUI>();
         
         recipeIcons = new Image[3];
