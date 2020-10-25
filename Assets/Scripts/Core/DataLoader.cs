@@ -27,7 +27,7 @@ public class DataLoader {
                 else if (line.Contains("BadAttributes")) LoadAttributes(false);
                 else if (line.Contains("Potion")) LoadPotion();
                 else if (line.Contains("Ingredients")) LoadIngredients();
-                else if (line.Contains("Inventory")) LoadInventory();
+                else if (line.Contains("StartingInventory")) LoadInventory();
                 else line = inputFile.ReadLine();
             }
 
@@ -141,10 +141,14 @@ public class DataLoader {
             if (line.Contains("//")) line = line.Split('/')[0];
             if (line.Trim().Length > 0) {
                 string[] s = line.Split(',');
-                string ingredient_name = s[0].Trim();
-                //Ingredient ingredient;
-                for (int i = 0; i < ingredients.Count; i++) {
-                    if (ingredient_name == ingredients[i].ingredient_name) Inventory.AddItem(ingredients[i], ushort.Parse(s[1].Trim()));
+                if (s[0].Trim() == ("Money")) Inventory.AddFunds(int.Parse(s[1].Trim()));
+                else {
+                    string ingredient_name = s[0].Trim();
+                    Inventory.AddItem(FindIngredient(ingredient_name),ushort.Parse(s[1].Trim()));
+                    //Ingredient ingredient;
+                    /*for (int i = 0; i < ingredients.Count; i++) {
+                        if (ingredient_name == ingredients[i].ingredient_name) Inventory.AddItem(ingredients[i], ushort.Parse(s[1].Trim()));
+                    }*/
                 }
             }
         }

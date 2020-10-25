@@ -23,16 +23,14 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DevtoberJam_2020/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DevtoberJam_2020/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DevtoberJam_2020/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DevtoberJam_2020/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Ingredient.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Ingredient.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Ingredient.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Ingredient.prefab.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestScenes/UITest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TestScenes/UITest.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/DataLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/DataLoader.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/IngredientGO.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/IngredientGO.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Input.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Core/IngredientGO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Core/IngredientGO.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ItemSlot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ItemSlot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/MoveableUIItem.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/MoveableUIItem.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/PotionGO.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/PotionGO.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/MoveableItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/MoveableItem.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +42,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/PageTurn.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Core/MoneyDisplay.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../RewindGameJam/Assets/Scripts/Player.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Book-Page Curl/scripts/AutoFlip.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/ItemSlot.cs" root0="FORCE_HIGHLIGHTING" />
@@ -74,16 +73,17 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/IngredientGO.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Core/Potion.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Core/Ingredient.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Inventory.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Core/PotionDialogues.txt" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Core/DataLoader.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Core/Input.txt" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/RecipeBook.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Core/InventoryGO.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/ItemSlot.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/RecipeBook.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Core/IngredientGO.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Core/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/MoveableItem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Core/IngredientGO.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/ItemSlot.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Core/MoneyDisplay.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Inventory.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Core/DataLoader.cs" />
       </list>
     </option>
   </component>
@@ -133,7 +133,7 @@
       <workItem from="1602860718233" duration="20039000" />
       <workItem from="1603123784031" duration="16617000" />
       <workItem from="1603205104857" duration="3223000" />
-      <workItem from="1603214406155" duration="46324000" />
+      <workItem from="1603214406155" duration="57280000" />
     </task>
     <servers />
   </component>
@@ -170,9 +170,9 @@
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state x="1700" y="0" width="1747" height="1407" key="dock-window-1/0.0.3440.1400/3440.360.1920.1040@0.0.3440.1400" timestamp="1603134036799" />
-    <state x="432" y="312" width="840" height="1034" key="search.everywhere.popup" timestamp="1603401985564">
+    <state x="432" y="312" width="840" height="1034" key="search.everywhere.popup" timestamp="1603584731015">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state x="432" y="312" width="840" height="1034" key="search.everywhere.popup/0.0.3440.1400/3440.360.1920.1040@0.0.3440.1400" timestamp="1603401985564" />
+    <state x="432" y="312" width="840" height="1034" key="search.everywhere.popup/0.0.3440.1400/3440.360.1920.1040@0.0.3440.1400" timestamp="1603584731015" />
   </component>
 </project>

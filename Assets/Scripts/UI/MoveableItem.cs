@@ -11,11 +11,14 @@ public class MoveableItem : MonoBehaviour, IPointerDownHandler, IBeginDragHandle
     private CanvasGroup canvasGroup;
     public ItemType itemType;
     public ItemSlot slot;
+    private GameObject stackSize, itemName;
 
     private void Awake() {
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
         canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
+        stackSize = transform.Find("StackSize").gameObject;
+        itemName = transform.Find("ItemName").gameObject;
     }
 
     public void OnPointerDown(PointerEventData eventData) {
@@ -28,9 +31,14 @@ public class MoveableItem : MonoBehaviour, IPointerDownHandler, IBeginDragHandle
 
     public void OnBeginDrag(PointerEventData eventData) {
         canvasGroup.blocksRaycasts = false;
+        stackSize.SetActive(false);
+        itemName.SetActive(false);
     }
 
     public void OnEndDrag(PointerEventData eventData) {
+        if (eventData.pointerDrag)
         canvasGroup.blocksRaycasts = true;
+        stackSize.SetActive(true);
+        itemName.SetActive(true);
     }
 }

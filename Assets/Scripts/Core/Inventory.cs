@@ -5,6 +5,11 @@ using UnityEngine;
 public class Inventory {
 
     public static List<Ingredient> ingredients;
+    public static List<Potion> potions;
+    public static int money = 0;
+
+    public delegate void MoneyEvent();
+    public static event MoneyEvent MoneyChangedListener;
 
     /*public Inventory(List<Ingredient> ingredients) {
         Inventory.ingredients = ingredients;
@@ -36,10 +41,15 @@ public class Inventory {
     }*/
 
     public static string ToString() {
-        string s = "";
+        string s = "Money: " + money + "\n";
         for (int i = 0; i < ingredients.Count; i++) {
             s += ingredients[i].ingredient_name + "  (" + ingredients[i].quantityInInventory + ")\n";
         }
         return s;
+    }
+
+    public static void AddFunds(int funds) {
+        money += funds;
+        if (MoneyChangedListener != null) MoneyChangedListener();
     }
 }

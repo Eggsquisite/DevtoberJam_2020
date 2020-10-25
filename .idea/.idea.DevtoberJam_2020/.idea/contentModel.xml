@@ -41,6 +41,7 @@
             <e p="Core" t="Include">
               <e p="IngredientGO.cs" t="Include" />
               <e p="InventoryGO.cs" t="Include" />
+              <e p="MoneyDisplay.cs" t="Include" />
               <e p="PotionGO.cs" t="Include" />
             </e>
             <e p="ItemSlot.cs" t="Include" />

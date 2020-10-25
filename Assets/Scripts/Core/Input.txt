@@ -19,8 +19,9 @@ Eye of Newt, 25
 Bacon, 25
 Toe of Frog, 30
 
-[ Inventory ]
+[ StartingInventory ]
 
+Money, 150
 Bacon, 2
 Eye of Newt, 2 
 Wing of Bat, 1
