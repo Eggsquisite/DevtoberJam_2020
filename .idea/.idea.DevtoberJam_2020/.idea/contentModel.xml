@@ -39,6 +39,7 @@
           </e>
           <e p="UI" t="Include">
             <e p="Core" t="Include">
+              <e p="DialogueManager.cs" t="Include" />
               <e p="IngredientGO.cs" t="Include" />
               <e p="InventoryGO.cs" t="Include" />
               <e p="MoneyDisplay.cs" t="Include" />
