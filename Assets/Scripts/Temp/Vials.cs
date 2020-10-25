@@ -34,4 +34,10 @@ public class Vials : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHan
 
         // If vial is over potion mix and can change color, change potion mix to appropriate color depending on vial
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.name == "Beaker")
+            Debug.Log("On beaker");
+    }
 }

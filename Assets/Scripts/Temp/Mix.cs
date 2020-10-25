@@ -20,6 +20,8 @@ public class Mix : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPoint
     {
         speed = (2 * Mathf.PI) / circleSpeed; //2*PI in degress is 360, so you get 5 seconds to complete a circle
         center = new Vector2(transform.position.x, transform.position.y);
+        CalculatePos();
+        transform.position = new Vector2(x, y);
     }
 
     void Update()
@@ -34,9 +36,14 @@ public class Mix : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPoint
         speed = (2 * Mathf.PI) / circleSpeed; //2*PI in degress is 360, so you get 5 seconds to complete a circle
         angle += speed * Time.deltaTime; //if you want to switch direction, use -= instead of +=
 
+        CalculatePos();
+        transform.position = new Vector2(x, y);
+    }
+
+    private void CalculatePos()
+    {
         x = Mathf.Cos(angle) * radius + center.x;
         y = Mathf.Sin(angle) * radius + center.y;
-        transform.position = new Vector2(x, y);
     }
 
     public void MixStatus(bool status)
