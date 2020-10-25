@@ -20,7 +20,7 @@ public class Burner : MonoBehaviour
     public float changeChance, changeFreqMin, changeFreqMax;
 
     private float changeTimer, changeVal, changeFreq;
-    private bool change;
+    private bool changeTemp;
 
     [Header("Temperature Reset Properties")]
     public float resetFreq;
@@ -45,12 +45,13 @@ public class Burner : MonoBehaviour
     void Update()
     {
         tempText.text = temp.ToString();
+        ChangeColor();
 
         if (sway && !reset)
             Sway();
 
-        if (change)
-            Change();
+        if (changeTemp)
+            ChangeTemp();
 
         if (reset)
             Resetting();
@@ -58,10 +59,10 @@ public class Burner : MonoBehaviour
 
     void ChangeChance()
     {
-        if (Random.Range(0, 100) <= changeChance && !change && !reset)
+        if (Random.Range(0, 100) <= changeChance && !changeTemp && !reset)
         {
             sway = false;
-            change = true;
+            changeTemp = true;
             changeVal = Random.Range(0, 2);
         }
         else return;
@@ -86,7 +87,7 @@ public class Burner : MonoBehaviour
         }
     }
 
-    void Change()
+    void ChangeTemp()
     {
         Debug.Log("Changing temp");
         if (changeTimer < changeFreq)
@@ -102,6 +103,17 @@ public class Burner : MonoBehaviour
             else if (changeVal == 1 && temp > temp - changeRange)
                 temp--;
         }
+    }
+
+    void ChangeColor()
+    {
+        if (temp >= initialTemp + changeRange)
+            tempText.color = Color.red;
+        else if (temp <= initialTemp - changeRange)
+            tempText.color = Color.blue;
+        else
+            tempText.color = Color.black;
+        
     }
 
     void Resetting()
@@ -123,7 +135,7 @@ public class Burner : MonoBehaviour
     {
         reset = true;
         resetTimer = 0;
-        sway = change = false;
+        sway = changeTemp = false;
         increaseTemp = status;
     }
 

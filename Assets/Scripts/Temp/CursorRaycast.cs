@@ -10,8 +10,10 @@ public class CursorRaycast : MonoBehaviour
     [SerializeField] EventSystem m_EventSystem;
     PointerEventData m_PointerEventData;
 
-    private GameObject mixer;
-    private bool mixerFound;
+    private void Start()
+    {
+        
+    }
 
     void Update()
     {
@@ -28,8 +30,9 @@ public class CursorRaycast : MonoBehaviour
         //Raycast using the Graphics Raycaster and mouse click position
         m_Raycaster.Raycast(m_PointerEventData, results);
 
+            Debug.Log("hi");
 
-        if (results.Count > 0 && Input.GetMouseButton(0))
+        if (results.Count > 0)
         {
             Debug.Log(results[0].gameObject.name + " Was Clicked");
         }
