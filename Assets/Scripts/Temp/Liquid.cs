@@ -21,7 +21,7 @@ public class Liquid : MonoBehaviour, IDropHandler
 
     public LiquidColor startColor;
     private LiquidColor baseColor, updatedColor;
-    private int downgrades;
+    private float downgrades;
 
     private void Start()
     {
@@ -38,7 +38,7 @@ public class Liquid : MonoBehaviour, IDropHandler
             CombineColors(baseColor, updatedColor);
 
             if (baseColor == LiquidColor.Brown) 
-                downgrades++;
+                downgrades += 0.25f;
                 // penalize player and degrade quality of potion
         }
     }
@@ -93,7 +93,7 @@ public class Liquid : MonoBehaviour, IDropHandler
             ChangeColor(newColor);
     }
 
-    public int GetDowngrades()
+    public float GetDowngrades()
     {
         return downgrades;
     }
