@@ -5,8 +5,6 @@ Eye of Newt, 25
 Bacon, 25
 Toe of Frog, 30
 
-// Max inventory slots for ingredients is 18
-
 [ StartingInventory ]
 
 Money, 150
@@ -82,4 +80,3 @@ Name= The Smelly Cat
 Attribute= 5 Smelly, 2 Allure, 1 Animal Whisperer
 Ingredients= 1 Toe of Frog, 1 Eye of Newt, 2 Bacon
 Craftable= yes
-

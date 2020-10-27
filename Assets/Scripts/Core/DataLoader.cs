@@ -29,8 +29,9 @@ public class DataLoader {
         badAttributes = new List<Attribute>();
         Attribute.badAttributes = badAttributes;
         
+        
         inputFile = new StreamReader("Assets/Scripts/Core/Input.txt");
-        int counter = 0;
+//        int counter = 0;
         while ((line = inputFile.ReadLine()) != null) {
             if (line.Contains("//")) line = line.Split('/')[0];
             //Debug.Log(line);
@@ -43,8 +44,8 @@ public class DataLoader {
                 else line = inputFile.ReadLine();
             }
 
-            counter++;
-            if (counter == 5000) break;
+            /*counter++;
+            if (counter == 5000) break;*/
         }
 
         String s = "We loaded the following: ";
@@ -152,7 +153,7 @@ public class DataLoader {
     }
 
     private static void LoadInventory() {
-        Debug.Log("Loading inventory");
+ //       Debug.Log("Loading inventory");
         //inventory = new Inventory(ingredients);
         //Inventory.ingredientsInInventory = ingredients;
         while (((line = inputFile.ReadLine()) != null) && !line.Contains("[") && !line.Contains("]")) {
@@ -167,7 +168,7 @@ public class DataLoader {
             }
         }
         
-        Debug.Log("Inventory Loaded");
+//        Debug.Log("Inventory Loaded");
     }
 
 }
