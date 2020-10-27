@@ -1,23 +1,11 @@
-[ GenericFail ]
-
-Response= Errr, I don't think this potion will solve my problem.  Thanks for wasting my time, jerk.
-
-[ GenericWin ]
-
-Response= This should do just nicely!  Thanks!
-
-[ MaleNames ] 
-
-[ FemaleNames ]
-
-[ Hints ]
-
 [ Ingredients ]
 
 Wing of Bat, 20
 Eye of Newt, 25
 Bacon, 25
 Toe of Frog, 30
+
+// Max inventory slots for ingredients is 18
 
 [ StartingInventory ]
 
@@ -44,6 +32,19 @@ Speed
 Luck
 
 [ BadAttributes ]
+
+Vengeful
+Gullible
+Annoying
+Smelly
+Obnoxious
+Grandiose
+Slow
+Boring
+Weak
+Timid
+Coward
+Dumb
 
 // Potions MUST come at the end of file
 
@@ -75,10 +76,10 @@ Attribute= 5 Stealth, 2 Courage, 1 Animal Whisperer
 Ingredients= 3 Toe of Frog, 1 Eye of Newt, 2 Bacon
 Craftable= yes
 
-[ Patron ]
+[ Potion ]
 
-Name= Steve King
-Costume= Vampire
-Problem= Hey pal, I need some help.  I have a job interview next week at a bakery and I need a little boost to help me get the job.  Can you help me out?
-Formula= 3 Charisma, 2charm
-Solution= The Blabbermouth; 150; no; OMG thanks buddy!  This will do 
+Name= The Smelly Cat
+Attribute= 5 Smelly, 2 Allure, 1 Animal Whisperer
+Ingredients= 1 Toe of Frog, 1 Eye of Newt, 2 Bacon
+Craftable= yes
+

@@ -6,6 +6,12 @@ Response= Errr, I don't think this potion will solve my problem.  Thanks for was
 
 Response= This should do just nicely!  Thanks!
 
+[ MaleNames ]
+
+[ FemaleNames ]
+
+[ Hints ]
+
 [ Patron ]
 
 Name= Steve King
@@ -19,5 +25,5 @@ Solution= The Blabbermouth; 150; no; OMG thanks buddy!  This will do nicely!
 Name= John Smith
 Costume= Dog
 Problem= So, uhm ... there's this girl I like.  She doesn't seem to notice me.  No matter what I do, it's like I'm invisible to her.  I want her to SEE me.  Can you help me out?
-Formula= 3 Charisma, 2 Charm
-Solution= The Blabbermouth; 150; no; OMG thanks buddy!  This will do nicely!
+Formula= 4 Smelly, 3 Allure, 1 Entertainer
+Solution= The Smelly Cat; 180; no; It's a little unconventional, but I like it!  She's bound to notice me now!  Thanks!

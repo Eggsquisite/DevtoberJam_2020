@@ -16,11 +16,11 @@ public class MoneyDisplay : MonoBehaviour {
 
     private void OnEnable() {
         moneyText = GetComponent<TextMeshProUGUI>();
-        Inventory.MoneyChangedListener += UpdateMoneyUI;
+        Inventory.InventoryChanged += UpdateMoneyUI;
     }
 
     private void OnDisable() {
-        Inventory.MoneyChangedListener -= UpdateMoneyUI;
+        Inventory.InventoryChanged -= UpdateMoneyUI;
     }
 
     // Update is called once per frame

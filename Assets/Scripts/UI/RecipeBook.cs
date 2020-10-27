@@ -15,6 +15,8 @@ public class RecipeBook : MonoBehaviour {
     private TextMeshProUGUI potionTitle;
     private Button brewItButton, pageLeftButton, pageRightButton;
 
+    private Color32 quantityGood, quantityBad = new Color32(255,0,0,255);
+
     void Start() {
         potions = Potion.potions;
         potionTitle = transform.Find("PotionTitle").GetComponent<TextMeshProUGUI>();
@@ -40,6 +42,8 @@ public class RecipeBook : MonoBehaviour {
         pageLeftButton.onClick.AddListener(TurnPageLeft);
         pageRightButton = transform.Find("PageRightButton").GetComponent<Button>();
         pageRightButton.onClick.AddListener(TurnPageRight);
+
+        quantityGood = ingredientQuantityText[0].color;
 
         TurnToPage(0);
     }
@@ -90,7 +94,7 @@ public class RecipeBook : MonoBehaviour {
             recipeIcons[i].enabled = true;
             recipeIngredientText[i].SetText(potions[index].recipe[i].ingredient.ingredient_name);
             recipeIngredientText[i].enabled = true;
-            ingredientQuantityText[i].SetText(potions[index].recipe[i].ingredient.quantityInInventory + "/" + potions[index].recipe[i].quantity);
+            ingredientQuantityText[i].SetText(Inventory.QuantityInInventory(potions[index].recipe[i].ingredient) + "/" + potions[index].recipe[i].quantity);
             ingredientQuantityText[i].enabled = true;
         }
 
@@ -105,7 +109,12 @@ public class RecipeBook : MonoBehaviour {
         //check if this potion can be crafted
         bool isBrewable = true;
         for (int i = 0; i < potions[index].recipe.Count; i++) {
-            if (potions[index].recipe[i].ingredient.quantityInInventory < potions[index].recipe[i].quantity) { isBrewable = false; break; }
+            if (Inventory.QuantityInInventory(potions[index].recipe[i].ingredient) < potions[index].recipe[i].quantity) {
+                ingredientQuantityText[i].color = quantityBad;
+                isBrewable = false;
+                break;
+            }
+            else ingredientQuantityText[i].color = quantityGood;
         }
 
         if (!isBrewable) {

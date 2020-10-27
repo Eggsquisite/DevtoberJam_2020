@@ -73,6 +73,7 @@ public class PatronLoader {
                 }
             }
         }
+        patrons.Add(patron);
     }
     
     public static string[] SplitSentences(string dialogue) {

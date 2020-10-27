@@ -31,13 +31,13 @@ public class GameManager : MonoBehaviour {
 
         int count = 0;
         //now instantiate the inventory
-        for (int i = 0; i < Inventory.ingredients.Count; i++) {
-            if (Inventory.ingredients[i].quantityInInventory > 0) {
-                Debug.Log("Instantiating " + Inventory.ingredients[i].ingredient_name);
+        for (int i = 0; i < Inventory.ingredientsInInventory.Count; i++) {
+            if (Inventory.ingredientsInInventory[i].quantity > 0) {
+                Debug.Log("Instantiating " + Inventory.ingredientsInInventory[i].ingredient.ingredient_name);
                 GameObject newIngredient = Instantiate(ingredientGO, new Vector3(Screen.width*0.5f, Screen.height*0.5f, 0f), Quaternion.identity);
                 //newIngredient.transform.localScale = Vector3.one;
-                newIngredient.GetComponent<IngredientGO>().SetIngredient(Inventory.ingredients[i]);
-                newIngredient.GetComponent<IngredientGO>().SetStackSize(Inventory.ingredients[i].quantityInInventory);
+                newIngredient.GetComponent<IngredientGO>().SetIngredient(Inventory.ingredientsInInventory[i].ingredient);
+                newIngredient.GetComponent<IngredientGO>().SetStackSize(Inventory.ingredientsInInventory[i].quantity);
                 //newIngredient.transform.parent = ingredientsParent.transform;
                 //newIngredient.transform.SetParent(ingredientsParent.transform, false);
                 

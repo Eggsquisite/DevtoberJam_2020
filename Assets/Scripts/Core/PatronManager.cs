@@ -13,6 +13,10 @@ public class PatronManager : MonoBehaviour {
         
     }
 
+    /**
+     * This method runs a check to see what Potion solutions are available for each patron, and whether the
+     * player has the correct ingredients able to craft that potion
+     */
     void LoadNextPatron() {
         
     }

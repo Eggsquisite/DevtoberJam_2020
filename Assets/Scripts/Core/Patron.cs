@@ -10,6 +10,7 @@ public class Patron {
     public List<string> solution; // leave null
     public List<WeightedAttribute> attributes = new List<WeightedAttribute>(1);
     public List<PotionSolution> potionSolutions = new List<PotionSolution>(0);
+    public bool hasVisitedTheShop = false;
 
     public static List<Patron> patrons;
 

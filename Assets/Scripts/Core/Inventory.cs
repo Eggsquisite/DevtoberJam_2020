@@ -4,52 +4,59 @@ using UnityEngine;
 
 public class Inventory {
 
-    public static List<Ingredient> ingredients;
-    public static List<Potion> potions;
+    public static List<WeightedIngredient> ingredientsInInventory = new List<WeightedIngredient>();
+    public static List<Potion> potionsInInventory = new List<Potion>();
     public static int money = 0;
 
-    public delegate void MoneyEvent();
-    public static event MoneyEvent MoneyChangedListener;
-
-    /*public Inventory(List<Ingredient> ingredients) {
-        Inventory.ingredients = ingredients;
-    }*/
+    public delegate void InventoryEvent();
+    public static event InventoryEvent InventoryChanged;
 
     public static void AddItem(Ingredient ingredient, ushort amount) {
-        for (int i = 0; i < ingredients.Count; i++) {
-            if (ingredients[i] == ingredient) { ingredients[i].Add(amount); break; }
-        }
+
+        WeightedIngredient wi = FindIngredient(ingredient);
+        if (wi != null) wi.quantity += amount;
+        else ingredientsInInventory.Add(new WeightedIngredient(ingredient,amount));
+        if (InventoryChanged != null) InventoryChanged();
     }
 
     public static void RemoveItem(Ingredient ingredient, ushort amount) {
-        for (int i = 0; i < ingredients.Count; i++) {
-            if (ingredients[i] == ingredient) { ingredients[i].Remove(amount); break; }
+        WeightedIngredient wi = FindIngredient(ingredient);
+        if (wi != null) {
+            wi.quantity -= amount;
+            if (wi.quantity <= 0) {
+                for (int i = 0; i < ingredientsInInventory.Count; i++) {
+                    if (wi == ingredientsInInventory[i]) ingredientsInInventory.RemoveAt(i);
+                }
+            }
         }
+        else ingredientsInInventory.Add(new WeightedIngredient(ingredient,amount));
+        if (InventoryChanged != null) InventoryChanged();
     }
 
-    public static ushort CheckQuantity(Ingredient ingredient) {
-        for (int i = 0; i < ingredients.Count; i++) {
-            if (ingredients[i] == ingredient) return ingredients[i].quantityInInventory;
-        }
-        return 0;
+    public static ushort QuantityInInventory(Ingredient ingredient) {
+        WeightedIngredient wi = FindIngredient(ingredient);
+        if (wi != null) return wi.quantity;
+        else return 0;
     }
 
-    /*public static Ingredient FindIngredient(Ingredient ingredient) {
-        for (int i = 0; i < ingredients.Count; i++) {
-            if (ingredients[i] == ingredient) return 
+    public static WeightedIngredient FindIngredient(Ingredient ingredient) {
+        for (int i = 0; i < ingredientsInInventory.Count; i++) {
+            if (ingredientsInInventory[i].ingredient == ingredient) return ingredientsInInventory[i];
         }
-    }*/
+
+        return null;
+    }
 
     public static string ToString() {
         string s = "Money: " + money + "\n";
-        for (int i = 0; i < ingredients.Count; i++) {
-            s += ingredients[i].ingredient_name + "  (" + ingredients[i].quantityInInventory + ")\n";
+        for (int i = 0; i < ingredientsInInventory.Count; i++) {
+            s += ingredientsInInventory[i].ingredient.ingredient_name + "  (" + ingredientsInInventory[i].quantity + ")\n";
         }
         return s;
     }
 
     public static void AddFunds(int funds) {
         money += funds;
-        if (MoneyChangedListener != null) MoneyChangedListener();
+        if (InventoryChanged != null) InventoryChanged();
     }
 }

@@ -18,6 +18,8 @@ public class DataLoader {
 
     public static void LoadDataFromFile() {
         
+        Debug.Log("Starting");
+        
         potions = new List<Potion>();
         Potion.potions = potions;
         ingredients = new List<Ingredient>();
@@ -150,8 +152,9 @@ public class DataLoader {
     }
 
     private static void LoadInventory() {
+        Debug.Log("Loading inventory");
         //inventory = new Inventory(ingredients);
-        Inventory.ingredients = ingredients;
+        //Inventory.ingredientsInInventory = ingredients;
         while (((line = inputFile.ReadLine()) != null) && !line.Contains("[") && !line.Contains("]")) {
             if (line.Contains("//")) line = line.Split('/')[0];
             if (line.Trim().Length > 0) {
@@ -160,54 +163,11 @@ public class DataLoader {
                 else {
                     string ingredient_name = s[0].Trim();
                     Inventory.AddItem(Ingredient.FindIngredient(ingredient_name),ushort.Parse(s[1].Trim()));
-                    //Ingredient ingredient;
-                    /*for (int i = 0; i < ingredients.Count; i++) {
-                        if (ingredient_name == ingredients[i].ingredient_name) Inventory.AddItem(ingredients[i], ushort.Parse(s[1].Trim()));
-                    }*/
                 }
             }
         }
+        
+        Debug.Log("Inventory Loaded");
     }
 
-    /*private static int FindGoodAttributeIndex(string attribute) {
-        for (int i = 0; i < goodAttributes.Count; i++) { 
-            if (goodAttributes[i].attribute_name == attribute) return i;
-        }
-        return -1;
-    }
-    
-    private static int FindBadAttributeIndex(string attribute) {
-        for (int i = 0; i < badAttributes.Count; i++) { 
-            if (badAttributes[i].attribute_name == attribute) return i;
-        }
-        return -1;
-    }*/
-
-    /*private static Attribute? FindAttribute(string attribute) {
-        for (int i = 0; i < goodAttributes.Count; i++) { 
-            if (goodAttributes[i].attribute_name == attribute) return goodAttributes[i];
-        }
-        for (int i = 0; i < badAttributes.Count; i++) { 
-            if (badAttributes[i].attribute_name == attribute) return badAttributes[i];
-        }
-
-        return null;
-    }*/
-
-    /*private static int FindIngredientIndex(string ingredient) {
-        for (int i = 0; i < ingredients.Count; i++) {
-            if (ingredients[i].ingredient_name == ingredient) return i;
-        }
-        Debug.LogError("We were unable to find the ingredient '" + ingredient + "'.  Is this a typo?");
-        return -1;
-    }*/
-
-    //[CanBeNull]
-    /*private static Ingredient FindIngredient(string ingredient) {
-        for (int i = 0; i < ingredients.Count; i++) {
-            if (ingredients[i].ingredient_name == ingredient) return ingredients[i];
-        }
-        Debug.LogError("We were unable to find the ingredient '" + ingredient + "'.  Is this a typo?");
-        return null;
-    }*/
 }
