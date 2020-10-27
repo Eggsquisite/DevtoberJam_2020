@@ -1134,8 +1134,8 @@ MonoBehaviour:
   swayRange: 2
   swayFreqMin: 0.75
   swayFreqMax: 1.25
-  changeRange: 8
-  changeChance: 5
+  changeRange: 10
+  changeChance: 6
   changeFreqMin: 0.25
   changeFreqMax: 0.75
   resetFreq: 0.15
@@ -1201,7 +1201,10 @@ MonoBehaviour:
   m_burner: {fileID: 1138370467}
   slider: {fileID: 1845125406}
   start: 1
-  potionMaxTime: 20
+  potionMaxTime: 30
+  mixingBonus: 6
+  liquidDowngrade: 0.3
+  burnerDowngrade: 4
 --- !u!1 &1406028602
 GameObject:
   m_ObjectHideFlags: 0
@@ -1914,6 +1917,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b1ccba1be88bda47a3ad125162d374a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  downgradeAmount: 0.3
   startColor: 0
 --- !u!1 &1823830865
 GameObject:

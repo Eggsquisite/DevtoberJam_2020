@@ -16,10 +16,11 @@ public class PotionManager : MonoBehaviour
     public Slider slider;
     public bool start;
     public float potionMaxTime;
+    public float mixingBonus, liquidDowngrade, burnerDowngrade;
 
-    private bool enable;
+    private bool enable, loseQuality, mixing;
     private float downgrades;
-    private float potionTimer, potionProgress, potionQuality, mixing, liquid;
+    private float potionTimer, potionProgress, potionQuality;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +28,7 @@ public class PotionManager : MonoBehaviour
         enable = true;
         EnableScripts(false);
         timesUp.enabled = false;
+        m_liquid.SetDowngrade(liquidDowngrade);
     }
 
     // Update is called once per frame
@@ -39,11 +41,19 @@ public class PotionManager : MonoBehaviour
 
         UpdateSlider();
 
+
         if (m_mix.GetMixStatus())
             Mixing();
+        else if (!m_mix.GetMixStatus() && mixing)
+            mixing = false;
 
         if (m_liquid.GetDowngrades() > downgrades)
             UpdateDowngrades();
+
+        if (m_burner.GetLosingQuality())
+            LoseQuality();
+        else if (!m_burner.GetLosingQuality() && loseQuality)
+            loseQuality = false;
     }
 
     private void EnableScripts(bool status)
@@ -61,7 +71,16 @@ public class PotionManager : MonoBehaviour
         }
 
         if (potionTimer < potionMaxTime)
+        {
+            // Update timer and potion progress
             potionTimer += Time.deltaTime;
+
+            if (!loseQuality)
+            {
+                potionProgress += Time.deltaTime / (potionMaxTime / 2);
+                Debug.Log("free progress");
+            }
+        }
         else if (potionTimer >= potionMaxTime)
             End();
         
@@ -80,13 +99,13 @@ public class PotionManager : MonoBehaviour
 
     private void UpdateSlider()
     {
-        potionProgress += Time.deltaTime / potionMaxTime;
         slider.value = potionProgress;
     }
 
     private void Mixing()
     {
-        potionProgress += Time.deltaTime / (potionMaxTime / 5);
+        mixing = true;
+        potionProgress += Time.deltaTime / (potionMaxTime / mixingBonus);
     }
 
     private void UpdateDowngrades()
@@ -94,5 +113,11 @@ public class PotionManager : MonoBehaviour
         downgrades = m_liquid.GetDowngrades();
         potionProgress -= downgrades;
         Debug.Log("Number of downgrades: " + downgrades);
+    }
+
+    private void LoseQuality()
+    {
+        loseQuality = true;
+        potionProgress -= Time.deltaTime / (potionMaxTime / burnerDowngrade);
     }
 }
