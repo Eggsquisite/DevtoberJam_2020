@@ -11,7 +11,7 @@ public class PatronLoader {
 
     public static void LoadDataFromFile() {
         inputFile = new StreamReader("Assets/Scripts/Core/PatronInput.txt");
-        int counter = 0;
+ //       int counter = 0;
         while ((line = inputFile.ReadLine()) != null) {
             if (line.Contains("//")) line = line.Split('/')[0];
             //Debug.Log(line);
@@ -19,10 +19,13 @@ public class PatronLoader {
                 if (line.Contains("FailDialogue")) SetGenericDialogue(false);
                 else if (line.Contains("SuccessDialogue")) SetGenericDialogue(true);
                 else if (line.Contains("Patron")) AddPatron();
+                else line = inputFile.ReadLine();
             }
+            /*counter++;
+            if (counter > 1000) break;*/
         }
 
-        string s = "We loaded the following:\n";
+        string s = "We loaded " + patrons.Count + " patrons:\n";
         for (int i = 0; i < patrons.Count; i++) {
             s += patrons[i] + "\n";
         }
@@ -45,6 +48,7 @@ public class PatronLoader {
     }
 
     public static void AddPatron() {
+
         Patron patron = new Patron();
         while (((line = inputFile.ReadLine()) != null) && !line.Contains("[") && !line.Contains("]")) {
             if (line.Contains("//")) line = line.Split('/')[0];
@@ -63,6 +67,7 @@ public class PatronLoader {
                 else if (line.Contains("Solution=")) {
                     PotionSolution ps = new PotionSolution();
                     string[] s = line.Split(new char[] {'=', ';'});
+
                     ps.potion = Potion.FindPotion(s[1].Trim());
                     ps.payment = ushort.Parse(s[2].Trim());
                     if (s[3].Contains("yes")) ps.isDrunkImmediately = true;

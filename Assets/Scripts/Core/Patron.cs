@@ -38,7 +38,7 @@ public class Patron {
     }
 }
 
-public struct PotionSolution {
+public class PotionSolution {
     public Potion potion { get; set; }
     public ushort payment { get; set; }
     public bool isDrunkImmediately { get; set; }

@@ -14,10 +14,14 @@ public class GameManager : MonoBehaviour {
     private GameObject[] inventorySlots;
     
     void Awake() {
+        
+        //Inventory inventory = new Inventory();
+
         DataLoader.LoadDataFromFile();
         PatronLoader.LoadDataFromFile();
 
-
+        //Application.Quit();
+        
         potionGO = Resources.Load<GameObject>("Prefabs/Potion");
         ingredientGO = Resources.Load<GameObject>("Prefabs/Ingredient");
         

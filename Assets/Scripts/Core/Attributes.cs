@@ -22,8 +22,8 @@ public class Attribute {
     }
 }
 
-[System.Serializable]
-public struct WeightedAttribute {
+//[System.Serializable]
+public class WeightedAttribute {
     
     public Attribute attribute;
     public byte weight;

@@ -1,12 +1,10 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Ingredient {
     public string ingredient_name;
     public ushort cost;
     //public ushort quantityInInventory = 0;
-    private Image icon;
 
     public static List<Ingredient> ingredients;
 
@@ -15,15 +13,6 @@ public class Ingredient {
         this.cost = cost;
     }
 
-    /*
-    public void Add(ushort amount) {
-        quantityInInventory += amount; 
-    }
-
-    public void Remove(ushort amount) {
-        quantityInInventory -= amount;
-    }*/
-    
     public static Ingredient FindIngredient(string ingredient) {
         for (int i = 0; i < ingredients.Count; i++) {
             if (ingredients[i].ingredient_name == ingredient) return ingredients[i];
