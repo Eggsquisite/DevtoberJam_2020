@@ -479,7 +479,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseCircleSpeed: 3
   radius: 50
-  slowDownSpeed: 0.25
+  slowDownSpeed: 0.15
 --- !u!1 &691947792
 GameObject:
   m_ObjectHideFlags: 0
