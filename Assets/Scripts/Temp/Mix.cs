@@ -6,19 +6,21 @@ using UnityEngine.EventSystems;
 
 public class Mix : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerEnterHandler, IPointerExitHandler
 {
-    public float circleSpeed; // the amount of seconds to complete a circle
-    public float radius = 5;
+    public float baseCircleSpeed; // the amount of seconds to complete a circle
+    public float radius;
+    public float slowDownSpeed;   
 
     private Vector2 center;
     private float x, y;
-    private float speed, angle;
+    private float speed, angle, tmpCircleSpeed;
 
     private bool mix, mouseClick, mouseEnter;
 
     // Start is called before the first frame update
     void Start()
     {
-        speed = (2 * Mathf.PI) / circleSpeed; //2*PI in degress is 360, so you get 5 seconds to complete a circle
+        tmpCircleSpeed = baseCircleSpeed;
+        speed = (2 * Mathf.PI) / baseCircleSpeed; //2*PI in degress is 360, so you get 5 seconds to complete a circle
         center = new Vector2(transform.position.x, transform.position.y);
         CalculatePos();
         transform.position = new Vector2(x, y);
@@ -29,14 +31,35 @@ public class Mix : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPoint
         // Add a buffer when mouse gets off mixer
         if (mouseClick && mouseEnter)
             Mixing();
-        else
-            mix = false;
+        else 
+            StopMixing();
     }
 
     void Mixing()
     {
+        if (baseCircleSpeed == 0)
+            return;
+
         mix = true;
-        speed = (2 * Mathf.PI) / circleSpeed; //2*PI in degress is 360, so you get 5 seconds to complete a circle
+        tmpCircleSpeed = baseCircleSpeed;
+        speed = (2 * Mathf.PI) / baseCircleSpeed; //2*PI in degress is 360, so you get 5 seconds to complete a circle
+        angle += speed * Time.deltaTime; //if you want to switch direction, use -= instead of +=
+
+        CalculatePos();
+        transform.position = new Vector2(x, y);
+    }
+
+    void StopMixing()
+    {
+        if (tmpCircleSpeed >= baseCircleSpeed * 4)
+        {
+            mix = false;
+            return;
+        }
+
+        tmpCircleSpeed += Time.deltaTime / slowDownSpeed;
+        speed = (2 * Mathf.PI) / tmpCircleSpeed;
+
         angle += speed * Time.deltaTime; //if you want to switch direction, use -= instead of +=
 
         CalculatePos();
