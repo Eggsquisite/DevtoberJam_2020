@@ -7,6 +7,7 @@ using UnityEngine.EventSystems;
 public class Vials : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     private Vector2 originalPos;
+    public CanvasGroup beaker;
     private CanvasGroup canvasGroup;
 
     //public enum LiquidColor { Red, Yellow, Blue, Purple, Green, Orange };
@@ -24,6 +25,7 @@ public class Vials : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHan
     {
         //Debug.Log("Beginning Drag with color: " + m_color);
         canvasGroup.blocksRaycasts = false;
+        beaker.blocksRaycasts = true;
     }
 
     public void OnDrag(PointerEventData data)
@@ -35,6 +37,7 @@ public class Vials : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHan
     {
         transform.position = originalPos;
         canvasGroup.blocksRaycasts = true;
+        beaker.blocksRaycasts = false;
         // If vial is over potion mix and can change color, change potion mix to appropriate color depending on vial
     }
 
