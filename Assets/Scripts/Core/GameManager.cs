@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class GameManager : MonoBehaviour {
     
@@ -14,14 +11,10 @@ public class GameManager : MonoBehaviour {
     private GameObject[] inventorySlots;
     
     void Awake() {
-        
-        //Inventory inventory = new Inventory();
 
         DataLoader.LoadDataFromFile();
         PatronLoader.LoadDataFromFile();
 
-        //Application.Quit();
-        
         potionGO = Resources.Load<GameObject>("Prefabs/Potion");
         ingredientGO = Resources.Load<GameObject>("Prefabs/Ingredient");
         
@@ -39,22 +32,13 @@ public class GameManager : MonoBehaviour {
             if (Inventory.ingredientsInInventory[i].quantity > 0) {
                 Debug.Log("Instantiating " + Inventory.ingredientsInInventory[i].ingredient.ingredient_name);
                 GameObject newIngredient = Instantiate(ingredientGO, new Vector3(Screen.width*0.5f, Screen.height*0.5f, 0f), Quaternion.identity);
-                //newIngredient.transform.localScale = Vector3.one;
+
                 newIngredient.GetComponent<IngredientGO>().SetIngredient(Inventory.ingredientsInInventory[i].ingredient);
                 newIngredient.GetComponent<IngredientGO>().SetStackSize(Inventory.ingredientsInInventory[i].quantity);
-                //newIngredient.transform.parent = ingredientsParent.transform;
-                //newIngredient.transform.SetParent(ingredientsParent.transform, false);
-                
+
                 inventorySlots[count].GetComponent<ItemSlot>().AddItemToSlot(newIngredient);
                 count++;
             }
         }
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

@@ -58,7 +58,6 @@ public class Inventory {
     public static void AddFunds(int funds) {
         money += funds;
         if (InventoryChanged != null) {
-            Debug.Log("This was called");
             InventoryChanged();
         }
     }

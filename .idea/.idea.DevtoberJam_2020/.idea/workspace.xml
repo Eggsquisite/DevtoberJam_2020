@@ -22,15 +22,16 @@
     <list default="true" id="02456b1a-d081-4f5f-8ad7-6e37f0b0f34b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DevtoberJam_2020/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DevtoberJam_2020/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestScenes/UITest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TestScenes/UITest.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Attributes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Attributes.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/DataLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/DataLoader.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Ingredient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Ingredient.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Input.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Inventory.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Patron.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Patron.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/PatronInput.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PatronInput.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/PatronLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PatronLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/PatronManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PatronManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Potion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Potion.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/RecipeBook.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/RecipeBook.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,17 +79,17 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/MoveableItem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/ItemSlot.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Core/DialogueManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Potion.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Core/PatronManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/RecipeBook.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Core/MoneyDisplay.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Inventory.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Ingredient.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Core/Attributes.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Patron.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Core/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Core/PatronLoader.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Ingredient.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Patron.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Potion.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Core/Inventory.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Core/DataLoader.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/RecipeBook.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Core/PatronManager.cs" />
       </list>
     </option>
   </component>
@@ -141,7 +142,8 @@
       <workItem from="1603214406155" duration="58628000" />
       <workItem from="1603651004617" duration="11641000" />
       <workItem from="1603735022622" duration="10511000" />
-      <workItem from="1603820688621" duration="4711000" />
+      <workItem from="1603820688621" duration="25118000" />
+      <workItem from="1603856683210" duration="818000" />
     </task>
     <servers />
   </component>
@@ -178,9 +180,9 @@
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
     <state x="1700" y="0" width="1747" height="1407" key="dock-window-1/0.0.3440.1400/3440.360.1920.1040@0.0.3440.1400" timestamp="1603134036799" />
-    <state x="432" y="312" width="840" height="1034" key="search.everywhere.popup" timestamp="1603584731015">
+    <state x="432" y="312" width="840" height="1034" key="search.everywhere.popup" timestamp="1603849953690">
       <screen x="0" y="0" width="3440" height="1400" />
     </state>
-    <state x="432" y="312" width="840" height="1034" key="search.everywhere.popup/0.0.3440.1400/3440.360.1920.1040@0.0.3440.1400" timestamp="1603584731015" />
+    <state x="432" y="312" width="840" height="1034" key="search.everywhere.popup/0.0.3440.1400/3440.360.1920.1040@0.0.3440.1400" timestamp="1603849953690" />
   </component>
 </project>
