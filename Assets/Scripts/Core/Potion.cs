@@ -6,7 +6,7 @@ public class Potion {
     public string potion_name;
     public List<WeightedAttribute> attributes = new List<WeightedAttribute>();
     public List<WeightedIngredient> recipe = new List<WeightedIngredient>();
-    public bool isCraftable = false;
+    public bool isInRecipeBook = false;
     
     public static List<Potion> potions;
 
@@ -22,6 +22,13 @@ public class Potion {
 
     public void AddRecipeIngredient(WeightedIngredient ingredient) {
         recipe.Add(ingredient);
+    }
+
+    public bool CanBeCrafted() {
+        for (int i = 0; i < recipe.Count; i++) {
+            if (recipe[i].quantity > Inventory.QuantityInInventory(recipe[i].ingredient)) return false;
+        }
+        return true;
     }
 
     public override string ToString() {

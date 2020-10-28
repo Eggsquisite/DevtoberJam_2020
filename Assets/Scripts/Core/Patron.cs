@@ -8,9 +8,10 @@ public class Patron {
     public string costume;
     public string problem;
     public List<string> solution; // leave null
-    public List<WeightedAttribute> attributes = new List<WeightedAttribute>(1);
+    public List<WeightedAttribute> formula = new List<WeightedAttribute>(1);
     public List<PotionSolution> potionSolutions = new List<PotionSolution>(0);
     public bool hasVisitedTheShop = false;
+    public int visitNumber = 0;
 
     public static List<Patron> patrons;
 
@@ -20,13 +21,9 @@ public class Patron {
         string s = "Name: " + patron_name;
         s += "\nCostume: " + costume;
         s += "\nProblem: " + problem;
-        /*for (int i = 0; i < problem.Length; i++) {
-            s += " " + problem[i];
-        }*/
-
         s += "\nFormula: ";
-        for (int i = 0; i < attributes.Count; i++) {
-            s += attributes[i] + ", ";
+        for (int i = 0; i < formula.Count; i++) {
+            s += formula[i] + ", ";
         }
 
         s += "\nSolutions:\n";
@@ -37,6 +34,19 @@ public class Patron {
         return s;
     }
 }
+
+/*
+public class QueuedPatron {
+
+    public Patron patron;
+    public bool hasVisitedTheShop = false;
+    public int visitNumber = -1;
+
+    public QueuedPatron(Patron patron) {
+        this.patron = patron;
+    }
+    
+}*/
 
 public class PotionSolution {
     public Potion potion { get; set; }
@@ -49,7 +59,6 @@ public class PotionSolution {
         s += "\nReward: " + payment;
         s += "\nIs Potion Drunk Immediately?: " + isDrunkImmediately;
         s += "\nDialogue: " + comment;
-
         return s;
     }
 }

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class RecipeBook : MonoBehaviour {
 
 
-    public List<Potion> potions;
+    public static List<Potion> potionsInRecipeBook = new List<Potion>();
     private int pageIndex;
 
     private Image[] recipeIcons;
@@ -18,7 +18,7 @@ public class RecipeBook : MonoBehaviour {
     private Color32 quantityGood, quantityBad = new Color32(255,0,0,255);
 
     void Start() {
-        potions = Potion.potions;
+        //potions = Potion.potions;
         potionTitle = transform.Find("PotionTitle").GetComponent<TextMeshProUGUI>();
         
         recipeIcons = new Image[3];
@@ -54,52 +54,31 @@ public class RecipeBook : MonoBehaviour {
     }
 
     public void TurnPageRight() {
-        Debug.Log("PageTurnRight Clicked");
-        int nextPageIndex = FlipPage(pageIndex, true);
         pageRightButton.GetComponent<AudioSource>().Play();
-        TurnToPage(nextPageIndex);
+        TurnToPage(pageIndex+1);
     }
     
     public void TurnPageLeft() {
-        Debug.Log("PageTurnLeft Clicked");
-        int nextPageIndex = FlipPage(pageIndex, false);
         pageLeftButton.GetComponent<AudioSource>().Play();
-        TurnToPage(nextPageIndex);
-    }
-
-    public int FlipPage(int pageIndex, bool fwd) {
-        if (fwd) {
-            if (pageIndex + 1 > potions.Count) return -1;
-            for (int i = pageIndex+1; i < potions.Count; i++) {
-                if (potions[i].isCraftable) return i;
-            }
-        }
-        else {
-            if (pageIndex - 1 < 0) return -1;
-            for (int i = pageIndex-1; i >= 0; i--) {
-                if (potions[i].isCraftable) return i;
-            }
-        }
-
-        return -1;
+        TurnToPage(pageIndex-1);
     }
 
     public void TurnToPage(int index) {
-        Debug.Log("Setting recipe book page to: " + potions[index].potion_name + " (Page -)");
-        potionTitle.SetText(potions[index].potion_name);
-        Debug.Log("Found " + potions[index].recipe.Count + " ingredients in the recipe");
-        for (int i = 0; i < potions[index].recipe.Count; i++) {
-            Debug.Log("Setting ingredient " + potions[index].recipe[i].ingredient.ingredient_name);
-            recipeIcons[i].sprite = Resources.Load<Sprite>("Art/UI/Ingredients/" + potions[index].recipe[i].ingredient.ingredient_name);
+        Debug.Log("Setting recipe book page to: " + potionsInRecipeBook[index].potion_name + " (Page -)");
+        potionTitle.SetText(potionsInRecipeBook[index].potion_name);
+        Debug.Log("Found " + potionsInRecipeBook[index].recipe.Count + " ingredients in the recipe");
+        for (int i = 0; i < potionsInRecipeBook[index].recipe.Count; i++) {
+            Debug.Log("Setting ingredient " + potionsInRecipeBook[index].recipe[i].ingredient.ingredient_name);
+            recipeIcons[i].sprite = Resources.Load<Sprite>("Art/UI/Ingredients/" + potionsInRecipeBook[index].recipe[i].ingredient.ingredient_name);
             recipeIcons[i].enabled = true;
-            recipeIngredientText[i].SetText(potions[index].recipe[i].ingredient.ingredient_name);
+            recipeIngredientText[i].SetText(potionsInRecipeBook[index].recipe[i].ingredient.ingredient_name);
             recipeIngredientText[i].enabled = true;
-            ingredientQuantityText[i].SetText(Inventory.QuantityInInventory(potions[index].recipe[i].ingredient) + "/" + potions[index].recipe[i].quantity);
+            ingredientQuantityText[i].SetText(Inventory.QuantityInInventory(potionsInRecipeBook[index].recipe[i].ingredient) + "/" + potionsInRecipeBook[index].recipe[i].quantity);
             ingredientQuantityText[i].enabled = true;
         }
 
-        if (potions[index].recipe.Count < 3) {
-            for (int i = potions[index].recipe.Count; i < 3; i++) {
+        if (potionsInRecipeBook[index].recipe.Count < 3) {
+            for (int i = potionsInRecipeBook[index].recipe.Count; i < 3; i++) {
                 recipeIcons[i].enabled = false;
                 recipeIngredientText[i].enabled = false;
                 ingredientQuantityText[i].enabled = false;
@@ -108,8 +87,8 @@ public class RecipeBook : MonoBehaviour {
         
         //check if this potion can be crafted
         bool isBrewable = true;
-        for (int i = 0; i < potions[index].recipe.Count; i++) {
-            if (Inventory.QuantityInInventory(potions[index].recipe[i].ingredient) < potions[index].recipe[i].quantity) {
+        for (int i = 0; i < potionsInRecipeBook[index].recipe.Count; i++) {
+            if (Inventory.QuantityInInventory(potionsInRecipeBook[index].recipe[i].ingredient) < potionsInRecipeBook[index].recipe[i].quantity) {
                 ingredientQuantityText[i].color = quantityBad;
                 isBrewable = false;
                 break;
@@ -126,11 +105,10 @@ public class RecipeBook : MonoBehaviour {
         }
         
         //check to see if the page turn buttons can be used
-        int check = FlipPage(index, true);
-        if (check < 0) pageRightButton.interactable = false;
+        
+        if (pageIndex+1 > potionsInRecipeBook.Count-1) pageRightButton.interactable = false;
         else pageRightButton.interactable = true;
-        check = FlipPage(index, false);
-        if (check < 0) pageLeftButton.interactable = false;
+        if (pageIndex-1 < 0) pageLeftButton.interactable = false;
         else pageLeftButton.interactable = true;
 
         pageIndex = index;

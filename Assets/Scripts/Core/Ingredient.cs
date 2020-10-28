@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 public class Ingredient {
     public string ingredient_name;
     public ushort cost;
-    //public ushort quantityInInventory = 0;
+    public bool illicit = false;
 
     public static List<Ingredient> ingredients;
 
@@ -19,6 +20,11 @@ public class Ingredient {
         }
         Debug.LogError("We were unable to find the ingredient '" + ingredient + "'.  Is this a typo?");
         return null;
+    }
+
+    public override string ToString() {
+        string s = ingredient_name + "; cost: " + cost + "; illicit: " + illicit;
+        return s;
     }
 }
 

@@ -1,25 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using JetBrains.Annotations;
 using UnityEngine;
 
 public class DataLoader {
     
     private static StreamReader inputFile;
     private static string line;
-
-    //public static Inventory inventory;
+    
     private static List<Potion> potions = new List<Potion>();
     private static List<Ingredient> ingredients = new List<Ingredient>();
     private static List<Attribute> goodAttributes = new List<Attribute>();
     private static List<Attribute> badAttributes = new List<Attribute>();
     
-
     public static void LoadDataFromFile() {
-        
-        Debug.Log("Starting");
-        
+
         potions = new List<Potion>();
         Potion.potions = potions;
         ingredients = new List<Ingredient>();
@@ -31,10 +26,9 @@ public class DataLoader {
         
         
         inputFile = new StreamReader("Assets/Scripts/Core/Input.txt");
-//        int counter = 0;
+
         while ((line = inputFile.ReadLine()) != null) {
             if (line.Contains("//")) line = line.Split('/')[0];
-            //Debug.Log(line);
             while ((line != null) && line.Contains("[") && line.Contains("]")) {
                 if (line.Contains("GoodAttributes")) LoadAttributes(true);
                 else if (line.Contains("BadAttributes")) LoadAttributes(false);
@@ -43,9 +37,6 @@ public class DataLoader {
                 else if (line.Contains("StartingInventory")) LoadInventory();
                 else line = inputFile.ReadLine();
             }
-
-            /*counter++;
-            if (counter == 5000) break;*/
         }
 
         String s = "We loaded the following: ";
@@ -57,7 +48,8 @@ public class DataLoader {
         
         s += ("\n\n" + ingredients.Count + " ingredients:");
         for (int i = 0; i < ingredients.Count; i++) {
-            s += ("\n" + ingredients[i].ingredient_name);
+            //s += ("\n" + ingredients[i].ingredient_name);
+            s += "\n" + ingredients[i];
         }
 
         s += ("\n\n" + goodAttributes.Count + " good attributes:");
@@ -136,10 +128,11 @@ public class DataLoader {
             }
             else if (line.Contains("Craftable")) {
                 line = line.Split('=')[1].Trim();
-                if (line.Contains("yes")) potion.isCraftable = true;
+                if (line.Contains("yes")) potion.isInRecipeBook = true;
             }
         }
         potions.Add(potion);
+        if (potion.isInRecipeBook) RecipeBook.potionsInRecipeBook.Add(potion);
     }
 
     private static void LoadIngredients() {
@@ -148,14 +141,15 @@ public class DataLoader {
             if (line.Trim().Length > 0) {
                 string[] s = line.Split(',');
                 ingredients.Add(new Ingredient(s[0].Trim(), Byte.Parse(s[1].Trim())));
+                if (s.Length == 3) {
+                    if (s[2].Trim().Contains("illicit")) ingredients[ingredients.Count - 1].illicit = true;
+                }
             }
         }
     }
 
     private static void LoadInventory() {
- //       Debug.Log("Loading inventory");
-        //inventory = new Inventory(ingredients);
-        //Inventory.ingredientsInInventory = ingredients;
+
         while (((line = inputFile.ReadLine()) != null) && !line.Contains("[") && !line.Contains("]")) {
             if (line.Contains("//")) line = line.Split('/')[0];
             if (line.Trim().Length > 0) {
@@ -167,8 +161,5 @@ public class DataLoader {
                 }
             }
         }
-        
-//        Debug.Log("Inventory Loaded");
     }
-
 }

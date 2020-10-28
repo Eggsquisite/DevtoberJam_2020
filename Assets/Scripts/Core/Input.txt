@@ -4,6 +4,7 @@ Wing of Bat, 20
 Eye of Newt, 25
 Bacon, 25
 Toe of Frog, 30
+Dead Man's Blood, 250, illicit
 
 [ StartingInventory ]
 
