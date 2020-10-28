@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-public enum LiquidColor { Red, Yellow, Blue, Purple, Green, Orange, Brown, White};
+//public enum LiquidColor { Red, Yellow, Blue, Purple, Green, Orange, Brown };
 
-public class Liquid : MonoBehaviour, IDropHandler
+public class Solution : MonoBehaviour, IDropHandler
 {
     private static Hashtable hueColorValues = new Hashtable {
         {LiquidColor.Red,               new Color32( 254, 9, 0, 255) },
@@ -15,15 +15,20 @@ public class Liquid : MonoBehaviour, IDropHandler
         {LiquidColor.Green,             new Color32( 0, 254, 111, 255) },
         {LiquidColor.Orange,            new Color32( 254, 161, 0, 255) },
         {LiquidColor.Brown,             new Color32( 125, 60, 30, 255) },
+        {LiquidColor.White,             new Color32( 255, 255, 255, 255) },
     };
 
-    private Image liquid;
 
     [Header("Color Change")]
-    public float duration;
-    public float smoothness;
-    public float changeChance;
-    public float changeGraceTime;
+    public Image liquid;
+    public float colorDuration;
+    public float colorSmoothness;
+
+    [Header("Add Solution")]
+    public Slider liquidAmount;
+    public float solutionAdd;
+    public float solutionDuration;
+    public float solutionSmoothness;
 
     Color tmpColor;
     private int colorIndex, prevColorIndex;
@@ -36,32 +41,24 @@ public class Liquid : MonoBehaviour, IDropHandler
 
     private void Start()
     {
-        liquid = GetComponent<Image>();
-        baseColor = startColor;
+        baseColor = LiquidColor.White;
         changeColorReady = true;
 
         liquid.color = (Color32)hueColorValues[baseColor];
+        AddColors();
+    }
+
+    void AddColors()
+    {
+        colorArray.Add(LiquidColor.White);
         colorArray.Add(LiquidColor.Blue);
         colorArray.Add(LiquidColor.Yellow);
         colorArray.Add(LiquidColor.Red);
-
-        InvokeRepeating("ColorChangeChance", 1f, 1f);
+        colorArray.Add(LiquidColor.Orange);
+        colorArray.Add(LiquidColor.Green);
+        colorArray.Add(LiquidColor.Purple);
     }
 
-
-    void ColorChangeChance()
-    {
-        if (Random.Range(0, 100) <= changeChance && changeColorReady)
-        {
-            changeColorReady = false;
-            CancelInvoke("ResetChangeColor");
-            Invoke("ResetChangeColor", changeGraceTime);
-            colorIndex = Random.Range(0, colorArray.Count);
-
-            LiquidColor tmpColor = colorArray[colorIndex];
-            ChangeColor(tmpColor);
-        }
-    }
     public bool GetColorLoss()
     {
         return colorLoss;
@@ -83,11 +80,26 @@ public class Liquid : MonoBehaviour, IDropHandler
         {
             updatedColor = data.pointerDrag.GetComponent<Vials>().GetColor();
 
+            StopCoroutine("AddLiquid");
+            StartCoroutine("AddLiquid");
             CombineColors(baseColor, updatedColor);
 
-            if (baseColor == LiquidColor.Brown) 
+            if (baseColor == LiquidColor.Brown)
                 downgrades += downgradeAmount;
-                // penalize player and degrade quality of potion
+            // penalize player and degrade quality of potion
+        }
+    }
+
+    IEnumerator AddLiquid()
+    {
+        var tmp = liquidAmount.value + solutionAdd;
+        float progress = 0; //This float will serve as the 3rd parameter of the lerp function.
+        float increment = solutionSmoothness / solutionDuration; //The amount of change to apply.
+        while (progress < 1)
+        {
+            liquidAmount.value = Mathf.Lerp(liquidAmount.value, tmp, progress);
+            progress += increment;
+            yield return new WaitForSeconds(solutionSmoothness);
         }
     }
 
@@ -98,8 +110,8 @@ public class Liquid : MonoBehaviour, IDropHandler
         changingColor = true;
         changeColorReady = false;
 
-        CancelInvoke("ResetChangeColor");
-        Invoke("ResetChangeColor", changeGraceTime);
+        //CancelInvoke("ResetChangeColor");
+        //Invoke("ResetChangeColor", changeGraceTime);
 
         if (baseColor != startColor)
             colorLoss = true;
@@ -114,12 +126,12 @@ public class Liquid : MonoBehaviour, IDropHandler
     IEnumerator LerpColor()
     {
         float progress = 0; //This float will serve as the 3rd parameter of the lerp function.
-        float increment = smoothness / duration; //The amount of change to apply.
+        float increment = colorSmoothness / colorDuration; //The amount of change to apply.
         while (progress < 1)
         {
             liquid.color = Color.Lerp(tmpColor, (Color32)hueColorValues[baseColor], progress);
             progress += increment;
-            yield return new WaitForSeconds(smoothness);
+            yield return new WaitForSeconds(colorSmoothness);
         }
 
         changingColor = false;
@@ -166,3 +178,4 @@ public class Liquid : MonoBehaviour, IDropHandler
         CancelInvoke("ColorChangeChance");
     }
 }
+

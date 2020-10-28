@@ -20,8 +20,10 @@ public class Mix : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPoint
     void Start()
     {
         tmpCircleSpeed = baseCircleSpeed;
+
         speed = (2 * Mathf.PI) / baseCircleSpeed; //2*PI in degress is 360, so you get 5 seconds to complete a circle
         center = new Vector2(transform.position.x, transform.position.y);
+
         CalculatePos();
         transform.position = new Vector2(x, y);
     }
@@ -31,7 +33,7 @@ public class Mix : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPoint
         // Add a buffer when mouse gets off mixer
         if (mouseClick && mouseEnter)
             Mixing();
-        else 
+        else if (mix)
             StopMixing();
     }
 
