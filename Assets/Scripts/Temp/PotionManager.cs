@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PotionManager : MonoBehaviour
 {
     public Text timesUp;
+    public Image progressBar;
 
     [Header("Minigame Scripts")]
     public Mix m_mix;
@@ -16,9 +17,9 @@ public class PotionManager : MonoBehaviour
     public Slider slider;
     public bool start;
     public float potionMaxTime;
-    public float mixingBonus, liquidDowngrade, burnerDowngrade;
+    public float mixingBonus, liquidDowngrade, burnerDowngrade, colorDowngrade;
 
-    private bool enable, loseQuality, mixing;
+    private bool enable, burnerLoss, colorLoss, mixing;
     private float downgrades;
     private float potionTimer, potionProgress, potionQuality;
 
@@ -26,6 +27,7 @@ public class PotionManager : MonoBehaviour
     void Start()
     {
         enable = true;
+        potionProgress = 1;
         EnableScripts(false);
         timesUp.enabled = false;
         m_liquid.SetDowngrade(liquidDowngrade);
@@ -40,20 +42,15 @@ public class PotionManager : MonoBehaviour
             Begin();
 
         UpdateSlider();
+        MixStatusCheck();
+        BurnerQualityCheck();
+        ColorQualityCheck();
+        ProgressBarChange();
+    }
 
-
-        if (m_mix.GetMixStatus())
-            Mixing();
-        else if (!m_mix.GetMixStatus() && mixing)
-            mixing = false;
-
-        if (m_liquid.GetDowngrades() > downgrades)
-            UpdateDowngrades();
-
-        if (m_burner.GetLosingQuality())
-            LoseQuality();
-        else if (!m_burner.GetLosingQuality() && loseQuality)
-            loseQuality = false;
+    public void StartGame()
+    {
+        start = true;
     }
 
     private void EnableScripts(bool status)
@@ -75,7 +72,7 @@ public class PotionManager : MonoBehaviour
             // Update timer and potion progress
             potionTimer += Time.deltaTime;
 
-            if (!loseQuality)
+            if ((!burnerLoss || !colorLoss) && potionProgress < 5)
             {
                 potionProgress += Time.deltaTime / (potionMaxTime / 2);
                 Debug.Log("free progress");
@@ -83,7 +80,6 @@ public class PotionManager : MonoBehaviour
         }
         else if (potionTimer >= potionMaxTime)
             End();
-        
     }
 
     private void End()
@@ -92,7 +88,12 @@ public class PotionManager : MonoBehaviour
         potionTimer = 0;
         EnableScripts(false);
         timesUp.enabled = true;
-        potionQuality = Mathf.RoundToInt(potionProgress);
+        potionQuality = Mathf.Abs(Mathf.RoundToInt(potionProgress));
+
+        if (potionQuality > 5)
+            potionQuality = 5;
+        else if (potionQuality < 1)
+            potionQuality = 1;
 
         Debug.Log("Finished potion quality: " + potionQuality);
     }
@@ -102,22 +103,72 @@ public class PotionManager : MonoBehaviour
         slider.value = potionProgress;
     }
 
+    private void MixStatusCheck()
+    {
+        if (m_mix.GetMixStatus())
+            Mixing();
+        else if (!m_mix.GetMixStatus() && mixing)
+            mixing = false;
+    }
+
     private void Mixing()
     {
         mixing = true;
-        potionProgress += Time.deltaTime / (potionMaxTime / mixingBonus);
+        if (potionProgress < 5)
+            potionProgress += Time.deltaTime / (potionMaxTime / mixingBonus);
     }
 
     private void UpdateDowngrades()
     {
         downgrades = m_liquid.GetDowngrades();
         potionProgress -= downgrades;
+        if (potionProgress < 0)
+            potionProgress = 0;
+
         Debug.Log("Number of downgrades: " + downgrades);
     }
 
-    private void LoseQuality()
+    private void BurnerQualityCheck()
     {
-        loseQuality = true;
-        potionProgress -= Time.deltaTime / (potionMaxTime / burnerDowngrade);
+        if (m_burner.GetLosingQuality())
+            BurnerQualityLoss();
+        else if (!m_burner.GetLosingQuality() && burnerLoss)
+            burnerLoss = false;
+    }
+
+    private void BurnerQualityLoss()
+    {
+        burnerLoss = true;
+
+        if (potionProgress > 0)
+            potionProgress -= Time.deltaTime / (potionMaxTime / burnerDowngrade);
+    }
+
+    private void ColorQualityCheck()
+    {
+        if (m_liquid.GetColorLoss())
+            ColorQualityLoss();
+        else if (!m_liquid.GetColorLoss() && burnerLoss)
+            colorLoss = false;
+
+        if (m_liquid.GetDowngrades() > downgrades)
+            UpdateDowngrades();
+    }
+
+    private void ColorQualityLoss()
+    {
+        colorLoss = true;
+        Debug.Log("Losing color quality");
+
+        if (potionProgress > 0)
+            potionProgress -= Time.deltaTime / (potionMaxTime / colorDowngrade);
+    }
+
+    private void ProgressBarChange()
+    {
+        if (colorLoss || burnerLoss)
+            progressBar.color = Color.red;
+        else if (!colorLoss && !burnerLoss)
+            progressBar.color = Color.white;
     }
 }

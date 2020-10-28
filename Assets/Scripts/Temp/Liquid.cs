@@ -18,17 +18,58 @@ public class Liquid : MonoBehaviour, IDropHandler
     };
 
     private Image liquid;
-    public float smoothness, duration;
+
+    [Header("Color Change")]
+    public float duration;
+    public float smoothness;
+    public float changeChance;
+    public float changeGraceTime;
 
     Color tmpColor;
+    private int colorIndex, prevColorIndex;
     public LiquidColor startColor;
     private LiquidColor baseColor, updatedColor;
+    private List<LiquidColor> colorArray = new List<LiquidColor>();
+
     private float downgrades, downgradeAmount;
+    private bool changeColorReady, changingColor, colorLoss;
 
     private void Start()
     {
         liquid = GetComponent<Image>();
-        ChangeColor(startColor);
+        baseColor = startColor;
+        changeColorReady = true;
+
+        liquid.color = (Color32)hueColorValues[baseColor];
+        colorArray.Add(LiquidColor.Blue);
+        colorArray.Add(LiquidColor.Yellow);
+        colorArray.Add(LiquidColor.Red);
+
+        InvokeRepeating("ColorChangeChance", 1f, 1f);
+    }
+
+
+    void ColorChangeChance()
+    {
+        if (Random.Range(0, 100) <= changeChance && changeColorReady)
+        {
+            changeColorReady = false;
+            CancelInvoke("ResetChangeColor");
+            Invoke("ResetChangeColor", changeGraceTime);
+            colorIndex = Random.Range(0, colorArray.Count);
+
+            LiquidColor tmpColor = colorArray[colorIndex];
+            ChangeColor(tmpColor);
+        }
+    }
+    public bool GetColorLoss()
+    {
+        return colorLoss;
+    }
+
+    private void ResetChangeColor()
+    {
+        changeColorReady = true;
     }
 
     public void SetDowngrade(float amt)
@@ -50,25 +91,23 @@ public class Liquid : MonoBehaviour, IDropHandler
         }
     }
 
-    private Color CombineColors(params Color[] aColors)
-    {
-        Color result = new Color(0, 0, 0, 0);
-        foreach (Color c in aColors)
-        {
-            result += c;
-        }
-
-        result /= aColors.Length;
-        return result;
-    }
-
     private void ChangeColor(LiquidColor color)
     {
         tmpColor = (Color32)hueColorValues[baseColor];
         baseColor = color;
-        Debug.Log("New color is... " + baseColor);
+        changingColor = true;
+        changeColorReady = false;
+
+        CancelInvoke("ResetChangeColor");
+        Invoke("ResetChangeColor", changeGraceTime);
+
+        if (baseColor != startColor)
+            colorLoss = true;
+        else if (baseColor == startColor)
+            colorLoss = false;
 
         //liquid.color = (Color32)hueColorValues[baseColor];
+        StopCoroutine("LerpColor");
         StartCoroutine("LerpColor");
     }
 
@@ -82,6 +121,9 @@ public class Liquid : MonoBehaviour, IDropHandler
             progress += increment;
             yield return new WaitForSeconds(smoothness);
         }
+
+        changingColor = false;
+        Debug.Log("Color change finished");
     }
 
     private void CombineColors(LiquidColor baseColor, LiquidColor newColor)
@@ -117,5 +159,10 @@ public class Liquid : MonoBehaviour, IDropHandler
     public float GetDowngrades()
     {
         return downgrades;
+    }
+
+    private void OnDisable()
+    {
+        CancelInvoke("ColorChangeChance");
     }
 }

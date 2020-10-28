@@ -9,7 +9,6 @@ public class Vials : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHan
     private Vector2 originalPos;
     private CanvasGroup canvasGroup;
 
-
     //public enum LiquidColor { Red, Yellow, Blue, Purple, Green, Orange };
 
     public LiquidColor m_color;

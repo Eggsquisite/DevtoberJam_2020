@@ -160,4 +160,9 @@ public class Burner : MonoBehaviour
         sway = true;
         reset = false;
     }
+
+    private void OnDisable()
+    {
+        CancelInvoke("ChangeChange");
+    }
 }
