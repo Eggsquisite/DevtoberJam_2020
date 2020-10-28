@@ -18,14 +18,22 @@ public class Liquid : MonoBehaviour, IDropHandler
     };
 
     private Image liquid;
+    public float smoothness, duration;
 
+    Color tmpColor;
     public LiquidColor startColor;
     private LiquidColor baseColor, updatedColor;
+    private float downgrades, downgradeAmount;
 
     private void Start()
     {
         liquid = GetComponent<Image>();
         ChangeColor(startColor);
+    }
+
+    public void SetDowngrade(float amt)
+    {
+        downgradeAmount = amt;
     }
 
     public void OnDrop(PointerEventData data)
@@ -36,7 +44,8 @@ public class Liquid : MonoBehaviour, IDropHandler
 
             CombineColors(baseColor, updatedColor);
 
-            if (baseColor == LiquidColor.Brown) ;
+            if (baseColor == LiquidColor.Brown) 
+                downgrades += downgradeAmount;
                 // penalize player and degrade quality of potion
         }
     }
@@ -55,9 +64,24 @@ public class Liquid : MonoBehaviour, IDropHandler
 
     private void ChangeColor(LiquidColor color)
     {
+        tmpColor = (Color32)hueColorValues[baseColor];
         baseColor = color;
         Debug.Log("New color is... " + baseColor);
-        liquid.color = (Color32)hueColorValues[color];
+
+        //liquid.color = (Color32)hueColorValues[baseColor];
+        StartCoroutine("LerpColor");
+    }
+
+    IEnumerator LerpColor()
+    {
+        float progress = 0; //This float will serve as the 3rd parameter of the lerp function.
+        float increment = smoothness / duration; //The amount of change to apply.
+        while (progress < 1)
+        {
+            liquid.color = Color.Lerp(tmpColor, (Color32)hueColorValues[baseColor], progress);
+            progress += increment;
+            yield return new WaitForSeconds(smoothness);
+        }
     }
 
     private void CombineColors(LiquidColor baseColor, LiquidColor newColor)
@@ -88,5 +112,10 @@ public class Liquid : MonoBehaviour, IDropHandler
             ChangeColor(LiquidColor.Brown);
         else
             ChangeColor(newColor);
+    }
+
+    public float GetDowngrades()
+    {
+        return downgrades;
     }
 }

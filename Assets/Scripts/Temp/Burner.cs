@@ -41,6 +41,7 @@ public class Burner : MonoBehaviour
         InvokeRepeating("ChangeChance", 1, 1);
     }
 
+
     // Update is called once per frame
     void Update()
     {
@@ -58,6 +59,10 @@ public class Burner : MonoBehaviour
 
         if (reset)
             Resetting(); 
+    }
+    public bool GetLosingQuality()
+    {
+        return losingQuality;
     }
 
     void ChangeChance()

@@ -29,10 +29,13 @@ public class Mix : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPoint
         // Add a buffer when mouse gets off mixer
         if (mouseClick && mouseEnter)
             Mixing();
+        else
+            mix = false;
     }
 
     void Mixing()
     {
+        mix = true;
         speed = (2 * Mathf.PI) / circleSpeed; //2*PI in degress is 360, so you get 5 seconds to complete a circle
         angle += speed * Time.deltaTime; //if you want to switch direction, use -= instead of +=
 
@@ -46,9 +49,9 @@ public class Mix : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPoint
         y = Mathf.Sin(angle) * radius + center.y;
     }
 
-    public void MixStatus(bool status)
+    public bool GetMixStatus()
     {
-        mix = status;
+        return mix;
     }
 
     public void OnPointerDown(PointerEventData eventData)
