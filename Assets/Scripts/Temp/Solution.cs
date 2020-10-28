@@ -8,14 +8,14 @@ using UnityEngine.EventSystems;
 public class Solution : MonoBehaviour, IDropHandler
 {
     private static Hashtable hueColorValues = new Hashtable {
-        {LiquidColor.Red,               new Color32( 254, 9, 0, 255) },
-        {LiquidColor.Yellow,            new Color32( 254, 224, 0, 255) },
-        {LiquidColor.Blue,              new Color32( 0, 122, 254, 255) },
-        {LiquidColor.Purple,            new Color32( 143, 0, 254, 255) },
-        {LiquidColor.Green,             new Color32( 0, 254, 111, 255) },
-        {LiquidColor.Orange,            new Color32( 254, 161, 0, 255) },
-        {LiquidColor.Brown,             new Color32( 125, 60, 30, 255) },
-        {LiquidColor.White,             new Color32( 255, 255, 255, 255) },
+        {LiquidColor.Red,               new Color32( 254, 9, 0, 175) },
+        {LiquidColor.Yellow,            new Color32( 254, 224, 0, 175) },
+        {LiquidColor.Blue,              new Color32( 0, 122, 254, 175) },
+        {LiquidColor.Purple,            new Color32( 143, 0, 254, 175) },
+        {LiquidColor.Green,             new Color32( 0, 254, 111, 175) },
+        {LiquidColor.Orange,            new Color32( 254, 161, 0, 175) },
+        {LiquidColor.Brown,             new Color32( 125, 60, 30, 175) },
+        {LiquidColor.White,             new Color32( 255, 255, 255, 175) },
     };
 
 
@@ -23,6 +23,7 @@ public class Solution : MonoBehaviour, IDropHandler
     public Image liquid;
     public float colorDuration;
     public float colorSmoothness;
+    private float delay = 1f;
 
     [Header("Add Solution")]
     public Slider liquidAmount;
@@ -78,6 +79,7 @@ public class Solution : MonoBehaviour, IDropHandler
     {
         if (data.pointerDrag != null)
         {
+            data.pointerDrag.GetComponent<Vials>().Animation();
             updatedColor = data.pointerDrag.GetComponent<Vials>().GetColor();
 
             StopCoroutine("AddLiquid");
@@ -92,6 +94,9 @@ public class Solution : MonoBehaviour, IDropHandler
 
     IEnumerator AddLiquid()
     {
+        // animation delay
+        yield return new WaitForSeconds(delay);
+
         var tmp = liquidAmount.value + solutionAdd;
         float progress = 0; //This float will serve as the 3rd parameter of the lerp function.
         float increment = solutionSmoothness / solutionDuration; //The amount of change to apply.
@@ -125,6 +130,9 @@ public class Solution : MonoBehaviour, IDropHandler
 
     IEnumerator LerpColor()
     {
+        // animation delay
+        yield return new WaitForSeconds(delay);
+
         float progress = 0; //This float will serve as the 3rd parameter of the lerp function.
         float increment = colorSmoothness / colorDuration; //The amount of change to apply.
         while (progress < 1)

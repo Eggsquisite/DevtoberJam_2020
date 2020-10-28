@@ -9,6 +9,8 @@ public class Vials : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHan
     private Vector2 originalPos;
     public CanvasGroup beaker;
     private CanvasGroup canvasGroup;
+    private Animation anim;
+    private static float animTime = 2f;
 
     //public enum LiquidColor { Red, Yellow, Blue, Purple, Green, Orange };
 
@@ -19,6 +21,7 @@ public class Vials : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHan
     {
         originalPos = transform.position;
         canvasGroup = GetComponent<CanvasGroup>();
+        anim = GetComponent<Animation>();
     }
 
     public void OnBeginDrag(PointerEventData data)
@@ -44,5 +47,23 @@ public class Vials : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHan
     public LiquidColor GetColor()
     {
         return m_color;
+    }
+
+    public void Animation()
+    {
+        StopCoroutine("PlayAnimation");
+        StartCoroutine("PlayAnimation");
+    }
+
+    IEnumerator PlayAnimation()
+    {
+        anim.Play();
+        canvasGroup.blocksRaycasts = false;
+        yield return new WaitForSeconds(animTime);
+
+        anim.Stop();
+        transform.position = originalPos;
+        transform.rotation = Quaternion.identity;
+        canvasGroup.blocksRaycasts = true;
     }
 }
