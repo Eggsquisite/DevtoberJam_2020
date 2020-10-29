@@ -15,7 +15,11 @@ public class ItemSlot : MonoBehaviour, IDropHandler {
     
     public void OnDrop(PointerEventData eventData) {
         Debug.Log("Dropping into slot " + transform.name);
-        if (eventData.pointerDrag != null && eventData.pointerDrag.GetComponent<MoveableItem>().itemType == onlyAccepts) {
+        if (eventData.pointerDrag.gameObject == itemInSlot) {
+            Debug.Log("Returning item back to its slot");
+            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
+        }
+        else if (eventData.pointerDrag != null && eventData.pointerDrag.GetComponent<MoveableItem>().itemType == onlyAccepts) {
 
             if (itemInSlot == null) {
                 Debug.Log("The Slot was empty.  Adding");

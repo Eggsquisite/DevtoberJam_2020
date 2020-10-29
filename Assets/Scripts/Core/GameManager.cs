@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour {
     public GameObject ingredientsParent;
 
     private GameObject[] inventorySlots;
+    private GameObject[] potionSlots;
     
     void Awake() {
 
@@ -25,6 +26,11 @@ public class GameManager : MonoBehaviour {
         for (int i = 0; i < inventorySlots.Length; i++) {
             inventorySlots[i] = GameObject.Find("Slot" + (i+1));
         }
+        
+        potionSlots = new GameObject[3];
+        for (int i = 0; i < potionSlots.Length; i++) {
+            potionSlots[i] = GameObject.Find("PotionSlot" + (i+1));
+        }
 
         int count = 0;
         //now instantiate the inventory
@@ -40,5 +46,9 @@ public class GameManager : MonoBehaviour {
                 count++;
             }
         }
+
+        GameObject newPotion = Instantiate(potionGO, new Vector3(Screen.width * 0.5f, Screen.height * 0.5f, 0f), Quaternion.identity);
+        newPotion.GetComponent<PotionGO>().SetPotion(Potion.potions[0]);
+        potionSlots[0].GetComponent<ItemSlot>().AddItemToSlot(newPotion);
     }
 }

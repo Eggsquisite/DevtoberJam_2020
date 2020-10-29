@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class IngredientGO : MonoBehaviour {
+public class IngredientGO : MonoBehaviour, IBeginDragHandler, IEndDragHandler {
     
     public Ingredient ingredient;
     public ushort stackSize;
@@ -28,5 +29,15 @@ public class IngredientGO : MonoBehaviour {
 
     public void SetStackSize(ushort quantity) {
         stackSizeText.SetText(quantity + "");
+    }
+
+    public void OnBeginDrag(PointerEventData eventData) {
+        stackSizeText.gameObject.SetActive(false);
+        itemName.gameObject.SetActive(false);
+    }
+
+    public void OnEndDrag(PointerEventData eventData) {
+        stackSizeText.gameObject.SetActive(true);
+        itemName.gameObject.SetActive(true);
     }
 }

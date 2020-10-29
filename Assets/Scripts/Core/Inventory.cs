@@ -5,7 +5,7 @@ using UnityEngine;
 public class Inventory {
 
     public static List<WeightedIngredient> ingredientsInInventory = new List<WeightedIngredient>();
-    public static List<Potion> potionsInInventory = new List<Potion>();
+    public static List<Potion> potionsInInventory = new List<Potion>(3);
     public static int money = 0;
 
     public delegate void InventoryEvent();
@@ -16,6 +16,12 @@ public class Inventory {
         WeightedIngredient wi = FindIngredient(ingredient);
         if (wi != null) wi.quantity += amount;
         else ingredientsInInventory.Add(new WeightedIngredient(ingredient,amount));
+        if (InventoryChanged != null) InventoryChanged();
+    }
+    
+    public static void AddItem(Potion potion) {
+
+        potionsInInventory.Add(potion);
         if (InventoryChanged != null) InventoryChanged();
     }
 
@@ -30,6 +36,13 @@ public class Inventory {
             }
         }
         else ingredientsInInventory.Add(new WeightedIngredient(ingredient,amount));
+        if (InventoryChanged != null) InventoryChanged();
+    }
+
+    public static void RemoveItem(Potion potion) {
+        for (int i = 0; i < potionsInInventory.Count; i++) {
+            if (potionsInInventory[i] == potion) { potionsInInventory.RemoveAt(i); break; }
+        }
         if (InventoryChanged != null) InventoryChanged();
     }
 

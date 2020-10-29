@@ -4,11 +4,15 @@ using UnityEngine;
 public class PatronManager : MonoBehaviour {
 
     public List<Patron> patronQueue;
-    public static float formulaPass = 0.65f;
-    public static float[] methodWeights = new float[] {0f, 0.333f, 0.666f}; // potion solution, stored potion method, formula method
-    public int position;
-    
+    private static float formulaPass = 0.65f;
+    private static float[] methodWeights = new float[] {0f, 0.333f, 0.666f}; // potion solution, stored potion method, formula method
+    private int position;
+
+    public DialogueManager dm;
+
     void Start() {
+
+        dm = GameObject.Find("PatronTextBox").GetComponent<DialogueManager>();
         
         PatronShuffle();
         
@@ -62,6 +66,13 @@ public class PatronManager : MonoBehaviour {
         if (index < 0) index = 0;
 
         //patronQueue[index]; //NEXT PATRON TO LOAD
+        patronQueue[index].visitNumber = position;
+        position++;
+        dm.LoadPatron(patronQueue[index]);
+        //move to the back of the queue
+        Patron temp = patronQueue[index];
+        patronQueue.RemoveAt(index);
+        patronQueue.Add(temp);
     }
 
     /*private void UseRandomPatronMethod() {
