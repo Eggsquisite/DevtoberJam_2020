@@ -8,8 +8,9 @@ public class Mix : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPoint
 {
     public float baseCircleSpeed; // the amount of seconds to complete a circle
     public float radius;
-    public float slowDownSpeed;   
+    public float slowDownSpeed;
 
+    public Transform beaker;
     private Vector2 center;
     private float x, y;
     private float speed, angle, tmpCircleSpeed;
@@ -22,7 +23,6 @@ public class Mix : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPoint
         tmpCircleSpeed = baseCircleSpeed;
 
         speed = (2 * Mathf.PI) / baseCircleSpeed; //2*PI in degress is 360, so you get 5 seconds to complete a circle
-        center = new Vector2(transform.position.x, transform.position.y);
 
         CalculatePos();
         transform.position = new Vector2(x, y);
@@ -70,6 +70,7 @@ public class Mix : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPoint
 
     private void CalculatePos()
     {
+        center = new Vector2(beaker.position.x, beaker.position.y);
         x = Mathf.Cos(angle) * radius + center.x;
         y = Mathf.Sin(angle) * radius + center.y;
     }
