@@ -16,9 +16,11 @@ public class PotionMix : MonoBehaviour
 
     [Header("Task Management")]
     public GameObject taskParent;
-    public Text redVial;
-    public Text blueVial;
-    public Text yellowVial;
+    public Text redVialText;
+    public Text blueVialText;
+    public Text yellowVialText;
+
+    private int redVialCount, blueVialCount, yellowVialCount;
 
     [TextArea(1, 3)]
     public string[] tasks;
@@ -27,9 +29,9 @@ public class PotionMix : MonoBehaviour
     public float maxPotionTime; 
     public float qualityDegrade;
     public float solutionAdd;
-    public int redVials;
-    public int blueVials;
-    public int yellowVials;
+    public int redVialsMax;
+    public int blueVialsMax;
+    public int yellowVialsMax;
 
     private float potionQuality;
     
@@ -38,6 +40,8 @@ public class PotionMix : MonoBehaviour
     void Start()
     {
         sol.SetSolutionAdd(solutionAdd);
+
+        UpdateVials();
     }
 
     // Update is called once per frame
@@ -47,6 +51,11 @@ public class PotionMix : MonoBehaviour
             EndGame();
         else if (startGame)
             BeginTimer();
+        //else
+            //return;
+
+        if (sol.GetVialUpdated())
+            UpdateVials();
     }
 
     private void BeginTimer()
@@ -59,5 +68,26 @@ public class PotionMix : MonoBehaviour
         endGame = false;
         startGame = false;
         Debug.Log("Total time: " + totalTime);
+    }
+
+    private void UpdateVials()
+    {
+        redVialCount = sol.GetRedVials();
+        blueVialCount = sol.GetBlueVials();
+        yellowVialCount = sol.GetYellowVials();
+
+        UpdateVialTextCount(redVialCount, redVialsMax, redVialText);
+        UpdateVialTextCount(blueVialCount, blueVialsMax, blueVialText);
+        UpdateVialTextCount(yellowVialCount, yellowVialsMax, yellowVialText);
+
+        sol.SetVialUpdated(false);
+    }
+
+    private void UpdateVialTextCount(int currentCount, int maxCount, Text txt)
+    {
+        string currentVials = $"({currentCount} / ";
+        string maxVials = $"{maxCount})";
+        string all = string.Concat(currentVials, maxVials);
+        txt.text = all;
     }
 }

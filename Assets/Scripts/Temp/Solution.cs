@@ -31,6 +31,7 @@ public class Solution : MonoBehaviour, IDropHandler
     public float solutionSmoothness;
     private float solutionAdd;
     private int redVials, blueVials, yellowVials;
+    private bool vialUpdated;
 
     Color tmpColor;
     private int colorIndex, prevColorIndex;
@@ -81,6 +82,16 @@ public class Solution : MonoBehaviour, IDropHandler
         solutionAdd = amt;
     }
 
+    public bool GetVialUpdated()
+    {
+        return vialUpdated;
+    }
+
+    public void SetVialUpdated(bool status)
+    {
+        vialUpdated = status;
+    }
+
     public void OnDrop(PointerEventData data)
     {
         if (data.pointerDrag != null)
@@ -88,12 +99,15 @@ public class Solution : MonoBehaviour, IDropHandler
             data.pointerDrag.GetComponent<Vials>().Animation();
             updatedColor = data.pointerDrag.GetComponent<Vials>().GetColor();
 
+            vialUpdated = true;
+
             if (updatedColor == LiquidColor.Red)
                 redVials++;
             else if (updatedColor == LiquidColor.Blue)
                 blueVials++;
             else if (updatedColor == LiquidColor.Yellow)
                 yellowVials++;
+
 
             StopCoroutine("AddLiquid");
             StartCoroutine("AddLiquid");
