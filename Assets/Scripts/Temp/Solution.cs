@@ -27,9 +27,10 @@ public class Solution : MonoBehaviour, IDropHandler
 
     [Header("Add Solution")]
     public Slider liquidAmount;
-    public float solutionAdd;
     public float solutionDuration;
     public float solutionSmoothness;
+    private float solutionAdd;
+    private int redVials, blueVials, yellowVials;
 
     Color tmpColor;
     private int colorIndex, prevColorIndex;
@@ -75,12 +76,24 @@ public class Solution : MonoBehaviour, IDropHandler
         downgradeAmount = amt;
     }
 
+    public void SetSolutionAdd(float amt)
+    {
+        solutionAdd = amt;
+    }
+
     public void OnDrop(PointerEventData data)
     {
         if (data.pointerDrag != null)
         {
             data.pointerDrag.GetComponent<Vials>().Animation();
             updatedColor = data.pointerDrag.GetComponent<Vials>().GetColor();
+
+            if (updatedColor == LiquidColor.Red)
+                redVials++;
+            else if (updatedColor == LiquidColor.Blue)
+                blueVials++;
+            else if (updatedColor == LiquidColor.Yellow)
+                yellowVials++;
 
             StopCoroutine("AddLiquid");
             StartCoroutine("AddLiquid");
@@ -180,6 +193,22 @@ public class Solution : MonoBehaviour, IDropHandler
     {
         return downgrades;
     }
+
+    public int GetRedVials()
+    {
+        return redVials;
+    }
+
+    public int GetBlueVials()
+    {
+        return blueVials;
+    }
+
+    public int GetYellowVials()
+    {
+        return yellowVials;
+    }
+
 
     private void OnDisable()
     {
