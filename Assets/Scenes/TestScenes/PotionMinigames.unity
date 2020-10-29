@@ -934,6 +934,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecf0fb258f556d9498f07f1eac4ba197, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  beaker: {fileID: 0}
   m_color: 2
 --- !u!225 &852751522
 CanvasGroup:
@@ -1669,6 +1670,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecf0fb258f556d9498f07f1eac4ba197, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  beaker: {fileID: 0}
   m_color: 1
 --- !u!225 &1406028607
 CanvasGroup:
@@ -1935,9 +1937,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c6445abc7c778442a5cb7b4f1fa54d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseCircleSpeed: 0
+  baseCircleSpeed: 2
   radius: 35
-  slowDownSpeed: 0
+  slowDownSpeed: 0.25
 --- !u!224 &1624445011 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2613041865659716870, guid: d1226def3aa346f418952f0beec33f27, type: 3}

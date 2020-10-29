@@ -28,7 +28,9 @@ public class Vials : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHan
     {
         //Debug.Log("Beginning Drag with color: " + m_color);
         canvasGroup.blocksRaycasts = false;
-        beaker.blocksRaycasts = true;
+
+        if (beaker != null)
+            beaker.blocksRaycasts = true;
     }
 
     public void OnDrag(PointerEventData data)
@@ -40,7 +42,9 @@ public class Vials : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHan
     {
         transform.position = originalPos;
         canvasGroup.blocksRaycasts = true;
-        beaker.blocksRaycasts = false;
+
+        if (beaker != null)
+            beaker.blocksRaycasts = false;
         // If vial is over potion mix and can change color, change potion mix to appropriate color depending on vial
     }
 
