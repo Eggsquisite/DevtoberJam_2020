@@ -364,8 +364,8 @@ RectTransform:
   m_LocalScale: {x: 0.05, y: 0.05, z: 1}
   m_Children:
   - {fileID: 246080202}
-  - {fileID: 1235157676}
   - {fileID: 1999950196}
+  - {fileID: 1235157676}
   - {fileID: 748949410}
   m_Father: {fileID: 791013413}
   m_RootOrder: 0
@@ -408,7 +408,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: To-Do List
+  m_Text: Potion Recipe
 --- !u!222 &172481817
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1876,11 +1876,11 @@ RectTransform:
   m_Children:
   - {fileID: 1996537468}
   m_Father: {fileID: 172481815}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -450, y: -400}
+  m_AnchoredPosition: {x: -450, y: -800}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1235157677
@@ -2661,7 +2661,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 126.295}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -652.33997, y: 280.1}
+  m_AnchoredPosition: {x: -524, y: 280.1}
   m_SizeDelta: {x: 10, y: 22}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &1775522762
@@ -2935,11 +2935,11 @@ RectTransform:
   - {fileID: 818229547}
   - {fileID: 117314580}
   m_Father: {fileID: 172481815}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -450, y: -650}
+  m_AnchoredPosition: {x: -450, y: -400}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1999950197
@@ -3022,7 +3022,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 126.295}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -520.33997, y: 283.09998}
+  m_AnchoredPosition: {x: -652, y: 283.09998}
   m_SizeDelta: {x: 10, y: 22}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &2040393478
