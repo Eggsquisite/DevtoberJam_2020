@@ -23,7 +23,7 @@ public class Solution : MonoBehaviour, IDropHandler
     public Image liquid;
     public float colorDuration;
     public float colorSmoothness;
-    private float delay = 1f;
+    private float delay = 0f;
 
     [Header("Add Solution")]
     public Slider liquidAmount;
@@ -96,7 +96,7 @@ public class Solution : MonoBehaviour, IDropHandler
     {
         if (data.pointerDrag != null)
         {
-            data.pointerDrag.GetComponent<Vials>().Animation();
+            //data.pointerDrag.GetComponent<Vials>().Animation();
             updatedColor = data.pointerDrag.GetComponent<Vials>().GetColor();
 
             vialUpdated = true;
