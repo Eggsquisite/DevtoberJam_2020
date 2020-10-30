@@ -19,55 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="02456b1a-d081-4f5f-8ad7-6e37f0b0f34b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DevtoberJam_2020/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DevtoberJam_2020/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DevtoberJam_2020/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DevtoberJam_2020/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Art/UI/Ingredients/Bacon.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Art/UI/Ingredients/Bacon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Art/UI/Ingredients/Bacon.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Art/UI/Ingredients/Bacon.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Art/UI/Ingredients/Eye of Newt.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Art/UI/Ingredients/Eye of Newt.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Art/UI/Ingredients/Eye of Newt.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Art/UI/Ingredients/Eye of Newt.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Art/UI/Ingredients/Toe of Frog.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Art/UI/Ingredients/Toe of Frog.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Art/UI/Ingredients/Toe of Frog.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Art/UI/Ingredients/Toe of Frog.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Art/UI/Ingredients/Wing of Bat.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Art/UI/Ingredients/Wing of Bat.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Art/UI/Ingredients/Wing of Bat.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Art/UI/Ingredients/Wing of Bat.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Art/UI/Ingredients/ingred_bacon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Art/UI/Ingredients/ingred_bacon.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Art/UI/Ingredients/ingred_beeBrain.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Art/UI/Ingredients/ingred_beeBrain.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Art/UI/Ingredients/ingred_deadmansBlood.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Art/UI/Ingredients/ingred_deadmansBlood.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Art/UI/Ingredients/ingred_eyeOfNewt.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Art/UI/Ingredients/ingred_eyeOfNewt.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Art/UI/Ingredients/ingred_mermaidTear.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Art/UI/Ingredients/ingred_mermaidTear.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Art/UI/Ingredients/ingred_meteorite.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Art/UI/Ingredients/ingred_meteorite.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Art/UI/Ingredients/ingred_nightshade.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Art/UI/Ingredients/ingred_nightshade.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Art/UI/Ingredients/ingred_phoenixFeather.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Art/UI/Ingredients/ingred_phoenixFeather.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Art/UI/Ingredients/ingred_saltyLips.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Art/UI/Ingredients/ingred_saltyLips.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Art/UI/Ingredients/ingred_stinkyMushroom.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Art/UI/Ingredients/ingred_stinkyMushroom.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Art/UI/Ingredients/ingred_toeOfFrog.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Art/UI/Ingredients/ingred_toeOfFrog.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Art/UI/Ingredients/ingred_unicornHorn.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Art/UI/Ingredients/ingred_unicornHorn.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Art/UI/Ingredients/ingred_uranium.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Art/UI/Ingredients/ingred_uranium.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Art/UI/Ingredients/ingred_werewolfFang.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Art/UI/Ingredients/ingred_werewolfFang.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Art/UI/Ingredients/ingred_wingOfBat.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Art/UI/Ingredients/ingred_wingOfBat.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Ingredient.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Ingredient.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestScenes/UITest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TestScenes/UITest.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Patron.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Patron.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/PatronInput.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PatronInput.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/PatronManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PatronManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Core/DialogueManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Core/DialogueManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Core/PotionGO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Core/PotionGO.cs" afterDir="false" />
-    </list>
+    <list default="true" id="02456b1a-d081-4f5f-8ad7-6e37f0b0f34b" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -125,9 +77,9 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/MoveableItem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Core/Patron.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Core/PotionGO.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Core/PatronGO.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Core/DialogueManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Core/PatronManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Core/PatronGO.cs" />
       </list>
     </option>
   </component>
@@ -181,7 +133,7 @@
       <workItem from="1603651004617" duration="11641000" />
       <workItem from="1603735022622" duration="10511000" />
       <workItem from="1603820688621" duration="25118000" />
-      <workItem from="1603856683210" duration="34625000" />
+      <workItem from="1603856683210" duration="35319000" />
     </task>
     <servers />
   </component>
