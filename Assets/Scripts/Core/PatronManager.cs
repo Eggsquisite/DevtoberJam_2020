@@ -139,6 +139,8 @@ public class PatronManager : MonoBehaviour {
         while (go.transitioning) {
             yield return null;
         }
+        yield return new WaitForSeconds(2f);
+        LoadNextPatron();
     }
 
 

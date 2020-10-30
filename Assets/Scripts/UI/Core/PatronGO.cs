@@ -3,11 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class PatronGO : MonoBehaviour {
     
     private Image patronImage;
-    
+
     private Color32 silhouette = new Color32(0,0,0,150);
     public bool transitioning = false;
 
@@ -22,15 +23,12 @@ public class PatronGO : MonoBehaviour {
         patronImage.sprite = Resources.Load<Sprite>("Art/Characters/character1");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void MakePatronAppear() {
-        //StartCoroutine(Transition(Color.clear, silhouette, Color.white, 1f, 1f));
-
+        int number = (int)(Random.value*24 + 1);
+        if (number == 25) number--;
+        string n = number + "";
+        if (number < 10) n = "0" + number;
+        patronImage.sprite = Resources.Load<Sprite>("Art/Characters/patron0" + n);
         StartCoroutine(Transition(Color.clear, silhouette, Color.white, 2f, 0.5f));
     }
 

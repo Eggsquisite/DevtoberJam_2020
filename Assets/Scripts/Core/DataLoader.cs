@@ -140,7 +140,7 @@ public class DataLoader {
             if (line.Contains("//")) line = line.Split('/')[0];
             if (line.Trim().Length > 0) {
                 string[] s = line.Split(',');
-                ingredients.Add(new Ingredient(s[0].Trim(), Byte.Parse(s[1].Trim())));
+                ingredients.Add(new Ingredient(s[0].Trim(), ushort.Parse(s[1].Trim())));
                 if (s.Length == 3) {
                     if (s[2].Trim().Contains("illicit")) ingredients[ingredients.Count - 1].illicit = true;
                 }

@@ -27,3 +27,93 @@ Costume= Dog
 Problem= So, uhm ... there's this girl I like.  She doesn't seem to notice me.  No matter what I do, it's like I'm invisible to her.  I want her to SEE me.  Can you help me out?
 Formula= 4 Smelly, 3 Allure, 1 Entertainer
 Solution= The Blabbermouth; 180; no; It's a little unconventional, but I like it!  She's bound to notice me now!  Thanks!
+
+[ Patron ]
+
+Name= Billy Kidd
+Costume= 
+Problem= Excuse me Mister (Ma'am? depending on the player?), can you help?  I keep getting refused entry to the new nightclub in town due to my stupid babyface.  You've got to find a way to get me past those scary Bouncers!
+Formula= 3 Wisdom, 2 Grandoise
+Solution= The Beardface; 150; yes; Wow, thanks Mister!... I mean, why thank you sir, this will indubitably support the fulfilment of my short-to-medium term aspirations.
+
+
+[ Patron ]
+
+Name= Carmen Dogooder
+Costume= 
+Problem= I'm having trouble fitting in with the other girls in my sorority.  I wish I could be more like them!  Can you help?
+Formula= 2 Charisma, 1 Malleable, 1 Obnoxious
+Solution= The Socialite;150; yes; Thank you so much!  I'd recommend you to my girlfriends, if your clothes weren't so outdated.  I mean, have you even looked in a mirror recently? 
+
+
+[ Patron ]
+
+Name= Dwight Wright
+Costume= 
+Problem= Pardon me man (Ma'am), can you spare some time?  I've spent the past month speaking only in rhyme.  My girl is fed up, my friends think it's funny, can you get me speaking normal please?  Here, take my money.
+Formula= 2 Boring, 1 Intellect
+Solution= The Accountant;150; yes; I don't know if it did the trick, please tell me I'm in luck?  If you've failed your mission man (Ma'am) then you can get to fundamentally try again...  Oh wait, it did work.
+
+
+[ Patron ]
+
+Name= Stuart Dent
+Costume= 
+Problem= I've got an exam tomorrow morning and haven't started studying yet! Can you help me pull an all-nighter and get the "A" I need to get into College?
+Formula= 3 Intellect, 2 Energy
+Solution= The Smartypants;150; yes; You're a life-saver!  I won't forget you... wait, what's your name again?
+
+
+[ Patron ]
+
+Name= Barry Player
+Costume= 
+Problem= My wife thinks I'm having an affair!... I mean, I am having an affair, but I don't want her to know about it!  Can you help?
+Formula= 1 Stealth, 1 Luck, 2 Obnoxious
+Solution= The Bastard;150; no; Thank you!  Now to clarify, will this also keep my girlfriend from knowing I've got a wife?
+
+
+[ Patron ]
+
+Name= Philip Sibling
+Costume= 
+Problem= My little brother keeps calling me a poo-poo head, but if anyone's a poo-poo head it's in fact him who's a poo-poo head!  Can you help me get revenge?
+Formula= 3 Smelly, 1 Coward
+Solution= The Smelly Cat;150; no; Great, thank you!  I'll put this in his milk and then we'll see who's a poo-poo head....  It'll be him who is the poo-poo head by the way, did you get that?
+
+
+[ Patron ]
+
+Name= Daphne Dafty
+Costume= 
+Problem= I keep losing things!  The other day it took me an hour to find my car keys, and then I couldn't remember where I'd parked!
+Formula= 1 Luck, 2 Intellect, 
+Solution= The Magpie;150; no; Thank you, and I promise you I'll keep this safe haha!!  Now where's my handbag...
+
+
+[ Patron ]
+
+Name= Sally Stripes
+Costume= 
+Problem= A girl I know wants to fight me after school tomorrow!  She's so much stronger than me, can you help?
+Formula= 2 Weak, 1 Coward 
+Solution= The Yellow Belly;150; no; Thank you!  I don't start fights, I only finish them...
+
+
+[ Patron ]
+
+Name= Richard F Loppy
+Costume= 
+Problem= My wife isn't very satisfied with our marriage anymore.  I love her so much!  Please help.
+Formula= 1 Charm, 2 Allure, 1 Strength 
+Solution= The Stallion;150; no; Yes!  Thank you sir.  Who knew it was going to be this hard... marriage I mean.
+
+
+[ Patron ]
+
+Name= Bon Jon Bovi
+Costume= 
+Problem= Everywhere I go I've got a trail of women following me and offering me sex!  I shouldn't complain, but I'm a married man and just want to be left alone.  HELP ME!
+Formula= 1 Stealth, 1 Speed, 2 Smelly
+Solution= The Pariah;150; no; My wife thanks you!  This is only temporary though isn't it?...
+

@@ -104,13 +104,13 @@ public class RecipeBook : MonoBehaviour {
             brewItButton.interactable = true;
         }
         
+        pageIndex = index;
         //check to see if the page turn buttons can be used
-        
         if (pageIndex+1 > potionsInRecipeBook.Count-1) pageRightButton.interactable = false;
         else pageRightButton.interactable = true;
         if (pageIndex-1 < 0) pageLeftButton.interactable = false;
         else pageLeftButton.interactable = true;
 
-        pageIndex = index;
+        
     }
 }

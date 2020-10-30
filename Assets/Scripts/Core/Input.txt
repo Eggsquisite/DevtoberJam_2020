@@ -4,6 +4,16 @@ Wing of Bat, 20
 Eye of Newt, 25
 Bacon, 25
 Toe of Frog, 30
+Brain of Bee, 40
+Mermaid's Tear, 50
+Nightshade, 45
+Phoenix Feather, 60
+Stinky Mushroom, 20
+Werewolf Fang, 90
+Uranium-235, 900, illicit
+Unicorn Horn, 400, illicit
+Salty Lips, 150, illicit
+Meteorite, 200, illicit
 Dead Man's Blood, 250, illicit
 
 [ StartingInventory ]
@@ -29,6 +39,7 @@ Entertainer
 Green
 Speed
 Luck
+Wisdom
 
 [ BadAttributes ]
 
@@ -44,20 +55,22 @@ Weak
 Timid
 Coward
 Dumb
+Manipulative
+Malleable
 
 // Potions MUST come at the end of file
 
 [ Potion ] 
 
 Name= The Blabbermouth
-Attribute= 3 Charisma, 2 Charm
+Attribute= 3 Charisma, 2 Charm, 5 Annoying
 Ingredients= 3 Eye of Newt, 2 Bacon
 Craftable= yes
 
 [ Potion ]
 
-Name= Smartypants
-Attribute= 4 Intellect, 2 Tech
+Name= The Smartypants
+Attribute= 4 Intellect, 2 Tech, 2 Boring
 Ingredients= 1 Wing of Bat, 2 Bacon
 Craftable= yes
 
@@ -79,5 +92,61 @@ Craftable= yes
 
 Name= The Smelly Cat
 Attribute= 5 Smelly, 2 Allure, 1 Animal Whisperer
+Ingredients= 1 Toe of Frog, 1 Eye of Newt, 2 Bacon
+Craftable= yes
+
+[ Potion ]
+
+Name= The Yellow Belly
+Attribute= 4 Coward, 2 Weak, 1 Slow
+Ingredients= 1 Toe of Frog, 1 Eye of Newt, 2 Bacon
+Craftable= yes
+
+[ Potion ]
+
+Name= The Stallion
+Attribute= 5 Allure, 3 Grandiose, 2 Strength
+Ingredients= 1 Toe of Frog, 1 Eye of Newt, 2 Bacon
+Craftable= yes
+
+[ Potion ]
+
+Name= The Pariah
+Attribute= 3 Stealth, 2 Slow, 1 Smelly
+Ingredients= 1 Toe of Frog, 1 Eye of Newt, 2 Bacon
+Craftable= yes
+
+[ Potion ]
+
+Name= The Magpie
+Attribute= 2 Intellect, 1 Luck
+Ingredients= 1 Toe of Frog, 1 Eye of Newt, 2 Bacon
+Craftable= yes
+
+[ Potion ]
+
+Name= The Bastard
+Attribute= 2 Annoying, 3 Obnoxious, 2 Grandiose, 3 Manipulative, 4 Luck
+Ingredients= 1 Toe of Frog, 1 Eye of Newt, 2 Bacon
+Craftable= yes
+
+[ Potion ]
+
+Name= The Socialite
+Attribute= 4 Charisma, 2 Malleable, 3 Charm
+Ingredients= 1 Toe of Frog, 1 Eye of Newt, 2 Bacon
+Craftable= yes
+
+[ Potion ]
+
+Name= The Beardface
+Attribute= 5 Wisdom, 3 Grandiose, 1 Smelly
+Ingredients= 1 Toe of Frog, 1 Eye of Newt, 2 Bacon
+Craftable= yes
+
+[ Potion ]
+
+Name= The Accountant
+Attribute= 5 Boring, 1 Intellect
 Ingredients= 1 Toe of Frog, 1 Eye of Newt, 2 Bacon
 Craftable= yes
