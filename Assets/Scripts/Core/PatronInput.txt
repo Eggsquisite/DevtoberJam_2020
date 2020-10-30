@@ -26,4 +26,4 @@ Name= John Smith
 Costume= Dog
 Problem= So, uhm ... there's this girl I like.  She doesn't seem to notice me.  No matter what I do, it's like I'm invisible to her.  I want her to SEE me.  Can you help me out?
 Formula= 4 Smelly, 3 Allure, 1 Entertainer
-Solution= The Smelly Cat; 180; no; It's a little unconventional, but I like it!  She's bound to notice me now!  Thanks!
+Solution= The Blabbermouth; 180; no; It's a little unconventional, but I like it!  She's bound to notice me now!  Thanks!

@@ -10,49 +10,53 @@ public class DialogueManager : MonoBehaviour, IPointerClickHandler {
     
     public static string genericWinResponse, genericFailResponse;
     private TextMeshProUGUI patronName, patronText;
-    
-    private List<string> sentences;
-    private bool clickToAdvanceText = false;
+
+    private bool clickToAdvance = true;
     private bool rollText = false;
-    public Patron patron;
     
-    private string displayText;
-    private int noOfChars;
+    private string dialogue;
+    private string displayingText;
+
     
     void Start() {
-        sentences = new List<string>();
-
         patronName = transform.Find("PatronName").GetComponent<TextMeshProUGUI>();
         patronText = transform.Find("PatronText").GetComponent<TextMeshProUGUI>();
-        
-        
     }
 
     IEnumerator RollText() {
         int counter = 0;
+        int noOfChars = dialogue.Length;
+        clickToAdvance = false;
         while (counter != noOfChars) {
-            displayText += sentences[0][counter];
-            patronText.SetText(displayText);
+            displayingText += dialogue[counter];
+            patronText.SetText(displayingText);
             counter++;
             yield return new WaitForSeconds(0.02f);
         }
+
+        clickToAdvance = true;
     }
 
-    public void LoadPatron(Patron patron) {
-        sentences.Add(patron.problem);
-        noOfChars = sentences[0].Length;
+
+    public void SetName(string name) {
+        patronName.SetText(name);
+    }
+    public void SetDialogue(string text) {
+        dialogue = text;
+        patronText.SetText("");
+        displayingText = "";
         StartCoroutine("RollText");
     }
-    
-    
-    
-    
-    
-    
+
+    public void ResetAll() {
+        patronName.SetText("");
+        patronText.SetText("");
+    }
 
     public void OnPointerClick(PointerEventData eventData) {
-        if (clickToAdvanceText) {
-            
+        Debug.Log("POINTER CLICKED");
+        if (clickToAdvance) {
+            GameObject.Find("PatronManager").GetComponent<PatronManager>().ClickToAdvance();
         }
     }
 }

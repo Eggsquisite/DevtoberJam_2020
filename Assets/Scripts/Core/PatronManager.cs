@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PatronManager : MonoBehaviour {
@@ -7,6 +8,9 @@ public class PatronManager : MonoBehaviour {
     private static float formulaPass = 0.65f;
     private static float[] methodWeights = new float[] {0f, 0.333f, 0.666f}; // potion solution, stored potion method, formula method
     private int position;
+    private Patron currentPatron;
+    private bool readyToAccept = true;
+    private bool clickToAdvance = true;
 
     public DialogueManager dm;
 
@@ -68,12 +72,75 @@ public class PatronManager : MonoBehaviour {
         //patronQueue[index]; //NEXT PATRON TO LOAD
         patronQueue[index].visitNumber = position;
         position++;
-        dm.LoadPatron(patronQueue[index]);
+        currentPatron = patronQueue[index];
+        
+        
         //move to the back of the queue
         Patron temp = patronQueue[index];
         patronQueue.RemoveAt(index);
         patronQueue.Add(temp);
+
+        StartCoroutine(BeginTransition());
+
+        /*GameObject.Find("Patron").GetComponent<PatronGO>().MakePatronAppear();
+        dm.SetName(currentPatron.patron_name);
+        dm.SetDialogue(currentPatron.problem);*/
     }
+
+    public IEnumerator BeginTransition() {
+        PatronGO go = GameObject.Find("Patron").GetComponent<PatronGO>();
+        go.MakePatronAppear();
+        while (go.transitioning) {
+            yield return null;
+        }
+        dm.SetName(currentPatron.patron_name);
+        dm.SetDialogue(currentPatron.problem);
+    }
+
+    public bool GivePatronPotion(Potion potion) {
+        if (readyToAccept) {
+            bool found = false;
+            for (int i = 0; i < currentPatron.potionSolutions.Count; i++) {
+                if (currentPatron.potionSolutions[i].potion == potion) {
+                    found = true;
+                    dm.SetDialogue(currentPatron.potionSolutions[i].comment);
+                    Inventory.AddFunds(currentPatron.potionSolutions[i].payment);
+                    break;
+                }
+            }
+
+            if (!found) { // the potion wasn't explicitly listed as a solution so now try the formula approach
+                float value = CheckEffectivenessFormula(currentPatron, potion);
+                if (value >= formulaPass) { //success
+                    dm.SetDialogue(DialogueManager.genericWinResponse);
+                    Inventory.AddFunds(200); //CHANGE THIS NUMBER
+                }
+                else {
+                    dm.SetDialogue(DialogueManager.genericFailResponse);
+                }
+            }
+
+            clickToAdvance = true;
+            return true;
+        }
+        return false;
+    }
+
+    public void ClickToAdvance() {
+        if (clickToAdvance) {
+            StartCoroutine(BeginFade());
+        }
+    }
+
+    public IEnumerator BeginFade() {
+        PatronGO go = GameObject.Find("Patron").GetComponent<PatronGO>();
+        dm.ResetAll();
+        go.MakePatronDisappear();
+        while (go.transitioning) {
+            yield return null;
+        }
+    }
+
 
     /*private void UseRandomPatronMethod() {
 

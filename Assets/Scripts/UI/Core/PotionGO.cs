@@ -11,12 +11,12 @@ public class PotionGO : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     private Image icon;
 
     private TextMeshProUGUI itemName;
-    private GameObject patronWindow;
+    //private GameObject patronWindow;
 
     void Start() {
         icon = transform.Find("Icon").GetComponent<Image>();
         itemName = transform.Find("ItemName").GetComponent<TextMeshProUGUI>();
-        patronWindow = GameObject.Find("WindowFrame");
+        //patronWindow = GameObject.Find("WindowFrame");
     }
 
     public void SetPotion(Potion potion) {
@@ -29,7 +29,7 @@ public class PotionGO : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         icon = transform.Find("Icon").GetComponent<Image>();
         itemName = transform.Find("ItemName").GetComponent<TextMeshProUGUI>();
         itemName.gameObject.SetActive(false);
-        patronWindow = GameObject.Find("WindowFrame");
+        //patronWindow = GameObject.Find("WindowFrame");
     }
 
     public void OnPointerEnter(PointerEventData eventData) {
@@ -45,10 +45,16 @@ public class PotionGO : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     }
 
     public void OnEndDrag(PointerEventData eventData) {
-        Debug.Log(eventData.pointerCurrentRaycast.gameObject.name + "    " + patronWindow.name);
+        //Debug.Log(eventData.pointerCurrentRaycast.gameObject.name + "    " + patronWindow.name);
 
-        if (eventData.pointerCurrentRaycast.gameObject == patronWindow) {
-            Debug.Log("Potion Delivered");
+        if (eventData.pointerCurrentRaycast.gameObject.name == "WindowFrame") { //idk why doing gameObject == gameObject fails here
+            Debug.Log("Trying to deliver potion");
+            if (GameObject.Find("PatronManager").GetComponent<PatronManager>().GivePatronPotion(potion)) {
+                //if true, they accepted the potion, so remove the gameobject
+                Inventory.RemoveItem(potion);
+                Debug.Log("DESTROYING");
+                Destroy(this.gameObject);
+            }
         }
         
     }

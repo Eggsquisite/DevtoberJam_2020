@@ -63,3 +63,8 @@ public class PotionSolution {
     }
 }
 
+public enum PatronStage {
+    WAITING_FOR_POTION,
+    BLAH
+}
+
