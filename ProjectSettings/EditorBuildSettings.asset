@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/TestScenes/PotionMinigames.unity
-    guid: 03cd121a8ed9aa34ea417d28be25d5af
+    path: Assets/Scenes/Scenes/PotionMix.unity
+    guid: b45c1e922935b9741bb4f5cab0af90ff
   m_configObjects: {}
