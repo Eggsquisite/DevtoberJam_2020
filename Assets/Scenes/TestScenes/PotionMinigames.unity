@@ -935,6 +935,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beaker: {fileID: 0}
+  ladel: {fileID: 0}
   m_color: 2
 --- !u!225 &852751522
 CanvasGroup:
@@ -1578,8 +1579,8 @@ MonoBehaviour:
   potionMaxTime: 60
   mixingBonus: 5
   liquidDowngrade: 0.3
-  burnerDowngrade: 2.5
-  colorDowngrade: 2.5
+  burnerDowngrade: 3
+  colorDowngrade: 3
 --- !u!1 &1406028602
 GameObject:
   m_ObjectHideFlags: 0
@@ -1671,6 +1672,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beaker: {fileID: 0}
+  ladel: {fileID: 0}
   m_color: 1
 --- !u!225 &1406028607
 CanvasGroup:
@@ -1940,6 +1942,7 @@ MonoBehaviour:
   baseCircleSpeed: 2
   radius: 35
   slowDownSpeed: 0.25
+  beaker: {fileID: 821773877}
 --- !u!224 &1624445011 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2613041865659716870, guid: d1226def3aa346f418952f0beec33f27, type: 3}
