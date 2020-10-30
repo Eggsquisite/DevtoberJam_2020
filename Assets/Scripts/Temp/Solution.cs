@@ -170,7 +170,6 @@ public class Solution : MonoBehaviour, IDropHandler
         }
 
         changingColor = false;
-        Debug.Log("Color change finished");
     }
 
     private void CombineColors(LiquidColor baseColor, LiquidColor newColor)
@@ -222,7 +221,6 @@ public class Solution : MonoBehaviour, IDropHandler
     {
         return yellowVials;
     }
-
 
     private void OnDisable()
     {
