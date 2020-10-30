@@ -8,6 +8,7 @@ public class Vials : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHan
 {
     private Vector2 originalPos;
     public CanvasGroup beaker;
+    public CanvasGroup ladel;
     private CanvasGroup canvasGroup;
     private Animation anim;
     private static float animTime = 2f;
@@ -31,6 +32,8 @@ public class Vials : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHan
 
         if (beaker != null)
             beaker.blocksRaycasts = true;
+        if (ladel != null)
+            ladel.blocksRaycasts = false;
     }
 
     public void OnDrag(PointerEventData data)
@@ -45,6 +48,8 @@ public class Vials : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHan
 
         if (beaker != null)
             beaker.blocksRaycasts = false;
+        if (ladel != null)
+            ladel.blocksRaycasts = true;
         // If vial is over potion mix and can change color, change potion mix to appropriate color depending on vial
     }
 

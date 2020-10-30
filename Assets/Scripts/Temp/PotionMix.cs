@@ -88,6 +88,6 @@ public class PotionMix : MonoBehaviour
         string currentVials = $"({currentCount} / ";
         string maxVials = $"{maxCount})";
         string all = string.Concat(currentVials, maxVials);
-        txt.text = all;
+        //txt.text = all;
     }
 }
