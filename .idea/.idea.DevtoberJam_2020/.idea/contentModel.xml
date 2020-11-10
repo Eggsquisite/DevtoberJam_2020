@@ -48,6 +48,7 @@
             <e p="Vials.cs" t="Include" />
           </e>
           <e p="UI" t="Include">
+            <e p="CanvasListener.cs" t="Include" />
             <e p="Core" t="Include">
               <e p="DialogueManager.cs" t="Include" />
               <e p="IngredientGO.cs" t="Include" />

@@ -22,15 +22,9 @@
     <list default="true" id="02456b1a-d081-4f5f-8ad7-6e37f0b0f34b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DevtoberJam_2020/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DevtoberJam_2020/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DevtoberJam_2020/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DevtoberJam_2020/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Art/UI/Ingredients/Mermaid Tear.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Art/UI/Ingredients/Mermaid Tear.png.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestScenes/UITest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TestScenes/UITest.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/DataLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/DataLoader.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Input.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/PatronInput.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PatronInput.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/PatronManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PatronManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Core/PatronGO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Core/PatronGO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/RecipeBook.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/RecipeBook.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Core/DialogueManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Core/DialogueManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,16 +37,17 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/PageTurn.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Core/MoneyDisplay.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../RewindGameJam/Assets/Scripts/Player.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/CanvasListener.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Book-Page Curl/scripts/AutoFlip.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Core/DialogueManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/CounterButtons.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/ItemSlot.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/63DD8BF9-8CFA-4BA9-85AF-735EF1A56BA9/de/544df211/List`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Core/PatronLoader.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/RecipeBook.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Core/InventoryGO.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Core/PatronGO.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../RewindGameJam/Assets/Scripts/Player.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/ItemSlot.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/RecipeBook.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -88,12 +83,13 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/MoveableItem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Core/Patron.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Core/PotionGO.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Core/DialogueManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/RecipeBook.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/CounterButtons.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Core/PatronManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Core/DataLoader.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Core/PatronGO.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Core/DialogueManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/CanvasListener.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Core/PatronManager.cs" />
       </list>
     </option>
   </component>
@@ -148,6 +144,7 @@
       <workItem from="1603735022622" duration="10511000" />
       <workItem from="1603820688621" duration="25118000" />
       <workItem from="1603856683210" duration="41326000" />
+      <workItem from="1604966518496" duration="9663000" />
     </task>
     <servers />
   </component>

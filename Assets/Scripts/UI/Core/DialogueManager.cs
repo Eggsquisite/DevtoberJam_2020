@@ -11,7 +11,7 @@ public class DialogueManager : MonoBehaviour, IPointerClickHandler {
     public static string genericWinResponse, genericFailResponse;
     private TextMeshProUGUI patronName, patronText;
 
-    private bool clickToAdvance = true;
+    public static bool textScollingFinished = true;
     private bool rollText = false;
     
     private string dialogue;
@@ -26,7 +26,7 @@ public class DialogueManager : MonoBehaviour, IPointerClickHandler {
     IEnumerator RollText() {
         int counter = 0;
         int noOfChars = dialogue.Length;
-        clickToAdvance = false;
+        textScollingFinished = false;
         while (counter != noOfChars) {
             displayingText += dialogue[counter];
             patronText.SetText(displayingText);
@@ -34,7 +34,7 @@ public class DialogueManager : MonoBehaviour, IPointerClickHandler {
             yield return new WaitForSeconds(0.02f);
         }
 
-        clickToAdvance = true;
+        textScollingFinished = true;
     }
 
 
@@ -54,9 +54,9 @@ public class DialogueManager : MonoBehaviour, IPointerClickHandler {
     }
 
     public void OnPointerClick(PointerEventData eventData) {
-        Debug.Log("POINTER CLICKED");
+        /*Debug.Log("POINTER CLICKED");
         if (clickToAdvance) {
             GameObject.Find("PatronManager").GetComponent<PatronManager>().ClickToAdvance();
-        }
+        }*/
     }
 }

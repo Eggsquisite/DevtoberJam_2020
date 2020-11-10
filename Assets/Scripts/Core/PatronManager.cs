@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PatronManager : MonoBehaviour {
@@ -10,7 +11,9 @@ public class PatronManager : MonoBehaviour {
     private int position;
     private Patron currentPatron;
     private bool readyToAccept = true;
-    private bool clickToAdvance = true;
+    //public static bool readyForNextPatron = false;
+
+    public static PatronState patronState = PatronState.WAITING_ON_POTION;
 
     public DialogueManager dm;
 
@@ -32,7 +35,7 @@ public class PatronManager : MonoBehaviour {
      * This method runs a check to see what Potion solutions are available for each patron, and whether the
      * player has the correct ingredients able to craft that potion
      */
-    void LoadNextPatron() {
+    private void LoadNextPatron() {
         List<int> order = new List<int>(3);
 
         for (int i = 0; i < 3; i++) { //loop 3 times
@@ -87,7 +90,7 @@ public class PatronManager : MonoBehaviour {
         dm.SetDialogue(currentPatron.problem);*/
     }
 
-    public IEnumerator BeginTransition() {
+    private  IEnumerator BeginTransition() {
         PatronGO go = GameObject.Find("Patron").GetComponent<PatronGO>();
         go.MakePatronAppear();
         while (go.transitioning) {
@@ -95,8 +98,12 @@ public class PatronManager : MonoBehaviour {
         }
         dm.SetName(currentPatron.patron_name);
         dm.SetDialogue(currentPatron.problem);
+        patronState = PatronState.WAITING_ON_POTION;
     }
 
+    /**
+     * Returns true if the potion is accepted (regardless of being successful or unsuccessful
+     */
     public bool GivePatronPotion(Potion potion) {
         if (readyToAccept) {
             bool found = false;
@@ -105,6 +112,7 @@ public class PatronManager : MonoBehaviour {
                     found = true;
                     dm.SetDialogue(currentPatron.potionSolutions[i].comment);
                     Inventory.AddFunds(currentPatron.potionSolutions[i].payment);
+                    SetReward("$" + currentPatron.potionSolutions[i].payment);
                     break;
                 }
             }
@@ -114,28 +122,58 @@ public class PatronManager : MonoBehaviour {
                 if (value >= formulaPass) { //success
                     dm.SetDialogue(DialogueManager.genericWinResponse);
                     Inventory.AddFunds(200); //CHANGE THIS NUMBER
+                    SetReward("$200");
                 }
                 else {
                     dm.SetDialogue(DialogueManager.genericFailResponse);
+                    SetReward("$200");
                 }
             }
 
-            clickToAdvance = true;
+            patronState = PatronState.READY_TO_LEAVE;
             return true;
         }
         return false;
     }
 
-    public void ClickToAdvance() {
-        if (clickToAdvance) {
+    private void SetReward(string rewardText) {
+        GameObject rewardTextGO = GameObject.Find("RewardText");
+        StartCoroutine(SetRewardCoroutine(rewardTextGO, rewardText));
+    }
+
+    private IEnumerator SetRewardCoroutine(GameObject rewardGO, string text) {
+        RectTransform rewardTransform = rewardGO.GetComponent<RectTransform>();
+        Vector3 startPosition = rewardGO.GetComponent<RectTransform>().position;
+        TextMeshProUGUI rewardText = rewardGO.GetComponent<TextMeshProUGUI>();
+        Color startColor = rewardText.color;
+        Debug.Log("Setting reward text to: " + text);
+        rewardText.SetText(text);
+        rewardGO.SetActive(true);
+        float d = 5f;
+        float s = 2f;
+        float inc = 0f;
+        Vector3 endPosition = new Vector3(startPosition.x, startPosition.y + d, startPosition.z);
+        while (inc < 1f) {
+            rewardTransform.position = Vector3.Lerp(startPosition, endPosition, inc);
+            rewardText.color = Color.Lerp(startColor, Color.clear, inc);
+            inc += Time.deltaTime / s;
+            yield return null;
+        }
+        rewardGO.SetActive(false);
+        rewardTransform.position = startPosition;
+    }
+
+    public void SayByeBye() {
+        if (DialogueManager.textScollingFinished) {
             StartCoroutine(BeginFade());
         }
     }
 
-    public IEnumerator BeginFade() {
+    private IEnumerator BeginFade() {
         PatronGO go = GameObject.Find("Patron").GetComponent<PatronGO>();
         dm.ResetAll();
         go.MakePatronDisappear();
+        patronState = PatronState.TRANSITIONING;
         while (go.transitioning) {
             yield return null;
         }
@@ -216,4 +254,10 @@ public class PatronManager : MonoBehaviour {
             tempList.RemoveAt(rand);
         }
     }
+}
+
+public enum PatronState {
+    TRANSITIONING,
+    WAITING_ON_POTION,
+    READY_TO_LEAVE
 }
