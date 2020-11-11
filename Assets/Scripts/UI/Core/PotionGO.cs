@@ -47,12 +47,12 @@ public class PotionGO : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public void OnEndDrag(PointerEventData eventData) {
         //Debug.Log(eventData.pointerCurrentRaycast.gameObject.name + "    " + patronWindow.name);
 
-        if (eventData.pointerCurrentRaycast.gameObject.name == "WindowFrame") { //idk why doing gameObject == gameObject fails here
+        if (eventData.pointerCurrentRaycast.gameObject.name == "WindowFrameImage") { //idk why doing gameObject == gameObject fails here
             Debug.Log("Trying to deliver potion");
             if (GameObject.Find("PatronManager").GetComponent<PatronManager>().GivePatronPotion(potion)) {
                 //if true, they accepted the potion, so remove the gameobject
                 Inventory.RemoveItem(potion);
-                Debug.Log("DESTROYING");
+                Debug.Log("DESTROYING POTION");
                 Destroy(this.gameObject);
             }
         }

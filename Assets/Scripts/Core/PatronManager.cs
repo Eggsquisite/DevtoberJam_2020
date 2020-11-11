@@ -15,12 +15,14 @@ public class PatronManager : MonoBehaviour {
 
     public static PatronState patronState = PatronState.WAITING_ON_POTION;
 
+    private GameObject rewardGOPrefab;
+
     public DialogueManager dm;
 
     void Start() {
 
         dm = GameObject.Find("PatronTextBox").GetComponent<DialogueManager>();
-        
+        rewardGOPrefab = Resources.Load<GameObject>("Prefabs/RewardText");
         PatronShuffle();
         
         LoadNextPatron();
@@ -137,30 +139,33 @@ public class PatronManager : MonoBehaviour {
     }
 
     private void SetReward(string rewardText) {
-        GameObject rewardTextGO = GameObject.Find("RewardText");
-        StartCoroutine(SetRewardCoroutine(rewardTextGO, rewardText));
+        StartCoroutine(SetRewardCoroutine(rewardText));
     }
 
-    private IEnumerator SetRewardCoroutine(GameObject rewardGO, string text) {
+    private IEnumerator SetRewardCoroutine(string text) {
+        GameObject rewardGO = Instantiate(rewardGOPrefab);
+        rewardGO.transform.parent = GameObject.Find("WindowFrame").transform;
+        //rewardGO.transform.position = new Vector3(153f,-50f,0f);
         RectTransform rewardTransform = rewardGO.GetComponent<RectTransform>();
-        Vector3 startPosition = rewardGO.GetComponent<RectTransform>().position;
+        rewardTransform.anchoredPosition = new Vector2(153, -50);
+        Vector2 startPosition = rewardTransform.anchoredPosition;
         TextMeshProUGUI rewardText = rewardGO.GetComponent<TextMeshProUGUI>();
         Color startColor = rewardText.color;
         Debug.Log("Setting reward text to: " + text);
         rewardText.SetText(text);
-        rewardGO.SetActive(true);
-        float d = 5f;
-        float s = 2f;
+
+        float d = 125f;
+        float s = 1.8f;
         float inc = 0f;
-        Vector3 endPosition = new Vector3(startPosition.x, startPosition.y + d, startPosition.z);
+        Vector2 endPosition = new Vector2(startPosition.x, startPosition.y + d);
         while (inc < 1f) {
-            rewardTransform.position = Vector3.Lerp(startPosition, endPosition, inc);
+            rewardTransform.anchoredPosition = Vector2.Lerp(startPosition, endPosition, inc);
             rewardText.color = Color.Lerp(startColor, Color.clear, inc);
             inc += Time.deltaTime / s;
             yield return null;
         }
-        rewardGO.SetActive(false);
-        rewardTransform.position = startPosition;
+
+        Destroy(rewardGO);
     }
 
     public void SayByeBye() {

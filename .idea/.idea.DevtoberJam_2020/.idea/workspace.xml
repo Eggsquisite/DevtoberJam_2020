@@ -20,11 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02456b1a-d081-4f5f-8ad7-6e37f0b0f34b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DevtoberJam_2020/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DevtoberJam_2020/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DevtoberJam_2020/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DevtoberJam_2020/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestScenes/UITest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TestScenes/UITest.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/PatronManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PatronManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Core/DialogueManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Core/DialogueManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Core/PotionGO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Core/PotionGO.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,13 +81,13 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Core/Inventory.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/MoveableItem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Core/Patron.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Core/PotionGO.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/RecipeBook.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/CounterButtons.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Core/DataLoader.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Core/PatronGO.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Core/DialogueManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/CanvasListener.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Core/PotionGO.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Core/PatronManager.cs" />
       </list>
     </option>
@@ -144,7 +143,9 @@
       <workItem from="1603735022622" duration="10511000" />
       <workItem from="1603820688621" duration="25118000" />
       <workItem from="1603856683210" duration="41326000" />
-      <workItem from="1604966518496" duration="9663000" />
+      <workItem from="1604966518496" duration="9687000" />
+      <workItem from="1605042936178" duration="6877000" />
+      <workItem from="1605084614460" duration="640000" />
     </task>
     <servers />
   </component>
