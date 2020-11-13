@@ -20,10 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02456b1a-d081-4f5f-8ad7-6e37f0b0f34b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DevtoberJam_2020/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DevtoberJam_2020/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DevtoberJam_2020/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DevtoberJam_2020/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestScenes/UITest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TestScenes/UITest.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/PatronManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/PatronManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Core/PotionGO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Core/PotionGO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/CounterButtons.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/CounterButtons.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,13 +82,15 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/MoveableItem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Core/Patron.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/RecipeBook.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/CounterButtons.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Core/DataLoader.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Core/PatronGO.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Core/DialogueManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/CanvasListener.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Core/PotionGO.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Core/PatronManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Shaders/FrostedGlass.shader" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/CounterButtons.cs" />
+        <option value="$PROJECT_DIR$/Assets/Shaders/Gradient.shader" />
       </list>
     </option>
   </component>
@@ -145,7 +147,8 @@
       <workItem from="1603856683210" duration="41326000" />
       <workItem from="1604966518496" duration="9687000" />
       <workItem from="1605042936178" duration="6877000" />
-      <workItem from="1605084614460" duration="640000" />
+      <workItem from="1605084614460" duration="1425000" />
+      <workItem from="1605265225208" duration="3997000" />
     </task>
     <servers />
   </component>

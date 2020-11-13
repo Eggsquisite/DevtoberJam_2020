@@ -65,6 +65,10 @@
             <e p="RecipeBook.cs" t="Include" />
           </e>
         </e>
+        <e p="Shaders" t="Include">
+          <e p="FrostedGlass.shader" t="Include" />
+          <e p="Gradient.shader" t="Include" />
+        </e>
         <e p="TextMesh Pro" t="Include">
           <e p="Fonts" t="Include">
             <e p="LiberationSans - OFL.txt" t="Include" />
